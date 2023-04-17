@@ -1,19 +1,16 @@
+require 'faker'
 
+puts "👨 Creating donors..."
 
-# Create 5 organizations
-puts "seeding now************"
-5.times do
-  Organisation.create!(
-    logo: Faker::Company.logo,
-    name: Faker::Company.name,
-    password_digest: Faker::Internet.password,
+10.times do
+  Donor.create!(
+    name: Faker::Name.name,
     email: Faker::Internet.email,
-    description: Faker::Lorem.paragraph,
-    website: Faker::Internet.url,
-    contact_person: Faker::Name.name,
-    phone_number: Faker::PhoneNumber.phone_number,
-    status: rand(0..2)
+    password_digest: "password"
   )
 end
 
-puts "done seeding **************"
+puts "👤 Created #{Donor.count} donors"
+puts
+
+puts "🎉 Done!"
