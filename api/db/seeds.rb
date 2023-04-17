@@ -1,6 +1,6 @@
 
 
-# Create 10 organizations
+# Create 5 organizations
 puts "seeding now************"
 5.times do
   Organisation.create!(
@@ -16,4 +16,4 @@ puts "seeding now************"
   )
 end
 
-puts "done seeding**************"
+puts "done seeding **************"
