@@ -1,3 +1,3 @@
 class Inventory < ApplicationRecord
-  belongs_to :organization
+  belongs_to :organisation
 end
