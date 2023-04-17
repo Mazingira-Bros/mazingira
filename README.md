@@ -2,7 +2,7 @@
 ---
 ### Front-end:
 - Repo: [Mazingira-front](https://github.com/Mazingira-Bros/mazingira/tree/main/client)
-- Livelink: [front-end](https://mazingira-project.vercel.app/)
+- Livelink: [front-end](https://mazingira-delta.vercel.app/)
 
 ### Back-end:
 - Repo: [Mazingira-back](https://github.com/Mazingira-Bros/mazingira/tree/main/api)
