@@ -1,0 +1,44 @@
+# This workflow uses actions that are not certified by GitHub.  They are
+# provided by a third-party and are governed by separate terms of service,
+# privacy policy, and support documentation.
+#
+# This workflow will install a prebuilt Ruby version, install dependencies, and
+# run tests and linters.
+name: "Ruby on Rails CI"
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  rails:
+    name: Ruby on Rails
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Ruby and Bundler
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7.4
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: |
+          cd api
+          bundle install
+      - name: Database setup and migration
+        run: |
+          cd api
+          bin/rails db:setup
+          if [ -f db/schema.rb ]; then
+            bin/rails db:migrate
+          fi
+      - name: Test
+        run: |
+          cd api
+          bin/rails test

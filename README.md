@@ -1,12 +1,12 @@
 # MAZINGIRA
 ---
 ### Front-end:
-- Repo: [Mazingira-front](https://github.com/treva556/mazingira/tree/master/client)
-- Livelink: [front-end](https://mazingira-green.vercel.app/)
+- Repo: [Mazingira-front](https://github.com/Mazingira-Bros/mazingira/tree/main/client)
+- Livelink: [front-end](https://mazingira-project.vercel.app/)
 
 ### Back-end:
-- Repo: [Mazingira-back](https://github.com/treva556/mazingira/tree/master/api)
-- Livelink: [backend](https://mazingirer.onrender.com/)
+- Repo: [Mazingira-back](https://github.com/Mazingira-Bros/mazingira/tree/main/api)
+- Livelink: [backend](https://mazingira-6hpc.onrender.com/)
 
 ## Problem Statement
 - Environmental degradation is the disintegration of the earth or deterioration of the environment through the consumption of assets, for example, air, water, and soil; the destruction of environments and the eradication of wildlife.
