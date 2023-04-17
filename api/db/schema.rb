@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_17_110814) do
+ActiveRecord::Schema[7.0].define(version: 0) do
   create_table "admins", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -18,31 +18,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_110814) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "donations", force: :cascade do |t|
-    t.integer "organization_id", null: false
-    t.integer "donor_id", null: false
-    t.float "amount"
-    t.integer "preference"
-    t.integer "frequency"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["donor_id"], name: "index_donations_on_donor_id"
-    t.index ["organization_id"], name: "index_donations_on_organization_id"
-  end
-
-  create_table "inventories", force: :cascade do |t|
-    t.integer "organization_id", null: false
-    t.string "image"
-    t.string "name"
-    t.string "description"
-    t.integer "quantity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["organization_id"], name: "index_inventories_on_organization_id"
-  end
-
-  add_foreign_key "donations", "donors"
-  add_foreign_key "donations", "organizations"
-  add_foreign_key "inventories", "organizations"
+  
 end
