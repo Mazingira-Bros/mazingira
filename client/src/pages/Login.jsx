@@ -37,7 +37,8 @@ function Login() {
       .catch((error) => {
         console.error('There was a problem with the fetch operation:', error);
       });
-  };
+  }; 
+  
   return (
     <div className='login-cont'>
     <form onSubmit={handleSubmit} className="login-form">
