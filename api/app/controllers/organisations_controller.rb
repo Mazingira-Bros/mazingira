@@ -1,5 +1,6 @@
 class OrganisationsController < ApplicationController
   before_action :set_organisation, only: [:show, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
   # GET /organisations
   def index
@@ -42,6 +43,10 @@ class OrganisationsController < ApplicationController
 
   def set_organisation
     @organisation = Organisation.find(params[:id])
+  end
+
+  def render_not_found
+    render json: { error: "Organization with ID: #{params[:id]} not found" }, status: :not_found
   end
 
   # Only allow a list of trusted parameters through.
