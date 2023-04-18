@@ -20,6 +20,19 @@ class DonorsController < ApplicationController
     render json: donor, status: :created
   end
 
+  # POST /donors
+  def create
+    donor = Donor.create(donor_params)
+    render json: donor, status: :created
+  end
+
+  # DELETE /donor/:id
+  def destroy
+    donor = Donor.find(params[:id])
+    donor.destroy
+    head :no_content
+  end
+
   private
 
   def donor_params
