@@ -14,8 +14,30 @@ class TransactionsController < ApplicationController
     else
       render json: { error: "Transaction not found" }, status: :not_found
     end
+   end
+   #This updates a specific transaction
+   def update
+    transaction = Transaction.find_by(id: params[:id])
+    
+    if transaction
+      if transaction.update(transaction_params)
+        render json: transaction, status: :ok
+      else
+        render json: { errors: transaction.errors.full_messages }, status: :unprocessable_entity
+      end
+    else
+      render json: { error: "Transaction not found" }, status: :not_found
+    end
   end
-
   
+  private
+  
+  def transaction_params
+    params.require(:transaction).permit(:donation_id, :payment_method, :status)
+  end
+  
+ 
+
+
 
 end
