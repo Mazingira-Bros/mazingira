@@ -29,15 +29,23 @@ class TransactionsController < ApplicationController
       render json: { error: "Transaction not found" }, status: :not_found
     end
   end
+
+   # This creates a new transaction
+   def create
+    transaction = Transaction.new(transaction_params)
+
+    if transaction.save
+      render json: { message: "Transaction created successfully", transaction: transaction }, status: :created
+    else
+      render json: { errors: transaction.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  
   
   private
   
   def transaction_params
     params.require(:transaction).permit(:donation_id, :payment_method, :status)
   end
-  
- 
-
-
-
 end
