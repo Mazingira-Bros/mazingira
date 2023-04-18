@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../css/Login.css'; // import the CSS file
 
 function Login() {
+  const setToken = useAuthStore((state) => state.setToken);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
