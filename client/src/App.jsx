@@ -1,11 +1,12 @@
 import React from 'react'
-import Navbar from './components/Navbar'
+import LandingPage from './pages/landingPage'
+///import style from  '.../src/pages/rectangle.css'
 
 function App() {
 
   return (
-    <div className="App">
-      <Navbar/>
+    <div className="App">      
+      <LandingPage/>
     </div>
   )
 }

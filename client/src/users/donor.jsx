@@ -1,9 +1,9 @@
 import React from 'react'
 
-function donorDashboard() {
+function DonorDashboard() {
   return (
     <div>landingPage</div>
   )
 }
 
-export default donorDashboard
+export default DonorDashboard

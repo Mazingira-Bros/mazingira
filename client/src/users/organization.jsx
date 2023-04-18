@@ -1,9 +1,9 @@
 import React from 'react'
 
-function organizationDash() {
+function OrganizationDash() {
   return (
     <div>landingPage</div>
   )
 }
 
-export default organizationDash
+export default OrganizationDash

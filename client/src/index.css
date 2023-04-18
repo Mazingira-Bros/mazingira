@@ -1,3 +1,63 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root { 
+  font-family: 'Poppins',  sans-serif;
+}
+
+body {
+  background-color: white;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+}
+
+li:hover ::before {
+  position: absolute;
+  content: '';
+  height: 4px;
+  width: 100%;
+  background-color: #2a68ff;
+  right: 0;
+  color: #2a68ff;
+}
+
+.icon {
+  cursor: pointer;
+}
+ 
+.card {
+  background-color: black;
+} 
+.wrapper{
+  display: grid;
+  place-items: center;
+ min-height: auto;
+}
+
+.grid-container{
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  height: 60px;
+}
+
+
+
+.left{
+  grid-column: 1;
+  width: 320px;
+  min-height: auto;
+}
+
+.right{
+  grid-column: 2;
+  width: 250px;
+  text-align: center;
+}
