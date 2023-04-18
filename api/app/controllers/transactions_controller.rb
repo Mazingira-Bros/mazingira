@@ -41,7 +41,16 @@ class TransactionsController < ApplicationController
     end
   end
 
-  
+  def destroy
+    transaction = Transaction.find_by(id: params[:id])
+
+    if transaction
+      transaction.destroy
+      render json: { message: "Transaction deleted successfully" }, status: :ok
+    else
+      render json: { error: "Transaction not found" }, status: :not_found
+    end
+  end
   
   private
   
