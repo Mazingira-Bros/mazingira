@@ -1,9 +1,9 @@
 class CreateTransactions < ActiveRecord::Migration[7.0]
   def change
     create_table :transactions do |t|
-      t.integer :donation_id
+      t.references :donation, null: false, foreign_key: true
       t.integer :payment_method
-      t.string :status
+      t.integer :status
 
       t.timestamps
     end
