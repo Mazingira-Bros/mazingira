@@ -87,6 +87,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_125741) do
     t.text "content"
     t.integer "beneficiary_id", null: false
     t.integer "likes"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["beneficiary_id"], name: "index_stories_on_beneficiary_id"
@@ -95,6 +96,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_125741) do
   create_table "transactions", force: :cascade do |t|
     t.integer "donation_id", null: false
     t.integer "payment_method"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["donation_id"], name: "index_transactions_on_donation_id"

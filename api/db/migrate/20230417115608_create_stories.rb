@@ -5,6 +5,7 @@ class CreateStories < ActiveRecord::Migration[7.0]
       t.text :content
       t.references :beneficiary, null: false, foreign_key: true
       t.integer :likes
+      t.string :image
 
       t.timestamps
     end
