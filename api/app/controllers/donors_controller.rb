@@ -26,7 +26,7 @@ class DonorsController < ApplicationController
     render json: donor, status: :created
   end
 
-  # DELETE /donor/:id
+  # DELETE /donor/:id {ERROR MESSAGE}
   def destroy
     donor = Donor.find(params[:id])
     donor.destroy
