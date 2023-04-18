@@ -61,3 +61,20 @@ li:hover ::before {
   width: 250px;
   text-align: center;
 }
+.container {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.item-1{
+  font-size: 7rem;
+  padding-top: 0px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+}
+.item-2{
+  text-align: center;
+  
+}
