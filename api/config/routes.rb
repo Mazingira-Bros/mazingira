@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :donors, only: [:index]
+  resources :donors
   resources :organisations
   resources :donations
   resources :beneficiaries
