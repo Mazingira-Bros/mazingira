@@ -4,14 +4,24 @@ class BeneficiariesController < ApplicationController
 
   #GET /beneficiaries
   def index
-    @beneficiaries = Beneficiary.all
+    if params[:organisation_id]
+      @beneficiaries = Organisation.find(params[:organisation_id]).beneficiaries
+    else
+      @beneficiaries = Beneficiary.all
+    end
     render json: @beneficiaries, status: :ok
   end
 
-  #GET /beneficiaries/:id
-  def show
+# GET /beneficiaries/:id
+def show
+  if params[:organisation_id]
+    @beneficiary = Organisation.find(params[:organisation_id]).beneficiaries
+    render json: @beneficiary, status: :ok
+  else
     render json: @beneficiary, status: :ok
   end
+end
+
 
   #POST /beneficiaries
   def create

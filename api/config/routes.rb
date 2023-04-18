@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  # resources :donors, only: [:index]
-  # resources :donations
-  # resources :stories
-  resources :organisations, except: [:new, :edit]
+  resources :donors, only: [:index]
+  resources :donations
+  resources :stories
+  resources :organisations, except: [:new, :edit] do
+    resources :beneficiaries, only: [:index]
+    resources :inventories, only: [:index]
+    resources :donations, only: [:index]
+  end
   resources :beneficiaries, except: [:new, :edit]
   resources :inventories, except: [:new, :edit]
 
