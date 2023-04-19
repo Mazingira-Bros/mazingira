@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :donors
-  resources :donations
+  resources :donations, except: [:destroy]
   resources :stories
   resources :organisations, except: [:new, :edit] do
     resources :beneficiaries, only: [:index]
@@ -9,8 +9,7 @@ Rails.application.routes.draw do
   end
   resources :beneficiaries, except: [:new, :edit]
   resources :inventories, except: [:new, :edit]
-  resources :transactions
-  resources :reminders 
+  resources :transactions 
   resources :admins
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
