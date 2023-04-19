@@ -2,79 +2,103 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { 
-  font-family: 'Poppins',  sans-serif;
-}
 
 body {
-  background-color: white;
-}
-
-li {
-  list-style: none;
-  cursor: pointer;
-  position: relative;
-}
-
-li:hover ::before {
-  position: absolute;
-  content: '';
-  height: 4px;
-  width: 100%;
-  background-color: #2a68ff;
-  right: 0;
-  color: #2a68ff;
-}
-
-.icon {
-  cursor: pointer;
-}
+  background-color: #fff5e1;
  
-.card {
-  background-color: black;
-} 
-.wrapper{
-  display: grid;
-  place-items: center;
- min-height: auto;
-}
-
-.grid-container{
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  height: 60px;
 }
 
 
-
-.left{
-  grid-column: 1;
-  width: 320px;
-  min-height: auto;
+/* custom.css */
+.my-custom-class {
+  height: 4000px;
 }
 
-.right{
-  grid-column: 2;
-  width: 250px;
-  text-align: center;
+
+.min-h-screen {
+  /* Set the minimum height of the div to the height of the viewport */
+  min-height: 100vh;
 }
-.container {
+
+.flex {
+  /* Set the display property to flex */
   display: flex;
-  justify-content: space-between;
-  
 }
 
-.item-1{
-  font-size: 7rem;
-  padding-top: 0px;
-  padding-right: 30px;
-  padding-bottom: 10px;
-  padding-left: 0px;
+.items-center {
+  /* Center the items vertically in the flex container */
+  align-items: center;
 }
-.item-2{
-  text-align: center;
-  
+
+.justify-center {
+  /* Center the content horizontally in the flex container */
+  justify-content: center;
+}
+
+.bg {
+  /* Set the background color to a specific color, or... */
+  /* If you want to set an image as the background, you can use the following CSS property */
+  /* Set the background image, and configure the size and position of the image */
+  background-image: url('../src/assets/image7.jpg'); /* Replace 'image.jpg' with the path to your image */
+  background-size: cover; /* Cover the entire background with the image */
+  background-position: center center; /* Center the image vertically and horizontally */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+
+.bg2 {
+  /* Set the background color to a specific color, or... */
+  /* If you want to set an image as the background, you can use the following CSS property */
+  /* Set the background image, and configure the size and position of the image */
+  background-image: url('../src/assets/image7.jpg'); /* Replace 'image.jpg' with the path to your image */
+  background-size: cover; /* Cover the entire background with the image */
+  background-position: center center; /* Center the image vertically and horizontally */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+
+
+/* Update the CSS for the sidebar container */
+.sidebar-container {
+  position: fixed; /* Fix the position of the sidebar */
+  top: 0; /* Set the top position to 0 */
+  bottom: 0; /* Set the bottom position to 0 */
+  left: 0; /* Set the left position to 0 */
+  z-index: 1000; /* Set the z-index to a higher value to make sure it's on top of other elements */
+  width: 20%; /* Set the width of the sidebar */
+  background-color: #464931; /* Set the background color of the sidebar */
+  border-radius: 20px; /* Set the border radius to create smooth edges */
+  padding: 20px; /* Add padding to the sidebar */
+  overflow-y: auto; /* Add vertical scrollbar if content overflows */
+  transition: width 0.3s ease; /* Add transition for smooth animation */
+}
+
+
+
+
+.flex-1 {
+  flex: 1;
+}
+
+/* Update margin-left to 1/5th of the viewport width */
+.ml-8 {
+  margin-left: 20vw; /* 20% of viewport width */
+}
+
+/* Footer occupies remaining space and avoids overlapping */
+.flex-none {
+  flex: none;
+}
+
+
+
+
+/* Styles for footer when sidebar is not minimized */
+.footer-expanded {
+  width: 80%; /* Change the width to the desired value */
+}
+
+/* Styles for footer when sidebar is minimized */
+.footer-collapsed {
+  width: 100%; /* Change the width to the desired value */
 }
