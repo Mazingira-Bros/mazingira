@@ -24,7 +24,7 @@ const handleSubmit = (e) => {
       // return <RegistrationForm />
       response.json().then(data => setErrors(data.errors));
     }
-  }):
+  });
 };
 
   return (
@@ -39,6 +39,17 @@ const handleSubmit = (e) => {
         <input type='email' id='email' name='email' onChange={ (e) => setEmail(e.target.value)}/>
         {errors.email && <div className='error'>{errors.email.join(', ')}</div>}
       </div>
+      <div>
+        <label htmlFor='password'>Password</label>
+        <input type='password' id='password' name='password' onChange={ (e) => setPassword(e.target.value) }/>
+        {errors.password && <div className='password'>{errors.password.join(', ')}</div>}
+      </div>
+      <div>
+        <label htmlFor='password-confirmation'>Password Confirmation</label>
+        <input type='paswword' id='password-confirmation' name='password_confrimation' onChange={ (e) => setPasswordConfirmation(e.target.value)}/>
+        {errors.password_confirmation && <div className='password_confirmation'>{errors.password_confirmation.join(', ')}</div>}
+      </div>
+      <button type='submit'>Submit</button>
     </form>
   )
 }
