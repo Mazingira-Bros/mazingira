@@ -242,8 +242,9 @@ PLATFORMS
   x86_64-darwin-22
   x86_64-linux
 
-DEPENDENCIES 
-
+DEPENDENCIES
+  active_model_serializers
+  activerecord
   bcrypt (~> 3.1.7)
   bootsnap
   byebug (~> 11.1)
