@@ -45,7 +45,7 @@ Donor.all.each do |donor|
     Donation.create!(
       organisation: Organisation.all.sample,
       donor: donor,
-      amount: rand(10..1000),
+      amount: rand(1000..10000),
       preference: rand(0..1),
       frequency: rand(0..2)
     )
