@@ -75,4 +75,38 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_125741) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "reminders", force: :cascade do |t|
+    t.integer "donation_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["donation_id"], name: "index_reminders_on_donation_id"
+  end
+
+  create_table "stories", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.integer "beneficiary_id", null: false
+    t.integer "likes"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["beneficiary_id"], name: "index_stories_on_beneficiary_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer "donation_id", null: false
+    t.integer "payment_method"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["donation_id"], name: "index_transactions_on_donation_id"
+  end
+
+  add_foreign_key "beneficiaries", "organisations"
+  add_foreign_key "donations", "donors"
+  add_foreign_key "donations", "organisations"
+  add_foreign_key "inventories", "organisations"
+  add_foreign_key "reminders", "donations"
+  add_foreign_key "stories", "beneficiaries"
+  add_foreign_key "transactions", "donations"
 end
