@@ -15,8 +15,9 @@ function LandingPage() {
       <div className='item-2'>
         {/* <img src={icom}></img> */}
         <br></br>
+        <br></br>
         <p>  We Have The Power Today To Change Tomorrow!  </p>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded">
+        <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-2 rounded">
   Get Started
 </button>
       </div>
