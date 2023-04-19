@@ -10,6 +10,10 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
+gem 'activerecord'
+
+gem 'active_model_serializers'
+
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
 
@@ -33,7 +37,6 @@ gem "jbuilder"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
-gem 'active_model_serializers'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "bcrypt", "~> 3.1.7"
@@ -76,10 +79,13 @@ group :test do
   gem "webdrivers"
 
 end
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
 gem "active_model_serializers"
 >>>>>>> 73ffcc785ff114ce1fe9bc15cf9086380d71c39e
 
+=======
+>>>>>>> 8974b4b1b33e96488b76c9386ee1fb8e4fd0c0dd
 gem "byebug", "~> 11.1"
