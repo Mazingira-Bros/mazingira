@@ -11,17 +11,17 @@ function App() {
 
   return (
     <div className="App">      
-     <BrowserRouter>
-       <Switch>
-        <Route path="/">
+     {/* {/* <BrowserRouter> */}
+       {/* <Switch> */}
+        {/* <Route path="/44"> */} 
         <LandingPage/>
-        </Route>
-        </Switch>
+        {/* </Route>
+        </Switch> */}
         <AdminDashboard/>
         <DonorDashboard/>
         <OrganizationDash/>
 
-     </BrowserRouter>
+     {/* </BrowserRouter> */}
     </div>
   )
 }
