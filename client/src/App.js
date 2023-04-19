@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import './App.css';
 import './index.css';
 import LandingPage from './components/LandingPage';
@@ -10,34 +10,35 @@ import GeneralRegistrationForm from '../src/components/GeneralRegistration';
 import PasswordReset from './components/PasswordReset';
 import DonorDashBoard from '../src/components/Donor/Dashboard';
 import OrganizationDahboard from '../src/components/Organization/Dashboard';
+import Dashboard from '../src/components/Organization/Dashboard';
 // import DonorNavBar from './components/Donor/DonorNavBar';
 // import NewDonationContent from './components/Donor/NewDonationContent';
 
-
-
 function App() {
-//
-
+  //
   return (
     <div className="App">
-      <Router> 
+      <BrowserRouter>
         <Routes>
-          <Route exact path="/" Component={LandingPage} /> 
-          <Route exact path="/login" Component={Login} /> 
-          <Route exact path="/donorregistration" Component={GeneralRegistrationForm} />
-          <Route exact path="/learnmore" Component={LearnMore} /> 
-          <Route exact path="/registration" Component={GeneralRegistrationForm} /> 
-          <Route exact path="/password-reset" Component={PasswordReset} /> 
-          <Route exact path="/donor-dashboard" Component={DonorDashBoard} />
-          <Route exact path="/organization-dashboard" Component={OrganizationDahboard} />  
+          <Route exact path="/" element={<LandingPage />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/register" element={<RegistrationForm />} />
+          <Route exact path="/donorregistration" element={<GeneralRegistrationForm />} />
+          <Route exact path="/learnmore" element={<LearnMore />} />
+          <Route exact path="/registration" element={<GeneralRegistrationForm />} />
+          <Route exact path="/password-reset" element={<PasswordReset />} />
+          <Route exact path="/donor-dashboard" element={<DonorDashBoard />} />
+          <Route exact path="/organization-dashboard" element={<OrganizationDahboard />} />
+          <Route exact path="/dashboard" element={<Dashboard />} />
+
           {/* Add other routes for other components */}
         </Routes>
         {/* <DonorNavBar/> */}
         {/* <NewDonationContent/> */}
-      </Router>
+      </BrowserRouter>
 
-      
-        {/* <div className="my-custom-class"></div> */}
+
+      {/* <div className="my-custom-class"></div> */}
     </div>
   );
 }
