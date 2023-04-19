@@ -11,6 +11,8 @@ import PasswordReset from './components/PasswordReset';
 import DonorDashBoard from '../src/components/Donor/Dashboard';
 import OrganizationDahboard from '../src/components/Organization/Dashboard';
 import Dashboard from '../src/components/Organization/Dashboard';
+import Checkout from './components/Donor/Checkout';
+
 // import DonorNavBar from './components/Donor/DonorNavBar';
 // import NewDonationContent from './components/Donor/NewDonationContent';
 
@@ -30,6 +32,7 @@ function App() {
           <Route exact path="/donor-dashboard" element={<DonorDashBoard />} />
           <Route exact path="/organization-dashboard" element={<OrganizationDahboard />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/checkout" element={<Checkout/>} />
 
           {/* Add other routes for other components */}
         </Routes>
