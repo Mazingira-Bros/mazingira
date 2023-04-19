@@ -21,16 +21,25 @@ const handleSubmit = (e) => {
     if (res.ok) {
       return <Login />
     } else {
-      return <RegistrationForm />
+      // return <RegistrationForm />
       response.json().then(data => setErrors(data.errors));
     }
   }):
-}
-
-
+};
 
   return (
-    <div>RegistrationForm</div>
+    <form onClick={handleSubmit}>
+      <div>
+        <label htmlFor='name'>Name</label>
+        <input type='text' id='name' name='name' value={name} onChange={(e) => setName(e.target.value)}/>
+        { errors.name && <div className='error'>{errors.name.join(', ')}</div> }
+      </div>
+      <div>
+        <label htmlFor='email'>Email</label>
+        <input type='email' id='email' name='email' onChange={ (e) => setEmail(e.target.value)}/>
+        {errors.email && <div className='error'>{errors.email.join(', ')}</div>}
+      </div>
+    </form>
   )
 }
 
