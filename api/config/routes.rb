@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :donors, only: [:index]
+  resources :donors
   resources :donations
   resources :stories
   resources :organisations, except: [:new, :edit] do
@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   end
   resources :beneficiaries, except: [:new, :edit]
   resources :inventories, except: [:new, :edit]
-
+  resources :transactions
+  resources :reminders 
+  resources :admins
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
