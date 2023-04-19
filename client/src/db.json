@@ -40,5 +40,55 @@
       "website": " https://www.nrdc.org/ ",
       "contactPerson": "Alice Brown"
     }
+  ],
+  "donor": [
+    {
+      "id": 1,
+      "name": "Rev. Marcellus Keeling",
+      "email": "dolly@ortiz.co",
+      "password_digest": "password",
+      "donations": [
+        {
+        "id": 1,
+        "organisation_id": 2,
+        "donor_id": 1,
+        "amount": 439,
+        "preference": "not_anonymous",
+        "frequency": "monthly"
+        },
+        {
+        "id": 2,
+        "organisation_id": 5,
+        "donor_id": 1,
+        "amount": 451,
+        "preference": "not_anonymous",
+        "frequency": "once"
+        },
+        {
+        "id": 3,
+        "organisation_id": 2,
+        "donor_id": 1,
+        "amount": 789,
+        "preference": "anonymous",
+        "frequency": "once"
+        },
+        {
+        "id": 4,
+        "organisation_id": 3,
+        "donor_id": 1,
+        "amount": 264,
+        "preference": "anonymous",
+        "frequency": "weekly"
+        },
+        {
+        "id": 5,
+        "organisation_id": 2,
+        "donor_id": 1,
+        "amount": 848,
+        "preference": "anonymous",
+        "frequency": "monthly"
+        }
+      ]
+      }
   ]
 }
