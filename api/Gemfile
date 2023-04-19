@@ -79,13 +79,5 @@ group :test do
   gem "webdrivers"
 
 end
-<<<<<<< HEAD
 
-<<<<<<< HEAD
-=======
-gem "active_model_serializers"
->>>>>>> 73ffcc785ff114ce1fe9bc15cf9086380d71c39e
 
-=======
->>>>>>> 8974b4b1b33e96488b76c9386ee1fb8e4fd0c0dd
-gem "byebug", "~> 11.1"
