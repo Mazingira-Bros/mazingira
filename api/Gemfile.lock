@@ -242,6 +242,7 @@ PLATFORMS
   x86_64-darwin-22
   x86_64-linux
 
+
 DEPENDENCIES
   active_model_serializers
   activerecord
@@ -266,4 +267,4 @@ DEPENDENCIES
   webdrivers
 
 BUNDLED WITH
-   2.4.12
+   2.4.9

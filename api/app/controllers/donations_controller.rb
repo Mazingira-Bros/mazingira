@@ -26,12 +26,7 @@ class DonationsController < ApplicationController
         render json: donation, status: :created
     end
 
-    # DELETE /destroy/:id
-    def destroy
-        donation = Donation.find(params[:id])
-        donation.destroy
-        head :no_content
-    end
+
     private
 
     def donations_params

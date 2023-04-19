@@ -1,3 +1,3 @@
 class Inventory < ApplicationRecord
-  belongs_to :organisation
+  belongs_to :organisation, dependent: :destroy
 end

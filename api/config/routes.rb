@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :donors
-  resources :donations
+  resources :donations, except: [:destroy]
   resources :stories
   resources :organisations, except: [:new, :edit] do
     resources :beneficiaries, only: [:index]
