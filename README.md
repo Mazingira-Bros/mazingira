@@ -29,4 +29,4 @@
 3. [Joseph Mwanzia](https://github.com/JoseMwanzia)
 4. [Stephen-Nene](https://github.com/Stephen-nene)
 5. [Bruno Kiptoo](https://github.com/dev5)
----
+6. [Khalid-Ahmed](https://github.com/certihimo)

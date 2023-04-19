@@ -1,69 +1,104 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  background-color: #fff5e1;
+ 
+}
+
+
+/* custom.css */
+.my-custom-class {
+  height: 4000px;
+}
+
+
+.min-h-screen {
+  /* Set the minimum height of the div to the height of the viewport */
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.flex {
+  /* Set the display property to flex */
+  display: flex;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.items-center {
+  /* Center the items vertically in the flex container */
+  align-items: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.justify-center {
+  /* Center the content horizontally in the flex container */
+  justify-content: center;
+}
+
+.bg {
+  /* Set the background color to a specific color, or... */
+  /* If you want to set an image as the background, you can use the following CSS property */
+  /* Set the background image, and configure the size and position of the image */
+  background-image: url('../src/assets/image7.jpg'); /* Replace 'image.jpg' with the path to your image */
+  background-size: cover; /* Cover the entire background with the image */
+  background-position: center center; /* Center the image vertically and horizontally */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+
+.bg2 {
+  /* Set the background color to a specific color, or... */
+  /* If you want to set an image as the background, you can use the following CSS property */
+  /* Set the background image, and configure the size and position of the image */
+  background-image: url('../src/assets/image7.jpg'); /* Replace 'image.jpg' with the path to your image */
+  background-size: cover; /* Cover the entire background with the image */
+  background-position: center center; /* Center the image vertically and horizontally */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+
+
+/* Update the CSS for the sidebar container */
+.sidebar-container {
+  position: fixed; /* Fix the position of the sidebar */
+  top: 0; /* Set the top position to 0 */
+  bottom: 0; /* Set the bottom position to 0 */
+  left: 0; /* Set the left position to 0 */
+  z-index: 1000; /* Set the z-index to a higher value to make sure it's on top of other elements */
+  width: 20%; /* Set the width of the sidebar */
+  background-color: #464931; /* Set the background color of the sidebar */
+  border-radius: 20px; /* Set the border radius to create smooth edges */
+  padding: 20px; /* Add padding to the sidebar */
+  overflow-y: auto; /* Add vertical scrollbar if content overflows */
+  transition: width 0.3s ease; /* Add transition for smooth animation */
+}
+
+
+
+
+.flex-1 {
+  flex: 1;
+}
+
+/* Update margin-left to 1/5th of the viewport width */
+.ml-8 {
+  margin-left: 20vw; /* 20% of viewport width */
+}
+
+/* Footer occupies remaining space and avoids overlapping */
+.flex-none {
+  flex: none;
+}
+
+
+
+
+/* Styles for footer when sidebar is not minimized */
+.footer-expanded {
+  width: 80%; /* Change the width to the desired value */
+}
+
+/* Styles for footer when sidebar is minimized */
+.footer-collapsed {
+  width: 100%; /* Change the width to the desired value */
 }
