@@ -77,5 +77,9 @@ group :test do
 
 end
 
+<<<<<<< HEAD
+=======
+gem "active_model_serializers"
+>>>>>>> 73ffcc785ff114ce1fe9bc15cf9086380d71c39e
 
 gem "byebug", "~> 11.1"
