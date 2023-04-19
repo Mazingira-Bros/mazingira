@@ -5,7 +5,7 @@ puts "👤 Creating Administrators"
   Admin.create!(
     name: Faker::Name.name,
     email: Faker::Internet.email,
-    password_digest: "root_password"
+    password: "root_password"
   )
 end
 
@@ -17,7 +17,7 @@ puts "👨 Creating donors..."
   Donor.create!(
     name: Faker::Name.name,
     email: Faker::Internet.email,
-    password_digest: "password"
+    password: "password"
   )
 end
 
@@ -28,7 +28,7 @@ puts "📦 Creating organisations..."
   Organisation.create!(
     logo: Faker::Company.logo,
     name: Faker::Company.name,
-    password_digest: Faker::Internet.password,
+    password: "org_password",
     email: Faker::Internet.email,
     description: Faker::Lorem.paragraph,
     website: Faker::Internet.url,
