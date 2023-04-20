@@ -40,5 +40,118 @@
       "website": " https://www.nrdc.org/ ",
       "contactPerson": "Alice Brown"
     }
-  ]
+  ],
+
+  "reminders": [
+      {
+        "id": 1,
+        "title": "Beach Cleanup",
+        "description": "Join us for a beach clean-up on Saturday at 9am",
+        "date": "2023-04-23rd",
+        "location": "Ocean Beach, San Francisco",
+        "image": " https://www.nrdc.org/sites/default/files/styles/huge_4x3_100/public/2023-04/daf-donation-earth-day-1258008992-homepage-dropdown.jpg.webp?itok=rEkD4ChE "
+      },
+      
+      {
+        "id": 2,
+        "title": "Sustainable Living Forum",
+        "image": "https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGVudmlyb25tZW50YWx8ZW58MHx8MHx8&w=1000&q=80 ",
+        "description": "Don't miss our panel discussion on sustainable living on Wednesday at 6pm",
+        "date": "2023-04-27th",
+        "location": "123 Main St, San Francisco"
+      },
+      {
+        "id": 3,
+        "title": "Community Garden Day",
+        "image": " https://st.depositphotos.com/1447173/3140/i/600/depositphotos_31406835-stock-photo-the-aim-is-the-recycling.jpg ",
+        "description": "Come help us plant the new community garden on Sunday at 10am",
+        "date": "2023-05-01st",
+        "location": "Golden Gate Park, San Francisco"
+      },
+      {
+        "id": 4,
+        "title": "Climate Change March",
+        "image": " https://media.istockphoto.com/id/1327919661/photo/world-earth-day-concept-green-energy-renewable-and-sustainable-resources-environmental-and.jpg?b=1&s=170667a&w=0&k=20&c=7u6TwP6RmGm5e9x78rZ_VS0QZ7JxUQmGaywqfPYdaWs= ",
+        "description": "Join us for a climate change march on Saturday at 2pm",
+        "date": "2023-05-07th",
+        "location": "Civic Center Plaza, San Francisco"
+      },
+      {
+        "id": 5,
+        "title": "Beach Cleanup",
+        "description": "Join us for a beach clean-up on Saturday at 9am",
+        "date": "2023-04-23rd",
+        "location": "Ocean Beach, San Francisco",
+        "image": " https://www.nrdc.org/sites/default/files/styles/huge_4x3_100/public/2023-04/daf-donation-earth-day-1258008992-homepage-dropdown.jpg.webp?itok=rEkD4ChE "
+      },
+      {
+        "id": 6,
+        "title": "Beach Cleanup",
+        "description": "Join us for a beach clean-up on Saturday at 9am",
+        "date": "2023-04-23rd",
+        "location": "Ocean Beach, San Francisco",
+        "image": " https://www.nrdc.org/sites/default/files/styles/huge_4x3_100/public/2023-04/daf-donation-earth-day-1258008992-homepage-dropdown.jpg.webp?itok=rEkD4ChE "
+      },
+      {
+        "id": 7,
+        "title": "Beach Cleanup",
+        "description": "Join us for a beach clean-up on Saturday at 9am",
+        "date": "2023-04-23rd",
+        "location": "Ocean Beach, San Francisco",
+        "image": " https://www.nrdc.org/sites/default/files/styles/huge_4x3_100/public/2023-04/daf-donation-earth-day-1258008992-homepage-dropdown.jpg.webp?itok=rEkD4ChE "
+      },
+      {
+        "id": 8,
+        "title": "Beach Cleanup",
+        "description": "Join us for a beach clean-up on Saturday at 9am",
+        "date": "2023-04-23rd",
+        "location": "Ocean Beach, San Francisco",
+        "image": " https://www.nrdc.org/sites/default/files/styles/huge_4x3_100/public/2023-04/daf-donation-earth-day-1258008992-homepage-dropdown.jpg.webp?itok=rEkD4ChE "
+      }
+    ],
+    "stories": [
+      {
+        "id": 1,
+        "title": "Saving the Turtles",
+        "location": "Costa Rica",
+        "summary": "We helped protect turtle nesting grounds and hatchlings from predators and poachers, and raised awareness about the importance of sea turtle conservation.",
+        "image": "https://images.ctfassets.net/81iqaqpfd8fy/1E7sBF870wYQRIaMn0s7sD/b8763104bbf99c182aad503e2870df97/environmentvol.jpg?h=620&w=1440"
+      },
+      {
+        "id": 2,
+        "title": "Protecting the Amazon",
+        "location": "Brazil",
+        "summary": "We worked with local communities to stop deforestation and preserve the biodiversity of the Amazon rainforest.",
+        "image": "https://img.freepik.com/premium-photo/young-responsible-people-doing-community-charity-work-park-group-people-cleaning-together-public-park-saving-environment_1212-7546.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Clean Water for All",
+        "location": "India",
+        "summary": "We built wells and provided water filtration systems to give communities access to clean water and prevent water-borne illnesses.",
+        "image": "https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2017/12/20/Pictures/asian-little-girl-helping-tree-father-plant_6cea6b48-e54e-11e7-bd8c-dad1885580ce.jpg"
+      },
+      {
+        "id": 4,
+        "title": "Renewable Energy in Action",
+        "location": "USA",
+        "summary": "We installed solar panels on community buildings and helped households transition to renewable energy, reducing their carbon footprint.",
+        "image": "https://cdn1.matadornetwork.com/blogs/1/2020/07/volunteers-planting-trees-1200x853.jpg"
+      },
+      {
+        "id": 5,
+        "title": "Community Forests",
+        "location": "Kenya",
+        "summary": "We worked with local communities to establish sustainable community forests, which provide important habitat for wildlife and help combat climate change.",
+        "image": "https://www.scotsman.com/webimg/b25lY21zOmExYTQ4OGJiLWU0YjItNDhjYi1hOGNlLTc4ZmY0Y2M5NmEyODphMTJmM2JmZC03NjU0LTRiZTItOWE0NS1iMzk3MjVkZWMwOTY=.jpg?width=1200&enable=upscale"
+      },
+      {
+        "id": 6,
+        "title": "Reducing Plastic Pollution",
+        "location": "Indonesia",
+        "summary": "We raised awareness about plastic pollution and provided education and resources to help communities reduce their use of single-use plastics.",
+        "image": "https://t4.ftcdn.net/jpg/01/65/02/89/360_F_165028958_a8t7Q0WJyETMXpRzabLZXFmFRVAYvbsM.jpg"
+      }
+    ]
+  
 }

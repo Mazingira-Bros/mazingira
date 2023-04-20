@@ -12,6 +12,8 @@ import DonorDashBoard from '../src/components/Donor/Dashboard';
 import OrganizationDahboard from '../src/components/Organization/Dashboard';
 // import DonorNavBar from './components/Donor/DonorNavBar';
 // import NewDonationContent from './components/Donor/NewDonationContent';
+// import ReminderContent from './components/Donor/ReminderContent';
+// import Profilepic from '../src/components/Donor/Profilepic'
 
 
 
@@ -40,7 +42,8 @@ function App() {
         </Routes>
         {/* <DonorNavBar/> */}
         {/* <NewDonationContent/> */}
-        
+        {/* <ReminderContent/> */}
+        {/* <Profilepic/> */}
         
       </Router>
 

@@ -2,81 +2,126 @@
 
 
 
-import React, { useState, useEffect } from 'react';
+// import React from 'react';
+// import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
+
+// function BeneficiaryStoriesContent({ stories }) {
+//   return (
+//     <div className="bg-gray-100 py-8">
+//       <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+//         <h2 className="text-3xl font-bold leading-tight text-gray-900">
+//           Beneficiary Stories
+//         </h2>
+//         <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+//           {stories.map((story) => (
+//             <div key={story.id} className="bg-white shadow-lg">
+//               <img
+//                 className="h-48 w-full object-cover"
+//                 src={story.image}
+//                 alt={story.title}
+//               />
+//               <div className="px-4 py-4">
+//                 <h3 className="text-xl font-medium text-gray-900 mb-2">
+//                   {story.title}
+//                 </h3>
+//                 <p className="text-gray-700">{story.summary}</p>
+//                 <div className="flex justify-between items-center mt-4">
+//                   <div className="flex items-center">
+//                     <FaThumbsUp className="mr-2 cursor-pointer" />
+//                     <FaThumbsDown className="mr-2 cursor-pointer" />
+//                     <span>{story.likes} Likes</span>
+//                   </div>
+//                   <a
+//                     href={story.url}
+//                     className="text-blue-500 hover:underline inline-block"
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                   >
+//                     Learn More
+//                   </a>
+//                 </div>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default BeneficiaryStoriesContent;
 
 
-function BeneficiaryStoriesContent({ organization, onDonate, onAddToDonationList }) {
-    const [isDonated, setIsDonated] = useState(false);
-    const [orgData, setOrgData] = useState(organization);
-    const [addedToDonationList, setAddedToDonationList] = useState(false);
-    
-    // Define state for modal visibility
-   
 
-  
-    const handleDonate = () => {
-      onDonate(orgData?.id);
-      setIsDonated(true);
-    };
-  
-    const handleAddToDonationList = () => {
-      onAddToDonationList(orgData?.id);
-  
-      // Update the state to reflect that the button has been clicked
-      setAddedToDonationList(true);
-    };
 
+import React, { useState } from 'react';
+import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
+
+function BeneficiaryStoriesContent({ stories }) {
+  const [likedStories, setLikedStories] = useState([]);
+
+  const handleLike = (storyId) => {
+    setLikedStories([...likedStories, storyId]);
+  };
+
+  const handleDislike = (storyId) => {
+    setLikedStories(likedStories.filter((id) => id !== storyId));
+  };
+
+  const isLiked = (storyId) => likedStories.includes(storyId);
+  const isDisliked = (storyId) => likedStories.includes(`disliked_${storyId}`);
 
   return (
-    
-     <div className=' '>
-    <div className="flex-1 mr-6  mt-6">
-    {/* md:pl-80  */}
-    <div className=""> {/* Update container width to occupy the rest of the page after the sidebar */}
-      <div className="flex">
-        {/* <img className="object-cover object-center h-24 w-24" src={orgData.image} alt="Organization Image" /> Add image on the left side outside the container card */}
-        <div className="bg-white rounded-lg shadow-md overflow-hidden mb-4 flex-grow ml-4"> {/* Add margin left to separate the image from the container card */}
-          <div className="flex">
-            <div className="flex-shrink-0">
-              <img className="object-cover object-center h-24 w-24" src={orgData.image} alt="Organization Image" />
+    <div className="bg-gray-100 py-8">
+      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold leading-tight text-gray-900">
+          Beneficiary Stories
+        </h2>
+        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {stories.map((story) => (
+            <div key={story.id} className="bg-white shadow-lg reminder-card">
+              <img
+                className="h-48 w-full object-cover"
+                src={story.image}
+                alt={story.title}
+              />
+              <div className="px-4 py-4">
+                <h3 className="text-xl font-medium text-gray-900 mb-2">
+                  {story.title}
+                </h3>
+                <p className="text-gray-700">{story.summary}</p>
+              </div>
+              <div className="flex justify-between items-end px-4 py-2">
+                <div className="flex items-center">
+                  <FaThumbsUp
+                    className={`mr-2 cursor-pointer transition-colors ${
+                      isLiked(story.id) ? 'text-green-500' : 'text-gray-500'
+                    }`}
+                    onClick={() => handleLike(story.id)}
+                  />
+                  <FaThumbsDown
+                    className={`mr-2 cursor-pointer transition-colors ${
+                      isDisliked(story.id) ? 'text-red-500' : 'text-gray-500'
+                    }`}
+                    onClick={() => handleDislike(`disliked_${story.id}`)}
+                  />
+                  <span>{story.likes} Likes</span>
+                </div>
+                <a
+                  href={story.url}
+                  className="text-blue-500 hover:underline inline-block"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Learn More
+                </a>
+              </div>
             </div>
-            <div className="flex-grow p-6">
-  <h3 className="text-gray-900 font-semibold text-lg mb-2">{orgData.name}</h3>
-  <p className="text-gray-600 text-sm mb-4">{orgData.description}</p>
-  <p className="text-gray-600 text-sm mb-2">Email: {orgData.email}</p>
-  {/* Make website clickable */}
-  <a href={orgData.website} target="_blank" rel="noopener noreferrer" className="text-blue-500 text-sm mb-2 hover:underline">
-    Website: {orgData.website}
-  </a>
-  <p className="text-gray-600 text-sm mb-2">Contact Person: {orgData.contactPerson}</p>
-  <button
-    className={`bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded ${isDonated ? 'bg-green-600' : 'bg-blue-500'} mr-2`}
-    onClick={handleDonate}
-  >
-    {isDonated ? 'Donated!' : 'Donate'}
-  </button>
-  <button
-    className={`bg-gray-400 hover:bg-gray-600 text-gray-800 text-white font-semibold py-2 px-4 rounded mt-2 ${addedToDonationList ? 'bg-green-600' : ''}`}
-    onClick={handleAddToDonationList}
-  >
-    {addedToDonationList ? 'Added to Donation List' : 'Donate Later'}
-  </button>
-</div>
-
-          </div>
+          ))}
         </div>
       </div>
     </div>
-  </div>
-  </div>
-  
   );
 }
 
 export default BeneficiaryStoriesContent;
-
-
-
-
-
-
