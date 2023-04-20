@@ -1,8 +1,11 @@
 import React from 'react'
+import { OrganizationNavBar } from './OrganizationNavBar'
 
 function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <div>
+    <OrganizationNavBar/>
+    </div>
   )
 }
 
