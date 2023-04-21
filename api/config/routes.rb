@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :donors,  except: [:new, :edit]
   resources :donations, except: [:destroy]
   resources :stories,  except: [:new, :edit]
-  
+
       resources :organisations, except: [:new, :edit] do
         resources :beneficiaries, only: [:index]
         resources :inventories, only: [:index]
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :admins,  except: [:new, :edit]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  post "/login", to: "sessions#login"
+  post "/login", to: "sessions#create"
 
   # Defines the root path route ("/")
   root "home#index"
