@@ -8,7 +8,7 @@ class Organisation < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true
-  validates :password, presence: true
+  validates :password, presence: true, length: { in: 8..15 }
 end
 
 

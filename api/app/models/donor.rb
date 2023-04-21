@@ -4,5 +4,5 @@ class Donor < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
-  validates :password, presence: true, length: { is: 13 }
+  validates :password, presence: true, length: { in: 8..15 }
 end
