@@ -78,14 +78,3 @@
 
 ---
 ### [reference](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
-
-
-
-
-
-
-
-
-rails generate rspec:swagger cars
-
-rake rswag:specs:swaggerize
