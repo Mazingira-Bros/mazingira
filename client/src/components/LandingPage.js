@@ -119,7 +119,7 @@ import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
-import Logo from '../assets/logo4.png';
+import Logo from '../assets/Mazingiralogo3.png';
 import image from '../assets/image9.jpg';
 
 function LandingPage() {
@@ -129,10 +129,10 @@ function LandingPage() {
   });
 
   return (
-    <div className="bg-[#9bbf7f] h-screen flex justify-center items-center" ref={ref}>
+    <div className="bg-[#042a30] h-screen flex justify-center items-center" ref={ref}>
       <div className="container mx-auto px-4 ">
   <div className="flex items-center justify-between mb-8 ">
-    <img src={Logo} alt='logo' className="h-25 w-40 absolute top-0 left-0 mt-4 ml-4 " /> 
+    <img src={Logo} alt='logo' className=" h-30 w-60 absolute top-0 left-0  " /> 
     <Link to="/login">
   <button
     className="bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] font-semibold py-2 px-4 rounded absolute top-0 right-0 mt-4 mr-4" /* Positioned login button at top right */
