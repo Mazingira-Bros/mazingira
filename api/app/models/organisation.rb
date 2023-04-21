@@ -5,6 +5,10 @@ class Organisation < ApplicationRecord
   has_many :inventories, dependent: :destroy
 
   enum status: {pending: 0,accepted: 1,denied: 2}
+
+  validates :name, presence: true
+  validates :email, presence: true
+  validates :password, presence: true
 end
 
 

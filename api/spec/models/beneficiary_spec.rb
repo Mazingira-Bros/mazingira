@@ -1,15 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Beneficiary, type: :model do
-  describe 'Validation' do
-
-    describe 'name' do
-      it 'must be present' do
-        beneficiary = Beneficiary.new
-        expect(beneficiary).not_to be_valid
-        expect(beneficiary.errors[:name]).to include("can't be blank")
-      end
-    end
+  describe 'Validations' do
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:organisation_id) }
   end
 
   describe 'Associations' do
