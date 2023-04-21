@@ -1,0 +1,187 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/admins":
+    get:
+      summary: list admins
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create admin
+      responses:
+        '200':
+          description: successful
+  "/admins/new":
+    get:
+      summary: new admin
+      responses:
+        '200':
+          description: successful
+  "/admins/{id}/edit":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: edit admin
+      responses:
+        '200':
+          description: successful
+  "/admins/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show admin
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update admin
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update admin
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete admin
+      responses:
+        '200':
+          description: successful
+  "/organisations/{organisation_id}/beneficiaries":
+    parameters:
+    - name: organisation_id
+      in: path
+      description: organisation_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list beneficiaries
+      responses:
+        '200':
+          description: successful
+  "/beneficiaries":
+    get:
+      summary: list beneficiaries
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create beneficiary
+      responses:
+        '200':
+          description: successful
+  "/beneficiaries/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show beneficiary
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update beneficiary
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update beneficiary
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete beneficiary
+      responses:
+        '200':
+          description: successful
+  "/donations":
+    get:
+      summary: list donations
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create donation
+      responses:
+        '200':
+          description: successful
+  "/donations/new":
+    get:
+      summary: new donation
+      responses:
+        '200':
+          description: successful
+  "/donations/{id}/edit":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: edit donation
+      responses:
+        '200':
+          description: successful
+  "/donations/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show donation
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update donation
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update donation
+      responses:
+        '200':
+          description: successful
+  "/organisations/{organisation_id}/donations":
+    parameters:
+    - name: organisation_id
+      in: path
+      description: organisation_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list donations
+      responses:
+        '200':
+          description: successful
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: http://127.0.0.1:3000/
