@@ -12,7 +12,7 @@ import DonorDashBoard from '../src/components/Donor/Dashboard';
 import OrganizationDahboard from '../src/components/Organization/Dashboard';
 import Dashboard from '../src/components/Organization/Dashboard';
 import Checkout from './components/Donor/Checkout';
-import Addorganization
+import Addorganization from './components/Organization/AddOrganization';
 
 // import DonorNavBar from './components/Donor/DonorNavBar';
 // import NewDonationContent from './components/Donor/NewDonationContent';
@@ -35,7 +35,7 @@ function App() {
           <Route exact path="/dashboard" element={<Dashboard />} />
           <Route exact path="/checkout" element={<Checkout/>} />
           <Route exact path="/addorganization" element={<Addorganization/>} />
-
+?
 
           {/* Add other routes for other components */}
         </Routes>
