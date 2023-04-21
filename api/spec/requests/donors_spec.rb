@@ -1,10 +1,10 @@
 require 'swagger_helper'
 
-RSpec.describe 'donations', type: :request do
+RSpec.describe 'donors', type: :request do
 
-  path '/donations' do
+  path '/donors' do
 
-    get('list donations') do
+    get('list donors') do
       response(200, 'successful') do
 
         after do |example|
@@ -18,7 +18,7 @@ RSpec.describe 'donations', type: :request do
       end
     end
 
-    post('create donation') do
+    post('create donor') do
       response(200, 'successful') do
 
         after do |example|
@@ -33,11 +33,11 @@ RSpec.describe 'donations', type: :request do
     end
   end
 
-  path '/donations/{id}' do
+  path '/donors/{id}' do
     # You'll want to customize the parameter types...
     parameter name: 'id', in: :path, type: :string, description: 'id'
 
-    get('show donation') do
+    get('show donor') do
       response(200, 'successful') do
         let(:id) { '123' }
 
@@ -52,7 +52,7 @@ RSpec.describe 'donations', type: :request do
       end
     end
 
-    patch('update donation') do
+    patch('update donor') do
       response(200, 'successful') do
         let(:id) { '123' }
 
@@ -66,15 +66,11 @@ RSpec.describe 'donations', type: :request do
         run_test!
       end
     end
-  end
 
-  path '/organisations/{organisation_id}/donations' do
-    # You'll want to customize the parameter types...
-    parameter name: 'organisation_id', in: :path, type: :string, description: 'organisation_id'
 
-    get('list donations') do
+    delete('delete donor') do
       response(200, 'successful') do
-        let(:organisation_id) { '123' }
+        let(:id) { '123' }
 
         after do |example|
           example.metadata[:response][:content] = {

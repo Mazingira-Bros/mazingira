@@ -12,28 +12,26 @@ paths:
           description: successful
     post:
       summary: create admin
+      parameters: []
       responses:
         '200':
           description: successful
-  "/admins/new":
-    get:
-      summary: new admin
-      responses:
-        '200':
-          description: successful
-  "/admins/{id}/edit":
-    parameters:
-    - name: id
-      in: path
-      description: id
-      required: true
-      schema:
-        type: string
-    get:
-      summary: edit admin
-      responses:
-        '200':
-          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - name
+              - email
+              - password
   "/admins/{id}":
     parameters:
     - name: id
@@ -49,14 +47,26 @@ paths:
           description: successful
     patch:
       summary: update admin
+      parameters: []
       responses:
         '200':
           description: successful
-    put:
-      summary: update admin
-      responses:
-        '200':
-          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - name
+              - email
+              - password
     delete:
       summary: delete admin
       responses:
@@ -104,11 +114,6 @@ paths:
       responses:
         '200':
           description: successful
-    put:
-      summary: update beneficiary
-      responses:
-        '200':
-          description: successful
     delete:
       summary: delete beneficiary
       responses:
@@ -122,25 +127,6 @@ paths:
           description: successful
     post:
       summary: create donation
-      responses:
-        '200':
-          description: successful
-  "/donations/new":
-    get:
-      summary: new donation
-      responses:
-        '200':
-          description: successful
-  "/donations/{id}/edit":
-    parameters:
-    - name: id
-      in: path
-      description: id
-      required: true
-      schema:
-        type: string
-    get:
-      summary: edit donation
       responses:
         '200':
           description: successful
@@ -162,11 +148,6 @@ paths:
       responses:
         '200':
           description: successful
-    put:
-      summary: update donation
-      responses:
-        '200':
-          description: successful
   "/organisations/{organisation_id}/donations":
     parameters:
     - name: organisation_id
@@ -177,6 +158,223 @@ paths:
         type: string
     get:
       summary: list donations
+      responses:
+        '200':
+          description: successful
+  "/donors":
+    get:
+      summary: list donors
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create donor
+      responses:
+        '200':
+          description: successful
+  "/donors/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show donor
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update donor
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete donor
+      responses:
+        '200':
+          description: successful
+  "/organisations/{organisation_id}/inventories":
+    parameters:
+    - name: organisation_id
+      in: path
+      description: organisation_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list inventories
+      responses:
+        '200':
+          description: successful
+  "/inventories":
+    get:
+      summary: list inventories
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create inventory
+      responses:
+        '200':
+          description: successful
+  "/inventories/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show inventory
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update inventory
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete inventory
+      responses:
+        '200':
+          description: successful
+  "/organisations":
+    get:
+      summary: list organisations
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create organisation
+      responses:
+        '200':
+          description: successful
+  "/organisations/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show organisation
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update organisation
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete organisation
+      responses:
+        '200':
+          description: successful
+  "/reminders":
+    get:
+      summary: list reminders
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create reminder
+      responses:
+        '200':
+          description: successful
+  "/reminders/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show reminder
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update reminder
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete reminder
+      responses:
+        '200':
+          description: successful
+  "/stories":
+    get:
+      summary: list stories
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create story
+      responses:
+        '200':
+          description: successful
+  "/stories/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show story
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update story
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete story
+      responses:
+        '200':
+          description: successful
+  "/transactions":
+    get:
+      summary: list transactions
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create transaction
+      responses:
+        '200':
+          description: successful
+  "/transactions/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show transaction
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update transaction
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete transaction
       responses:
         '200':
           description: successful

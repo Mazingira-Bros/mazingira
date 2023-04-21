@@ -271,6 +271,7 @@ DEPENDENCIES
   rails (~> 7.0.4, >= 7.0.4.3)
   rspec-rails (~> 6.0.0)
   rswag
+  rswag-ui
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)

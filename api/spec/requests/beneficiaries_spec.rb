@@ -87,20 +87,6 @@ RSpec.describe 'beneficiaries', type: :request do
       end
     end
 
-    put('update beneficiary') do
-      response(200, 'successful') do
-        let(:id) { '123' }
-
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
 
     delete('delete beneficiary') do
       response(200, 'successful') do
