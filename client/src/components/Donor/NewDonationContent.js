@@ -1,5 +1,27 @@
 
 
+    // const handleDonate = async () => {
+    //   try {
+    //     const response = await fetch(`http://localhost:5000/organizations/${orgData.id}`, { method: 'POST' });
+    //     if (response.ok) {
+    //       setIsDonated(true);
+    //       setOrgData(null);
+    //     } else {
+    //       throw new Error('Failed to donate');
+    //     }
+    //   } catch (error) {
+    //     console.error(error);
+    //     alert('Failed to donate. Please try again later.');
+    //   }
+    // };
+
+
+
+
+
+
+
+
 import React, { useState, useEffect } from 'react';
 
 
@@ -7,27 +29,31 @@ function NewDonationContent({ organization, onDonate, onAddToDonationList }) {
     const [isDonated, setIsDonated] = useState(false);
     const [orgData, setOrgData] = useState(organization);
     const [addedToDonationList, setAddedToDonationList] = useState(false);
-    
-    // Define state for modal visibility
-   
 
-  
+    // Define state for modal visibility
+
+
+
     const handleDonate = () => {
       onDonate(orgData?.id);
       setIsDonated(true);
     };
-  
+
+
     const handleAddToDonationList = () => {
       onAddToDonationList(orgData?.id);
-  
+
       // Update the state to reflect that the button has been clicked
       setAddedToDonationList(true);
     };
 
 
   return (
-    
-     <div className=' '>
+    <>
+
+    <div className="bg-gray-100 shadow-md rounded-md p-4">
+
+    {/* <h2 className="text-2xl font-bold mb-4">Donation History</h2> */}
     <div className="flex-1 mr-6  mt-6">
     {/* md:pl-80  */}
     <div className=""> {/* Update container width to occupy the rest of the page after the sidebar */}
@@ -66,8 +92,10 @@ function NewDonationContent({ organization, onDonate, onAddToDonationList }) {
       </div>
     </div>
   </div>
+
   </div>
-  
+  </>
+
   );
 }
 
