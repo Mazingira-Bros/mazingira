@@ -164,6 +164,7 @@ function MyEvents() {
   const [showForm, setShowForm] = useState(false);
   const [eventAdded, setEventAdded] = useState(false);
   const [event, setEvent] = useState({
+    location:'',
     title:'',
     time: '',
     date: '',
@@ -189,6 +190,7 @@ function MyEvents() {
       .then(data => {
         setEvents(prevState => [...prevState, data]);
         setEvent({
+          location:'',
           title:'',
           time: '',
           date: '',
@@ -235,6 +237,7 @@ function MyEvents() {
         });
         setEvents(updatedEvents);
         setEvent({
+          location:'',
           title:'',
           time: '',
           date: '',
@@ -254,7 +257,7 @@ function MyEvents() {
             {/* INPUT FIELDS */}
 
     <div className="flex flex-col">
-       <label htmlFor="time" className="text-lg font-medium leading-6 text-gray-900">Title</label>
+       <label htmlFor="time" className="text-lg font-medium leading-6 text-gray-900"> Event Title</label>
      <input
       type="text"
       name="title"
@@ -269,7 +272,7 @@ function MyEvents() {
   <div className="flex flex-col">
        <label htmlFor="time" className="text-lg font-medium leading-6 text-gray-900">Time</label>
      <input
-      type="text"
+      type="time"
       name="time"
       value={event.time}
       onChange={handleChange}
@@ -280,7 +283,7 @@ function MyEvents() {
   <div className="flex flex-col mt-4">
     <label htmlFor="date" className="text-lg font-medium leading-6 text-gray-900">Date</label>
     <input
-      type="text"
+      type="date"
       name="date"
       value={event.date}
       onChange={handleChange}
@@ -289,6 +292,21 @@ function MyEvents() {
     />
   </div>
 
+  {/* <div className="flex flex-col mt-4">
+
+<label className="text-lg font-medium leading-6 text-gray-900">Date and Time:</label>
+<input 
+type="datetime-local" 
+name="date" 
+value={event.date} 
+
+onChange={handleChange} 
+className="text-lg font-medium leading-6 text-gray-900" 
+placeholder="Enter the date"/>
+
+  </div> */}
+
+ 
   <div className="flex flex-col mt-4">
     <label htmlFor="description" className="text-lg font-medium leading-6 text-gray-900">Description</label>
     <textarea
@@ -301,15 +319,15 @@ function MyEvents() {
   </div>
 
   <div className="flex flex-col ">
-    {/* <label htmlFor="poster" className="text-lg font-medium leading-6 text-gray-900">Poster URL</label>
+    <label htmlFor="poster" className="text-lg font-medium leading-6 text-gray-900">Location</label>
     <input
       type="text"
-      name="poster"
-      value={event.poster}
+      name="location"
+      value={event.location}
       onChange={handleChange}
       className="mt-2 text-lg p-2 border border-gray-300 rounded-md"
-      placeholder="Enter the poster URL"
-    /> */}
+      placeholder="Enter event location"
+    />
 
 <label className="block mt-4 text-lg font-medium leading-6 text-gray-900">Poster:</label>
 <input type="file" name="poster" onChange={handleChange} className="mb-4" />

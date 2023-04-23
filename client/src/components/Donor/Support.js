@@ -1,140 +1,140 @@
 
-// ******************** OR THIS USE THIS HANDLESENDMESSAGE WHEN POSTING MESSAGES***********************
+// // ******************** OR THIS USE THIS HANDLESENDMESSAGE WHEN POSTING MESSAGES***********************
 
-// const handleSendMessage = async (e) => {
-//     e.preventDefault();
-//     const message = {
-//       text: newMessage,
-//       sender: 'user',
-//       createdAt: new Date(),
-//     };
+// // const handleSendMessage = async (e) => {
+// //     e.preventDefault();
+// //     const message = {
+// //       text: newMessage,
+// //       sender: 'user',
+// //       createdAt: new Date(),
+// //     };
   
-//     try {
-//       const response = await fetch('YOUR_BACKEND_ENDPOINT_URL', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(message),
-//       });
+// //     try {
+// //       const response = await fetch('YOUR_BACKEND_ENDPOINT_URL', {
+// //         method: 'POST',
+// //         headers: {
+// //           'Content-Type': 'application/json',
+// //         },
+// //         body: JSON.stringify(message),
+// //       });
   
-//       if (response.ok) {
-//         const savedMessage = await response.json();
-//         setMessages([...messages, savedMessage]);
-//         setNewMessage('');
-//       } else {
-//         console.error('Failed to save message');
-//       }
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
-  
-
-// ******************** OR THIS USE THIS HANDLESENDMESSAGE WHEN POSTING MESSAGES***********************
-
-// const handleSendMessage = (e) => {
-//     e.preventDefault();
-//     const message = {
-//       text: newMessage,
-//       sender: 'user',
-//       createdAt: new Date(),
-//     };
-  
-//     fetch('/api/messages', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify(message),
-//     })
-//       .then((response) => {
-//         if (!response.ok) {
-//           throw new Error('Network response was not ok');
-//         }
-//         return response.json();
-//       })
-//       .then((data) => {
-//         setMessages([...messages, data]);
-//         setNewMessage('');
-//       })
-//       .catch((error) => {
-//         console.error('There was a problem with the fetch operation:', error);
-//       });
-//   };
+// //       if (response.ok) {
+// //         const savedMessage = await response.json();
+// //         setMessages([...messages, savedMessage]);
+// //         setNewMessage('');
+// //       } else {
+// //         console.error('Failed to save message');
+// //       }
+// //     } catch (error) {
+// //       console.error(error);
+// //     }
+// //   };
   
 
-// import React, { useState } from 'react';
+// // ******************** OR THIS USE THIS HANDLESENDMESSAGE WHEN POSTING MESSAGES***********************
 
-// function Support() {
-//   const [messages, setMessages] = useState([]);
-//   const [newMessage, setNewMessage] = useState('');
+// // const handleSendMessage = (e) => {
+// //     e.preventDefault();
+// //     const message = {
+// //       text: newMessage,
+// //       sender: 'user',
+// //       createdAt: new Date(),
+// //     };
+  
+// //     fetch('/api/messages', {
+// //       method: 'POST',
+// //       headers: {
+// //         'Content-Type': 'application/json',
+// //       },
+// //       body: JSON.stringify(message),
+// //     })
+// //       .then((response) => {
+// //         if (!response.ok) {
+// //           throw new Error('Network response was not ok');
+// //         }
+// //         return response.json();
+// //       })
+// //       .then((data) => {
+// //         setMessages([...messages, data]);
+// //         setNewMessage('');
+// //       })
+// //       .catch((error) => {
+// //         console.error('There was a problem with the fetch operation:', error);
+// //       });
+// //   };
+  
 
-//   const handleSendMessage = (e) => {
-//     e.preventDefault();
-//     const message = {
-//       id: messages.length + 1,
-//       text: newMessage,
-//       sender: 'user',
-//       createdAt: new Date(),
-//     };
-//     setMessages([...messages, message]);
-//     setNewMessage('');
-//     // You can also send this message to your backend or admin dashboard to store it for later reference.
-//   };
+// // import React, { useState } from 'react';
+
+// // function Support() {
+// //   const [messages, setMessages] = useState([]);
+// //   const [newMessage, setNewMessage] = useState('');
+
+// //   const handleSendMessage = (e) => {
+// //     e.preventDefault();
+// //     const message = {
+// //       id: messages.length + 1,
+// //       text: newMessage,
+// //       sender: 'user',
+// //       createdAt: new Date(),
+// //     };
+// //     setMessages([...messages, message]);
+// //     setNewMessage('');
+// //     // You can also send this message to your backend or admin dashboard to store it for later reference.
+// //   };
 
 
-//   const handleNewMessageChange = (e) => {
-//     setNewMessage(e.target.value);
-//   };
+// //   const handleNewMessageChange = (e) => {
+// //     setNewMessage(e.target.value);
+// //   };
 
-//   return (
-//     <div className="bg-white shadow rounded-lg p-4">
-//       <h2 className="text-xl font-medium text-gray-800">Support</h2>
-//       <div className="mt-4">
-//         {messages.map((message) => (
-//           <div
-//             key={message.id}
-//             className={`p-3 mb-3 rounded-lg flex ${
-//               message.sender === 'user'
-//                 ? 'items-end justify-end'
-//                 : 'items-start justify-start'
-//             }`}
-//           >
-//             <div
-//               className={`px-4 py-2 rounded-lg ${
-//                 message.sender === 'user'
-//                   ? 'bg-green-500 text-white'
-//                   : 'bg-gray-200 text-gray-700'
-//               }`}
-//             >
-//               <p className="text-sm">{message.text}</p>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//       <form onSubmit={handleSendMessage} className="mt-4">
-//         <input
-//           type="text"
-//           value={newMessage}
-//           onChange={handleNewMessageChange}
-//           className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
-//           placeholder="Type your message here..."
-//         />
-//         <button
-//           type="submit"
-//           className="mt-2 text-sm text-white bg-blue-500 hover:bg-blue-600 py-2 px-4 rounded"
-//         >
-//           Send
-//         </button>
-//       </form>
-//     </div>
-//   );
-// }
+// //   return (
+// //     <div className="bg-white shadow rounded-lg p-4">
+// //       <h2 className="text-xl font-medium text-gray-800">Support</h2>
+// //       <div className="mt-4">
+// //         {messages.map((message) => (
+// //           <div
+// //             key={message.id}
+// //             className={`p-3 mb-3 rounded-lg flex ${
+// //               message.sender === 'user'
+// //                 ? 'items-end justify-end'
+// //                 : 'items-start justify-start'
+// //             }`}
+// //           >
+// //             <div
+// //               className={`px-4 py-2 rounded-lg ${
+// //                 message.sender === 'user'
+// //                   ? 'bg-green-500 text-white'
+// //                   : 'bg-gray-200 text-gray-700'
+// //               }`}
+// //             >
+// //               <p className="text-sm">{message.text}</p>
+// //             </div>
+// //           </div>
+// //         ))}
+// //       </div>
+// //       <form onSubmit={handleSendMessage} className="mt-4">
+// //         <input
+// //           type="text"
+// //           value={newMessage}
+// //           onChange={handleNewMessageChange}
+// //           className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+// //           placeholder="Type your message here..."
+// //         />
+// //         <button
+// //           type="submit"
+// //           className="mt-2 text-sm text-white bg-blue-500 hover:bg-blue-600 py-2 px-4 rounded"
+// //         >
+// //           Send
+// //         </button>
+// //       </form>
+// //     </div>
+// //   );
+// // }
 
-// export default Support;
+// // export default Support;
 
-// *******************************************************************************************************************************
+// // *******************************************************************************************************************************
 
 // import React, { useState, useEffect } from 'react';
 
@@ -245,9 +245,6 @@
 // }
 
 // export default Support;
-
-
-
 
 
 import React, { useState, useEffect } from 'react';

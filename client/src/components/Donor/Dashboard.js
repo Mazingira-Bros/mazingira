@@ -10,11 +10,18 @@ import NewDonationModal from './DonorModals.js/NewDonationModal';
 import HistoryModal from './DonorModals.js/HistoryModal';
 import BeneficiaryModal from './DonorModals.js/BeneficiaryModal';
 import ReminderModal from './DonorModals.js/ReminderModal';
+import AccountSettings from './AccountSettings';
+import Support from './Support';
+import SupportModal from './DonorModals.js/SupportModal';
+import Notifications from './Notifications';
+import NotificationsModal from './DonorModals.js/NotificationsModal';
+import TransactionHistory from './TransactionHistory';
+import TransactionHistoryModal from './DonorModals.js/TransactionHistoryModal';
 
 
 
 import {FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import {FaDonate, FaHistory, FaBell, FaHeart, FaEdit, FaSignOutAlt } from 'react-icons/fa';
+import {FaDonate, FaHistory, FaBell, FaHeart, FaEdit, FaSignOutAlt, FaHeartbeat, FaPhoneAlt, FaRegHeart } from 'react-icons/fa';
 
 
 
@@ -45,6 +52,10 @@ function Dashboard() {
   
   
  
+  const handleAccountSettingsClick = () => {
+    setSelectedContent('account-settings');
+  };  
+  
 
 
 
@@ -272,6 +283,7 @@ return (
     <div className="bg-[#464931] text-white py-2  w-full flex-1 fixed">
           <DonorNavBar 
           name={name}
+          onAccountSettingsClick={handleAccountSettingsClick}
           />
     </div>
 
@@ -369,21 +381,23 @@ onClick={handleNewDonationClick} // Add the onClick event handler here
 
 {/* ***********************************************End of New-Donation Button*************************************************************** */}
 
+{/* ***********************************************Transactions Button*************************************************************** */}
 
-{/* ***********************************************History Button*************************************************************** */}
 
 <button
   className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md mb-4 flex items-center justify-center"
-  onClick={() => setSelectedContent('history')}
+  onClick={() => setSelectedContent('my-transactions')}
   
   >
   <FaHistory className="mr-2" />
-  <span>History</span>
+  <span> My-Transaction</span>
 </button>
 
 
+{/* ***********************************************End of Transactions Button*************************************************************** */}
 
-{/* ***********************************************End of History Button*************************************************************** */}
+
+
 
 {/* ***********************************************Reminder Button*************************************************************** */}
 <button
@@ -398,7 +412,7 @@ onClick={handleReminderClick}>
 {/* ***********************************************Beneficiaries Stories Button*************************************************************** */}
 
 <button
-className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center"
+className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md mb-4 flex items-center justify-center"
 // onClick={() => setSelectedContent('beneficiary-stories')}
 onClick={handleBeneficiaryClick}
 >
@@ -409,9 +423,53 @@ onClick={handleBeneficiaryClick}
 
 {/* ***********************************************End of Beneficiary Stories Button*************************************************************** */}
 
+
+{/* ***********************************************Notifications Button*************************************************************** */}
+
+<button
+className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center mb-4 "
+onClick={() => setSelectedContent('notifications')}
+>
+<FaBell className="mr-2" />
+<span>Notifications</span>
+</button>
+
+
+{/* ***********************************************End of Notifications Button*************************************************************** */}
+
+
+{/* ***********************************************History Button*************************************************************** */}
+
+{/* <button
+  className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md mb-4 flex items-center justify-center"
+  onClick={() => setSelectedContent('history')}
+  
+  >
+  <FaHistory className="mr-2" />
+  <span>History</span>
+</button> */}
+
+
+
+{/* ***********************************************End of History Button*************************************************************** */}
+
+
+{/* ***********************************************Support Button*************************************************************** */}
+
+<button
+className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center mb-4"
+onClick={() => setSelectedContent('support')}
+>
+<FaPhoneAlt  className="mr-2" />
+<span>Support</span>
+</button>
+
+{/* ***********************************************END OF Support Button*************************************************************** */}
+
+
 {/* ***********************************************Logout Button*************************************************************** */}
 
-<a href="/login" 
+<a href="/donor-login" 
  className="py-2 mb-2 mt-auto bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center ">
  <FaSignOutAlt className="mr-2" />
  <span>Logout</span>
@@ -445,7 +503,7 @@ onClick={handleBeneficiaryClick}
 <div className='md:pl-80 '>
   
 
-<div className=" flex-grow flex flex-col py-16  mr-5 overflow-y-auto">
+<div className=" flex-grow flex flex-col py-20  mr-5 overflow-y-auto">
 {/* md:pl-80 */}
 
 {/*******************NewDonation Content ********************************************** */}
@@ -528,6 +586,55 @@ stories={stories}
 
 
 {/*******************End of Benficiary Content ********************************************** */}
+
+{/*******************NOTIFICATIONS Content ********************************************** */}
+
+<div>
+  <>
+  {selectedContent === 'notifications' && < Notifications />}
+  </>
+
+{selectedContent === 'notifications' && !isWelcomeShown && <NotificationsModal setIsWelcomeShown={setIsWelcomeShown}/>}
+</div>
+
+{/*******************End of NOTIFICATIONSContent ********************************************** */}
+
+{/*******************NOTIFICATIONS Content ********************************************** */}
+
+<div>
+  <>
+  {selectedContent === 'my-transactions' && < TransactionHistory />}
+  </>
+
+{selectedContent === 'my-transactions' && !isWelcomeShown && <TransactionHistoryModal setIsWelcomeShown={setIsWelcomeShown}/>}
+</div>
+
+{/*******************End of NOTIFICATIONSContent ********************************************** */}
+
+{/*******************STARTof SUPPORT ********************************************** */}
+
+<div>
+{selectedContent === 'support' && < Support />}
+
+{selectedContent === 'support' && !isWelcomeShown && <SupportModal setIsWelcomeShown={setIsWelcomeShown}/>}
+</div>
+
+{/*******************End of SUPPORT ********************************************** */}
+
+{/*******************STARTf ACCOUNT SETTINGS ********************************************** */}
+
+
+<div> 
+      {selectedContent === 'account-settings' && ( <AccountSettings />)}
+</div>
+
+ {/* <div>
+{selectedContent === 'account-settings' && < AccountSettings />}
+
+{selectedContent === 'account-settings' && !isWelcomeShown && <AccountSettingsModal setIsWelcomeShown={setIsWelcomeShown}/>}
+</div> */}
+
+{/*******************End of ACCOUNT SETTINGS ********************************************** */}
 
 </div>
 

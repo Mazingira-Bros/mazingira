@@ -4,21 +4,26 @@ import React, { useState, useEffect } from 'react';
 
 import OrganizationNavBar from './OrganizationNavBar';
 import Footer from '../Donor/Footer';
-import MyDonationsModal from './OrganizationModals.js/MyDonationsModal';
-import MyEventsModal from './OrganizationModals.js/MyEventsModal';
-import MyImpactModal from './OrganizationModals.js/MyImpactModal';
-import NotificationsModal from './OrganizationModals.js/NotificationsModal';
-import SupportModal from './OrganizationModals.js/SupportModal';
+import MyDonationsModal from './OrganizationModals/MyDonationsModal';
+import MyEventsModal from './OrganizationModals/MyEventsModal';
+import MyImpactModal from './OrganizationModals/MyImpactModal';
+import NotificationsModal from './OrganizationModals/NotificationsModal';
+import SupportModal from './OrganizationModals/SupportModal';
 import MyDonations from './MyDonations';
 import MyEvents from './MyEvents/MyEvents';
 import MyAddedEvents from './MyEvents/MyAddedEvents';
-import MyImpact from './MyImpact';
+import MyImpact from './MyImpact/MyImpact';
 import Notifications from './Notifications';
 import Support from './Support';
+import MyImpactStories from './MyImpact/MyImpactStories';
+import AccountSettings from './AccountSettings';
+import AccountSettingsModal from './OrganizationModals/AccountSettingsModal';
+
+
 
 
 import {FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import {FaBell, FaEdit, FaSignOutAlt,FaMoneyBillAlt, FaCalendarAlt, FaChartPie, FaHeartbeat } from 'react-icons/fa';
+import {FaBell, FaEdit, FaSignOutAlt,FaMoneyBillAlt, FaCalendarAlt, FaChartPie, FaHeartbeat, FaPhoneAlt } from 'react-icons/fa';
 
 import ProfilePicture from '../Donor/Profilepic';
 
@@ -28,6 +33,7 @@ import ProfilePicture from '../Donor/Profilepic';
 
 function Dashboard() {
 
+  
 
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -41,6 +47,12 @@ function Dashboard() {
   // const [donationHistory, setDonationHistory] = useState([]);
   // const [donationCount, setDonationCount] = useState(0);
 
+
+
+
+  const handleAccountSettingsClick = () => {
+    setSelectedContent('account-settings');
+  };  
 
   const handleEditClick = () => {
     setIsEditFormOpen(true);
@@ -86,6 +98,7 @@ return (
     <div className="bg-[#042a30] text-white py-2  w-full flex-1 fixed">
           <OrganizationNavBar 
           name={name}
+          onAccountSettingsClick={handleAccountSettingsClick} 
           />
     </div>
 
@@ -229,15 +242,17 @@ onClick={() => setSelectedContent('notifications')}
 className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center"
 onClick={() => setSelectedContent('support')}
 >
-<FaHeartbeat  className="mr-2" />
+<FaPhoneAlt  className="mr-2" />
 <span>Support</span>
 </button>
 
 {/* ***********************************************END OF Support Button*************************************************************** */}
 
+
+
 {/* ***********************************************Logout Button*************************************************************** */}
 
-<a href="/login" 
+<a href="/organization-login" 
  className="py-2 mb-2 mt-auto bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center ">
  <FaSignOutAlt className="mr-2" />
  <span>Logout</span>
@@ -268,8 +283,8 @@ onClick={() => setSelectedContent('support')}
 
 {/* ******These is where the props are passed from their imported components *************************************************************************************************** */}
 <div className='bg-[#f2efc5]'>
-<div className='md:pl-80 '>
-<div className=" flex-grow flex flex-col py-16  mr-5 overflow-y-auto">
+<div className='md:pl-80'>
+<div className=" flex-grow flex flex-col  py-20  mr-5 overflow-y-auto">
 {/* md:pl-80 */}
 
 {/*******************STRAT OF MY Donation Content ********************************************** */}
@@ -291,11 +306,15 @@ onClick={() => setSelectedContent('support')}
   <div className="w-full lg:w-1/2">
     {selectedContent === 'my-events' && <MyEvents />}
   </div>
-  <div className="w-full lg:w-1/2 ">
-    {selectedContent === 'my-events' && <MyAddedEvents />}
+  <div className="w-full lg:w-1/2">
+    {selectedContent === 'my-events' && <div className='overflow-y-auto' style={{ height: '500px' }}>
+      <MyAddedEvents />
+    </div>}
   </div>
   {selectedContent === 'my-events' && !isWelcomeShown && <MyEventsModal setIsWelcomeShown={setIsWelcomeShown}/>}
 </div>
+
+
 
 
 {/*******************End of MYEVENTS Content ********************************************** */}
@@ -303,13 +322,18 @@ onClick={() => setSelectedContent('support')}
 
 {/*******************MyImpact Content ********************************************** */}
 
-<div className="">
-  {/* use this for styling do not delete its custom css reminder-container */}
-  {selectedContent === 'my-impact' &&  <MyImpact/>}
-  
+<div className="flex flex-row flex-wrap " >
+  <div className='w-full lg:w-1/2'>
+    {selectedContent === 'my-impact' &&  <MyImpact/>}
+  </div>
+  <div className="w-full lg:w-1/2">
+    {selectedContent === 'my-impact' && <div className='overflow-y-auto' style={{ height: '500px' }}>
+      <MyImpactStories />
+    </div>}
+  </div>
   {selectedContent === 'my-impact' && !isWelcomeShown && <MyImpactModal setIsWelcomeShown={setIsWelcomeShown}/>}
-
 </div>
+
 
 {/*******************End of MyImpact Content ********************************************** */}
 
@@ -317,7 +341,9 @@ onClick={() => setSelectedContent('support')}
 {/*******************NOTIFICATIONS Content ********************************************** */}
 
 <div>
-{selectedContent === 'notifications' && < Notifications />}
+  <>
+  {selectedContent === 'notifications' && < Notifications />}
+  </>
 
 {selectedContent === 'notifications' && !isWelcomeShown && <NotificationsModal setIsWelcomeShown={setIsWelcomeShown}/>}
 </div>
@@ -333,6 +359,21 @@ onClick={() => setSelectedContent('support')}
 </div>
 
 {/*******************End of SUPPORT ********************************************** */}
+
+{/*******************STARTf ACCOUNT SETTINGS ********************************************** */}
+
+
+<div> 
+      {selectedContent === 'account-settings' && ( <AccountSettings />)}
+</div>
+
+ {/* <div>
+{selectedContent === 'account-settings' && < AccountSettings />}
+
+{selectedContent === 'account-settings' && !isWelcomeShown && <AccountSettingsModal setIsWelcomeShown={setIsWelcomeShown}/>}
+</div> */}
+
+{/*******************End of ACCOUNT SETTINGS ********************************************** */}
 
 
 </div>
