@@ -10,19 +10,27 @@ import NewDonationModal from './DonorModals.js/NewDonationModal';
 import HistoryModal from './DonorModals.js/HistoryModal';
 import BeneficiaryModal from './DonorModals.js/BeneficiaryModal';
 import ReminderModal from './DonorModals.js/ReminderModal';
+import AccountSettings from './AccountSettings';
+import Support from './Support';
+import SupportModal from './DonorModals.js/SupportModal';
+import Notifications from './Notifications';
+import NotificationsModal from './DonorModals.js/NotificationsModal';
+import TransactionHistory from './TransactionHistory';
+import TransactionHistoryModal from './DonorModals.js/TransactionHistoryModal';
+
 
 
 import {FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import {FaDonate, FaHistory, FaBell, FaHeart, FaEdit, FaSignOutAlt } from 'react-icons/fa';
+import {FaDonate, FaHistory, FaBell, FaHeart, FaEdit, FaSignOutAlt, FaHeartbeat, FaPhoneAlt, FaRegHeart } from 'react-icons/fa';
 
 
 
-
+import ProfilePicture from './Profilepic';
 
 function Dashboard() {
 
  
-
+ 
 
 
 
@@ -31,21 +39,23 @@ function Dashboard() {
   const [isEditFormOpen, setIsEditFormOpen] = useState(false);
   const [name, setName] = useState("John Doe");
   const [email, setEmail] = useState("johndoe@example.com");
-  const [profilePicture, setProfilePicture] = useState("https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80");
+  // const [profilePicture, setProfilePicture] = useState("");
   const [selectedContent, setSelectedContent] = useState(null);
   const [isWelcomeShown, setIsWelcomeShown] = useState(false);
-  const [organizations, setorganizations] = useState([]);
   const [donationHistory, setDonationHistory] = useState([]);
+  const [donationCount, setDonationCount] = useState(0);
+
+
+
+
 
   
-
-  // Callback function to handle donation data
-  const handleDonation = (donationData) => {
-    // Add the donationData to the historyData array
-    setHistoryData([...historyData, donationData]);
-  };
   
  
+  const handleAccountSettingsClick = () => {
+    setSelectedContent('account-settings');
+  };  
+  
 
 
 
@@ -67,37 +77,75 @@ function Dashboard() {
   setProfilePicture(e.target.value);
   };
 
-  const handleNewDonationClick = () => {
-    console.log('New-Donation button clicked'); // Add your custom logic here
-    setSelectedContent('new-donation');
-  };
+  
   
   const handleSidebarToggle = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  const handleDonate = (organizationId) => {
-    // Implement your logic for handling donation here
-    console.log(`Donating to organization with id: ${organizationId}`);
+// ************************************************************FOR HANDLING HISTORYCONTENT**********************************************************************
+
+
   
-    // Find the organization data from organizations state using organizationId
-    const organization = organizations.find(org => org.id === organizationId);
-  
-    // Add the organization data to donationHistory array
-    setDonationHistory(prevHistory => [...prevHistory, organization]);
-  };
 
-    
-  const handleAddToDonationList = (organizationId) => {
-  // Implement your logic for adding to donation list here
-  console.log(`Adding to donation list: ${organizationId}`);
+// ************************************************************END OF HANDLING HISTORYCONTENT**********************************************************************
 
-  // Find the organization data from organizations state using organizationId
-  const organization = organizations.find(org => org.id === organizationId);
 
-  // Add the organization data to donationHistory array
-  setDonationHistory(prevHistory => [...prevHistory, organization]);
+// ************************************************************FOR HANDLING NEWDONATION CONTENT**********************************************************************
+
+const [organizations, setorganizations] = useState([]);
+
+const handleNewDonationClick = () => {
+  console.log('New-Donation button clicked'); // Add your custom logic here
+  setSelectedContent('new-donation');
 };
+
+
+// const handleDonate = (orgId) => {
+//   // Implement your logic for handling donation here
+// };
+
+// const handleAddToDonationList = (orgId) => {
+//   // Implement your logic for adding organization to donation list here
+// };
+
+const handleDonate = (orgId) => {
+
+  // setDonationCount(donationCount + 1);
+
+  
+  // Find the organization in the list of organizations
+  const organization = organizations.find((org) => org.id === orgId);
+
+  // // Update the organization's donation count
+  // organization.donationCount = organization.donationCount ? organization.donationCount + 1 : 1;
+
+  // Update the state with the updated organization data
+  setorganizations((prevOrganizations) =>
+    prevOrganizations.map((org) => (org.id === orgId ? organization : org))
+  );
+};
+
+const handleAddToDonationList = (orgId) => {
+  // Find the organization in the list of organizations
+  const organization = organizations.find((org) => org.id === orgId);
+
+  // Add the organization to the donation history
+  setDonationHistory((prevDonationHistory) => {
+    // Check if the organization is already in the history
+    const existingOrg = prevDonationHistory.find((org) => org.id === orgId);
+    if (existingOrg) {
+      // If organization already exists, update its donation count
+      return prevDonationHistory.map((org) =>
+        org.id === orgId ? { ...org, donationCount: org.donationCount + 1 } : org
+      );
+    } else {
+      // If organization doesn't exist in history, add it
+      return [...prevDonationHistory, { ...organization, donationCount: 1 }];
+    }
+  });
+};
+
 
 
   useEffect(() => {
@@ -116,25 +164,114 @@ function Dashboard() {
     fetchData();
   }, []); 
 
-  const [showHistory, setShowHistory] = useState(false);
-  const [historyData, setHistoryData] = useState([]);
 
-  // Handler for "History" button click
-  const handleHistoryButtonClick = () => {
-    // Fetch history data from backend API
-    // Replace the fetch URL with your backend API endpoint to fetch donation history data
-    fetch('http://localhost:5000/history')
-      .then(response => response.json())
-      .then(data => {
-        // Update state with fetched history data
-        setHistoryData(data);
-        // Show the history content
-        setShowHistory(true);
-      })
-      .catch(error => console.error('Failed to fetch donation history:', error));
+// ************************************************************END OF HANDLING NEWDONATION CONTENT**********************************************************************
+
+ 
+// ************************************************************FOR HANDLING REMINDER CONTENT**********************************************************************
+  const [reminders, setReminders] = useState([]);
+
+  const handleReminderClick = () => {
+    console.log('reminder button clicked'); // Add your custom logic here
+    setSelectedContent('reminder');
+  };
+ 
+  useEffect(() => {
+    // Fetch organizations data from backend API
+    const fetchData = async () => {
+      try {
+        const response = await fetch(' http://localhost:5000/reminders');
+        const data = await response.json();
+        // Update state with fetched data
+        setReminders(data);
+      } catch (error) {
+        console.error('Failed to fetch organizations data:', error);
+      }
+    };
+
+    fetchData();
+  }, []); 
+
+  
+
+  function handleReminder(reminder) {
+    console.log('Reminder:', reminder);
+  }
+
+  function handleAddToReminderList(reminder) {
+    console.log('Added to reminder list:', reminder);
+  }
+
+// ************************************************************END OF HANDLING REMINDERS CONTENT**********************************************************************
+
+  
+// ************************************************************FOR HANDLING HISTORYCONTENT**********************************************************************
+
+const [profilePicture, setProfilePicture] = useState("");
+
+
+ 
+// const [profilePicture, setProfilePicture] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Handle saving the new profile picture here
   };
 
-  return (
+
+
+  function handleHistoryClick() {
+    // Create a list of organization IDs from the donation history
+    const orgIds = donationHistory.map((org) => org.id);
+  
+    // Fetch details of each organization using its ID
+    orgIds.forEach(async (orgId) => {
+      try {
+        const response = await fetch(`http://localhost:5000/organizations/${orgId}`);
+        const data = await response.json();
+        console.log('Organization details:', data);
+        // Add code here to update the UI with the organization details
+      } catch (error) {
+        console.error(`Failed to fetch organization details for ID ${orgId}:`, error);
+      }
+    });
+  }
+  
+  
+ 
+{/* ***********************************************Beneficiaries Stories *************************************************************** */}
+
+// const [Beneficiaries, setBeneficiaries] = useState([]);
+
+const [stories, setStories] = useState([]);
+
+const handleBeneficiaryClick = () => {
+  console.log('beneficiary button clicked');
+  setSelectedContent('beneficiary-stories');
+};
+ 
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/stories');
+      const data = await response.json();
+      setStories(data);
+    } catch (error) {
+      console.error('Failed to fetch beneficiary-stories data:', error);
+    }
+  };
+  fetchData();
+}, []);
+
+function handleBeneficiary(beneficiary) {
+  console.log('Beneficiary:', beneficiary);
+}
+
+
+{/* ***********************************************End of Beneficiaries Stories *************************************************************** */}
+
+
+return (
    
 <div className="flex flex-col min-h-screen bg-fff5e1">
       <div className="flex-grow">
@@ -145,53 +282,39 @@ function Dashboard() {
 
     <div className="bg-[#464931] text-white py-2  w-full flex-1 fixed">
           <DonorNavBar 
+          name={name}
+          onAccountSettingsClick={handleAccountSettingsClick}
           />
     </div>
 
                                                 {/* This is the END OF THE NAVBAR AREA */}
 
 
-
+  <div >
+    <div className=''>
   {/* ************************************This is the START of the contents related to the Sidebar Container********************************************** */}
-  <div>
+  <div className=''>
             {isSidebarOpen && (
          
-         <div className="flex-grow flex flex-col md:flex-row  h-full">
+         <div className="flex-grow flex flex-col md:flex-row  sidebar h-full">
            <div className="w-full md:w-1/5 bg-gray-200 flex-1 fixed top-0 bottom-0 left-0">
            {/* w-1/5 bg-gray-200 flex-1 fixed top-0 bottom-0 left-0 */}
           
            <div className="flex flex-col h-full p-4  bg-[#464931] ">
 
-             {/* Profile Picture ******************************************************************************************************/}
+            {/* Profile Picture ******************************************************************************************************/}
 
-                 <div className="flex items-center justify-center mb-4">
-                       <img
-                         src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80"
-                         alt="Profile Picture"
-                         className="w-30 h-20 rounded-full"
-                       />
+            <div className="flex items-center justify-center mb-4">
+            <ProfilePicture
+          initialProfilePicture="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0-FVVaYSFbTMXiC6bUW2O_Vzx0OyauBu_RwRlfQ7iIU5aMvWJ86dpdfvGL7eYThBSkQ0&usqp=CAU"  
+          profilePicture={profilePicture}
+          setProfilePicture={setProfilePicture}
+        />
                  </div>
 
              {/* Profile Picture Upload *************************************************************************************************/}
 
-           {isEditFormOpen && (
-               <div>
-                        <input
-                           type="file"
-                           accept="image/*"
-                           onChange={(e) => handleProfilePictureChange(e)}
-                           className="w-full mb-2 px-2 py-1 rounded-md"
-                       />
-                 <p className="text-white mb-4">or</p>
-                       <input
-                       type="text"
-                       placeholder="Enter Image URL"
-                       value={profilePicture}
-                       onChange={(e) => setProfilePicture(e.target.value)}
-                       className="w-full mb-2 px-2 py-1 rounded-md"
-                       />
-               </div>
-           )}
+         
 
            {/* ***************************End of Profile Picture Uploads********************************************************************* */}
 
@@ -258,24 +381,28 @@ onClick={handleNewDonationClick} // Add the onClick event handler here
 
 {/* ***********************************************End of New-Donation Button*************************************************************** */}
 
+{/* ***********************************************Transactions Button*************************************************************** */}
 
-{/* ***********************************************History Button*************************************************************** */}
 
 <button
   className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md mb-4 flex items-center justify-center"
- onClick={() => setSelectedContent('history')}>
+  onClick={() => setSelectedContent('my-transactions')}
+  
+  >
   <FaHistory className="mr-2" />
-  <span>History</span>
+  <span> My-Transaction</span>
 </button>
 
 
+{/* ***********************************************End of Transactions Button*************************************************************** */}
 
-{/* ***********************************************End of History Button*************************************************************** */}
+
+
 
 {/* ***********************************************Reminder Button*************************************************************** */}
 <button
 className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md mb-4 flex items-center justify-center"
-onClick={() => setSelectedContent('reminder')}>
+onClick={handleReminderClick}>
 <FaBell className="mr-2" />
 <span>Reminder</span>
 </button>
@@ -285,8 +412,10 @@ onClick={() => setSelectedContent('reminder')}>
 {/* ***********************************************Beneficiaries Stories Button*************************************************************** */}
 
 <button
-className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center"
-onClick={() => setSelectedContent('beneficiary-stories')}>
+className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md mb-4 flex items-center justify-center"
+// onClick={() => setSelectedContent('beneficiary-stories')}
+onClick={handleBeneficiaryClick}
+>
 <FaHeart className="mr-2" />
 <span>Beneficiary Stories</span>
 </button>
@@ -294,9 +423,53 @@ onClick={() => setSelectedContent('beneficiary-stories')}>
 
 {/* ***********************************************End of Beneficiary Stories Button*************************************************************** */}
 
+
+{/* ***********************************************Notifications Button*************************************************************** */}
+
+<button
+className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center mb-4 "
+onClick={() => setSelectedContent('notifications')}
+>
+<FaBell className="mr-2" />
+<span>Notifications</span>
+</button>
+
+
+{/* ***********************************************End of Notifications Button*************************************************************** */}
+
+
+{/* ***********************************************History Button*************************************************************** */}
+
+{/* <button
+  className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md mb-4 flex items-center justify-center"
+  onClick={() => setSelectedContent('history')}
+  
+  >
+  <FaHistory className="mr-2" />
+  <span>History</span>
+</button> */}
+
+
+
+{/* ***********************************************End of History Button*************************************************************** */}
+
+
+{/* ***********************************************Support Button*************************************************************** */}
+
+<button
+className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center mb-4"
+onClick={() => setSelectedContent('support')}
+>
+<FaPhoneAlt  className="mr-2" />
+<span>Support</span>
+</button>
+
+{/* ***********************************************END OF Support Button*************************************************************** */}
+
+
 {/* ***********************************************Logout Button*************************************************************** */}
 
-<a href="/login" 
+<a href="/donor-login" 
  className="py-2 mb-2 mt-auto bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center ">
  <FaSignOutAlt className="mr-2" />
  <span>Logout</span>
@@ -326,10 +499,11 @@ onClick={() => setSelectedContent('beneficiary-stories')}>
                                               {/* This is the START OF THE CONTENT AREA */}
 
 {/* ******These is where the props are passed from their imported components *************************************************************************************************** */}
+<div className=''>
+<div className='md:pl-80 '>
+  
 
-<div className=' md:pl-80'>
-
-<div className=" flex-grow flex flex-col py-16  mr-5 overflow-y-auto">
+<div className=" flex-grow flex flex-col py-20  mr-5 overflow-y-auto">
 {/* md:pl-80 */}
 
 {/*******************NewDonation Content ********************************************** */}
@@ -343,6 +517,8 @@ key={org.id}
 organization={org}
 onDonate={handleDonate}
 onAddToDonationList={handleAddToDonationList}
+// organization={selectedContent.organization}
+
 
 />
 ))}
@@ -356,36 +532,38 @@ onAddToDonationList={handleAddToDonationList}
 {/*******************HISTORY Content ********************************************** */}
 <div>
 {selectedContent === 'history' && 
-organizations.map((org) => (
+// donationHistory.map((donation, index) => (
 <HistoryContent 
-key={org.id}
-organization={org}
+// key={index}
+// donation={donation}
 onDonate={handleDonate}
-onAddToDonationList={handleAddToDonationList}
+donationHistory={donationHistory}/>
+}
 
-/>
-))}
+{selectedContent === 'history' && !isWelcomeShown && < HistoryModal 
+setIsWelcomeShown={setIsWelcomeShown}
 
-{selectedContent === 'history' && !isWelcomeShown && < HistoryModal setIsWelcomeShown={setIsWelcomeShown}/>}
+
+/>}
 </div>
 
 {/*******************End of Hitory Content ********************************************** */}
 
 {/*******************ReminderContent Content ********************************************** */}
 
-<div>
-{selectedContent === 'reminder' && 
-organizations.map((org) => (
-<ReminderContent 
-key={org.id}
-organization={org}
-onDonate={handleDonate}
-onAddToDonationList={handleAddToDonationList}
+<div className="reminder-container">
+  {selectedContent === 'reminder' && reminders.map((reminder) => (
+    <ReminderContent
+      key={reminder.id}
+      reminder={reminder}
+      onReminder={handleReminder}
+      onAddToReminderList={handleAddToReminderList}
+    />
+  ))}
+  
+  {selectedContent === 'reminder' && !isWelcomeShown && <ReminderModal setIsWelcomeShown={setIsWelcomeShown}/>}
+  
 
-/>
-))}
-
-{selectedContent === 'reminder' && !isWelcomeShown && < ReminderModal setIsWelcomeShown={setIsWelcomeShown}/>}
 </div>
 
 {/*******************End of ReminderContent Content ********************************************** */}
@@ -395,21 +573,68 @@ onAddToDonationList={handleAddToDonationList}
 
 <div>
 {selectedContent === 'beneficiary-stories' && 
-organizations.map((org) => (
 <BeneficiaryStoriesContent 
-key={org.id}
-organization={org}
-onDonate={handleDonate}
-onAddToDonationList={handleAddToDonationList}
+stories={stories} 
+
+
 
 />
-))}
+}
 
 {selectedContent === 'beneficiary-stories' && !isWelcomeShown && < BeneficiaryModal setIsWelcomeShown={setIsWelcomeShown}/>}
 </div>
 
 
 {/*******************End of Benficiary Content ********************************************** */}
+
+{/*******************NOTIFICATIONS Content ********************************************** */}
+
+<div>
+  <>
+  {selectedContent === 'notifications' && < Notifications />}
+  </>
+
+{selectedContent === 'notifications' && !isWelcomeShown && <NotificationsModal setIsWelcomeShown={setIsWelcomeShown}/>}
+</div>
+
+{/*******************End of NOTIFICATIONSContent ********************************************** */}
+
+{/*******************NOTIFICATIONS Content ********************************************** */}
+
+<div>
+  <>
+  {selectedContent === 'my-transactions' && < TransactionHistory />}
+  </>
+
+{selectedContent === 'my-transactions' && !isWelcomeShown && <TransactionHistoryModal setIsWelcomeShown={setIsWelcomeShown}/>}
+</div>
+
+{/*******************End of NOTIFICATIONSContent ********************************************** */}
+
+{/*******************STARTof SUPPORT ********************************************** */}
+
+<div>
+{selectedContent === 'support' && < Support />}
+
+{selectedContent === 'support' && !isWelcomeShown && <SupportModal setIsWelcomeShown={setIsWelcomeShown}/>}
+</div>
+
+{/*******************End of SUPPORT ********************************************** */}
+
+{/*******************STARTf ACCOUNT SETTINGS ********************************************** */}
+
+
+<div> 
+      {selectedContent === 'account-settings' && ( <AccountSettings />)}
+</div>
+
+ {/* <div>
+{selectedContent === 'account-settings' && < AccountSettings />}
+
+{selectedContent === 'account-settings' && !isWelcomeShown && <AccountSettingsModal setIsWelcomeShown={setIsWelcomeShown}/>}
+</div> */}
+
+{/*******************End of ACCOUNT SETTINGS ********************************************** */}
 
 </div>
 
@@ -420,11 +645,12 @@ onAddToDonationList={handleAddToDonationList}
                     
 
                                         {/* This is the END OF THE CONTENT AREA */}
+</div>
+                                        {/* This is the END OF THE CONTENT AREA AND SIDEBAR */}
 
 
 
                                               {/* Sidebar Toggle Button */}
-
 <div className='fixed right-0 bottom-1/2 mr-1 mb-4 p-2 flex items-center bg-gray-600 rounded-full cursor-pointer'>
 <span
 className="text-gray-600 text-sm absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-100 px-2 py-1 rounded-md"
@@ -446,11 +672,14 @@ Show Sidebar
 </div>
                           
                                             {/* Sidebar Toggle Button */}
+    </div>
+
+    </div>
 
                                                             
                                             {/* START OF FOOTER CONTENT */}
 
-<div className='w-full'>
+<div className=''>
 <Footer/>
 </div>
 

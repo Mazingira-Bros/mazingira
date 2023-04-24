@@ -66,7 +66,7 @@ function Login() {
     })
       .then(() => {
         // If the login request is successful, redirect the user to the dashboard page
-        window.location.href = '/organization-dashboard';
+        window.location.href = '/donor-dashboard';
       })
       .catch(error => console.error('Error logging in:', error));
   };
