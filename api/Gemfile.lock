@@ -78,7 +78,6 @@ GEM
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
-    byebug (11.1.3)
     capybara (3.39.0)
       addressable
       matrix
@@ -98,7 +97,7 @@ GEM
       reline (>= 0.3.1)
     diff-lcs (1.5.0)
     erubi (1.12.0)
-    faker (3.1.1)
+    faker (3.2.0)
       i18n (>= 1.8.11, < 2)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -113,6 +112,8 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    json-schema (3.0.0)
+      addressable (>= 2.8)
     jsonapi-renderer (0.2.2)
     loofah (2.20.0)
       crass (~> 1.0.2)
@@ -147,6 +148,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.6.4)
+    rack-cors (2.0.1)
+      rack (>= 2.0.0)
     rack-test (2.1.0)
       rack (>= 1.3)
     rails (7.0.4.3)
@@ -176,13 +179,13 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
-    regexp_parser (2.7.0)
+    regexp_parser (2.8.0)
     reline (0.3.3)
       io-console (~> 0.5)
     rexml (3.2.5)
-    rspec-core (3.12.1)
+    rspec-core (3.12.2)
       rspec-support (~> 3.12.0)
-    rspec-expectations (3.12.2)
+    rspec-expectations (3.12.3)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
     rspec-mocks (3.12.5)
@@ -197,11 +200,27 @@ GEM
       rspec-mocks (~> 3.11)
       rspec-support (~> 3.11)
     rspec-support (3.12.0)
+    rswag (2.8.0)
+      rswag-api (= 2.8.0)
+      rswag-specs (= 2.8.0)
+      rswag-ui (= 2.8.0)
+    rswag-api (2.8.0)
+      railties (>= 3.1, < 7.1)
+    rswag-specs (2.8.0)
+      activesupport (>= 3.1, < 7.1)
+      json-schema (>= 2.2, < 4.0)
+      railties (>= 3.1, < 7.1)
+      rspec-core (>= 2.14)
+    rswag-ui (2.8.0)
+      actionpack (>= 3.1, < 7.1)
+      railties (>= 3.1, < 7.1)
     rubyzip (2.3.2)
-    selenium-webdriver (4.8.6)
+    selenium-webdriver (4.9.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    shoulda-matchers (5.3.0)
+      activesupport (>= 5.2.0)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -242,22 +261,23 @@ PLATFORMS
   x86_64-darwin-22
   x86_64-linux
 
-
 DEPENDENCIES
   active_model_serializers
   activerecord
   bcrypt (~> 3.1.7)
   bootsnap
-  byebug (~> 11.1)
   capybara
   debug
   faker
   importmap-rails
   jbuilder
   puma (~> 5.0)
+  rack-cors
   rails (~> 7.0.4, >= 7.0.4.3)
   rspec-rails (~> 6.0.0)
+  rswag
   selenium-webdriver
+  shoulda-matchers
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails

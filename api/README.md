@@ -31,7 +31,7 @@
 ---
 - Below is a sample diagram of the database tables we used.
 
-- The database below contains the following tables including `books`, `genres`, `book_genres`, `users`, and `reviews`.
+<!-- - The database below contains the following tables including `books`, `genres`, `book_genres`, `users`, and `reviews`. -->
 
 <img src="./images/db.png" alt="database tables" />
 

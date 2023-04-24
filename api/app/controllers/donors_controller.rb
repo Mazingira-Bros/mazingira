@@ -8,13 +8,13 @@ class DonorsController < ApplicationController
   end
 
   # SHOW /donors/:id
-  def show 
+  def show
     donor = Donor.find(params[:id])
-    render json: donor, status: :ok
+    render json: donor, status: :ok, serializer: DonorWithDonationsSerializer
   end
 
   # PUT /donor/update/:id
-  def update 
+  def update
     donor = Donor.find(params[:id])
     donor.update(donor_params)
     render json: donor, status: :created
@@ -26,7 +26,7 @@ class DonorsController < ApplicationController
     render json: donor, status: :created
   end
 
-  # DELETE /donor/:id {ERROR MESSAGE}
+  # DELETE /donor/:id 
   def destroy
     donor = Donor.find(params[:id])
     donor.destroy

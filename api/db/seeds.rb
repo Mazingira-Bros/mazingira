@@ -4,32 +4,29 @@ puts "👤 Creating Administrators"
 6.times do
   Admin.create!(
     name: Faker::Name.name,
-    email: Faker::Internet.email,
-    password_digest: "root_password"
+    email:  Faker::Internet.email,
+    password: "root_password"
   )
 end
-
 puts "✨ Created #{Admin.count} Admins"; puts
 
 puts "👨 Creating donors..."
-
-10.times do
+100.times do
   Donor.create!(
     name: Faker::Name.name,
-    email: Faker::Internet.email,
-    password_digest: "password"
+    email:  Faker::Internet.email,
+    password: "password"
   )
 end
-
 puts "✨ Created #{Donor.count} donors";puts
 
 puts "📦 Creating organisations..."
-5.times do
+50.times do
   Organisation.create!(
     logo: Faker::Company.logo,
     name: Faker::Company.name,
-    password_digest: Faker::Internet.password,
-    email: Faker::Internet.email,
+    password: "org_password",
+    email:  Faker::Internet.email,
     description: Faker::Lorem.paragraph,
     website: Faker::Internet.url,
     contact_person: Faker::Name.name,
@@ -41,11 +38,11 @@ puts "✨ Created #{Organisation.count} organizations";puts
 
 puts "📦 Creating donations..."
 Donor.all.each do |donor|
-  rand(4..7).times do
+  rand(5..7).times do
     Donation.create!(
       organisation: Organisation.all.sample,
       donor: donor,
-      amount: rand(10..1000),
+      amount: rand(1000..10000),
       preference: rand(0..1),
       frequency: rand(0..2)
     )
@@ -55,7 +52,7 @@ puts "✨ Created #{Donation.count} donations";puts
 
 puts "👥 Creating beneficiaries..."
 Organisation.all.each do |organisation|
-  rand(3..4).times do
+  rand(5..6).times do
     Beneficiary.create!(
       name: Faker::Vehicle.manufacture,
       image: "https://picsum.photos/300/300/?random",
@@ -69,7 +66,7 @@ puts "✨ Created #{Beneficiary.count} beneficiaries";puts
 
 puts "📦 Creating inventories..."
 Organisation.all.each do |organisation|
-  rand(3..4).times do
+  rand(6..9).times do
     Inventory.create!(
       name: Faker::Commerce.product_name,
       quantity: rand(1..100),
@@ -97,7 +94,6 @@ end
 puts "✨ Created #{Story.count} stories";puts
 
 puts "📖 Creating transactions..."
-
 Donation.all.each do |donation|
   # Create a transaction for the donation
   Transaction.create(donation: donation, payment_method: Transaction.payment_methods.keys.sample, status: Transaction.statuses.keys.sample)
@@ -106,11 +102,14 @@ puts "✨ Created #{Transaction.count} transactions";puts
 
 puts "📖 Creating reminders..."
 
-Donation.all.each do |donation|
-  Reminder.create!(donation: donation)
+Donation.where(frequency: [1, 2]).each do |donation|
+  unless Reminder.find_by(donation_id: donation.id)
+    Reminder.create!(donation: donation)
+  end
 end
 
-puts "✨ Created #{Reminder.count} reminders";puts
+puts "✨ Created #{Reminder.count} reminders"
+
 
 
 puts "🎉 Done!"
