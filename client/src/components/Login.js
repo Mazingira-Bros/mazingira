@@ -9,11 +9,28 @@ function Login() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("email:",formData.email, "password:",formData.password);
-    // Perform login with email and password
+    console.log("email:", formData.email, "password:", formData.password);
+    const response = await fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
+    const data = await response.json();
+    console.log(data);
+
+    if (data.role === "Donor") {
+      window.location.href = "/donor-dashboard";
+    } else if (data.role === "Organisation") {
+      window.location.href = "/organization-dashboard";
+    } else if(data.role === "Admin") {
+      window.location.href = "/admin-dashboard";
+    }
   };
+
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg">

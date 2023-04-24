@@ -6,11 +6,13 @@ Rails.application.routes.draw do
   resources :stories,  except: [:new, :edit]
   resources :events, except: [:new, :edit]
 
-      resources :organisations, except: [:new, :edit] do
-        resources :beneficiaries, only: [:index]
-        resources :inventories, only: [:index]
-        resources :donations, only: [:index]
-      end
+  resources :organisations, except: [:new, :edit] do
+    resources :beneficiaries, only: [:index]
+    resources :inventories, only: [:index]
+    resources :donations, only: [:index]
+  end
+
+  resources :notifications, only: [:index, :new, :create, :destroy]
   resources :beneficiaries, except: [:new, :edit]
   resources :inventories, except: [:new, :edit]
   resources :transactions,  except: [:new, :edit]

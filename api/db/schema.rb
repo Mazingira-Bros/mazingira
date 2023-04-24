@@ -95,7 +95,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_063556) do
 
   create_table "stories", force: :cascade do |t|
     t.string "title"
-    t.text "content"
     t.integer "organisation_id", null: false
     t.string "image"
     t.string "summary"

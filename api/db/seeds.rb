@@ -111,7 +111,7 @@ Donation.where(frequency: [1, 2]).each do |donation|
   end
 end
 
-puts "✨ Created #{Reminder.count} reminders"
+puts "✨ Created #{Reminder.count} reminders";puts
 
 # Create 10 events
 10.times do
@@ -125,7 +125,7 @@ puts "✨ Created #{Reminder.count} reminders"
   )
 end
 
-puts "✨ Created #{Event.count} events"
+puts "✨ Created #{Event.count} events";puts
 
 
 puts "🎉 Done!"
