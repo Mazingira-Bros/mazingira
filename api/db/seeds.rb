@@ -11,7 +11,7 @@ end
 puts "✨ Created #{Admin.count} Admins"; puts
 
 puts "👨 Creating donors..."
-100.times do
+10.times do
   Donor.create!(
     name: Faker::Name.name,
     email:  Faker::Internet.email,
@@ -21,7 +21,7 @@ end
 puts "✨ Created #{Donor.count} donors";puts
 
 puts "📦 Creating organisations..."
-50.times do
+5.times do
   Organisation.create!(
     logo: Faker::Company.logo,
     name: Faker::Company.name,
@@ -81,13 +81,16 @@ puts "✨ Created #{Inventory.count} inventories";puts
 
 
 puts "📖 Creating stories..."
-Beneficiary.all.each do |beneficiary|
+Organisation.all.each do |organisation|
   rand(2..3).times do
     Story.create!(
-      title: Faker::Lorem.sentence(word_count: 5),
-      content: Faker::ChuckNorris.fact,
+      title: Faker::Books::CultureSeries.book,
+      summary: Faker::Quote.unique.famous_last_words,
       image: "https://picsum.photos/300/300/?random",
-      beneficiary: beneficiary
+      organisation: organisation,
+      location: Faker::Address.city,
+      likes: rand(10..50),
+      blogurl: Faker::Internet.url
     )
   end
 end
@@ -108,7 +111,7 @@ Donation.where(frequency: [1, 2]).each do |donation|
   end
 end
 
-puts "✨ Created #{Reminder.count} reminders"
+puts "✨ Created #{Reminder.count} reminders";puts
 
 # Create 10 events
 10.times do
@@ -122,7 +125,7 @@ puts "✨ Created #{Reminder.count} reminders"
   )
 end
 
-puts "✨ Created #{Event.count} events"
+puts "✨ Created #{Event.count} events";puts
 
 
 puts "🎉 Done!"
