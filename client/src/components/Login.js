@@ -2,25 +2,17 @@ import React, { useState } from "react";
 import Logo from "../assets/logo4.png";
 
 function Login() {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-    remember: false,
-  });
+  const [formData, setFormData] = useState({ email: "", password: "" });
 
   const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === "checkbox" ? checked : value,
-    });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Logged in");
-    console.log(formData.email);
-    console.log(formData.password);
+    console.log("email:",formData.email, "password:",formData.password);
+    // Perform login with email and password
   };
 
   return (
@@ -56,14 +48,7 @@ function Login() {
           </div>
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center ">
-              <input
-                type="checkbox"
-                id="remember"
-                name="remember"
-                checked={formData.remember}
-                onChange={handleInputChange}
-                className="mr-2 "
-              />
+              <input type="checkbox" id="remember" className="mr-2 " />
               <label htmlFor="remember">Remember me</label>
             </div>
             <a href="/password-reset" className="font-semibold hover:underline">

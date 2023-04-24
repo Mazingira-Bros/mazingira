@@ -1,4 +1,3 @@
 class Story < ApplicationRecord
-  belongs_to :beneficiary, dependent: :destroy
-  # has_one_attached :image
+  belongs_to :organisation, dependent: :destroy
 end
