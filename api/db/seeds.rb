@@ -110,6 +110,19 @@ end
 
 puts "✨ Created #{Reminder.count} reminders"
 
+# Create 10 events
+10.times do
+  Event.create!(
+    title: Faker::Lorem.sentence(word_count: 3),
+    description: Faker::Lorem.paragraph(sentence_count: 3),
+    poster: Faker::Internet.url,
+    location: Faker::Address.full_address,
+    date: Faker::Date.between(from: '2023-05-01', to: '2023-05-31').strftime('%Y-%m-%d'),
+    time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now).strftime('%H:%M:%S')
+  )
+end
+
+puts "✨ Created #{Event.count} events"
 
 
 puts "🎉 Done!"
