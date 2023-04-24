@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_17_125741) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_24_120114) do
   create_table "admins", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -61,6 +61,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_125741) do
     t.index ["organisation_id"], name: "index_inventories_on_organisation_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.string "text"
+    t.string "sender"
+    t.string "attachment"
+    t.datetime "createdAt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "organisations", force: :cascade do |t|
     t.string "logo"
     t.string "name"
@@ -100,6 +109,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_125741) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["donation_id"], name: "index_transactions_on_donation_id"
+  end
+
+  create_table "user_engagements", force: :cascade do |t|
+    t.integer "total_users"
+    t.integer "active_users"
+    t.integer "inactive_users"
+    t.string "month"
+    t.integer "visits"
+    t.integer "signups"
+    t.date "date"
+    t.integer "donations"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "beneficiaries", "organisations"

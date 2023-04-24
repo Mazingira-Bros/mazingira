@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
     const handleDeleteAccount = async (userId) => {
       try {
         // Send DELETE request to server's API to delete user by ID
-        const response = await fetch(`/api/users/${userId}`, {
+        const response = await fetch(`/api/organisations/${userId}`, {
           method: 'DELETE'
         });
     

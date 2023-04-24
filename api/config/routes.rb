@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :user_engagements
+  resources :messages
+  
   mount Rswag::Ui::Engine => '/api-docs'
   mount Rswag::Api::Engine => '/api-docs'
   resources :donors,  except: [:new, :edit]
