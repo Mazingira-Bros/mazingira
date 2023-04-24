@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../assets/logo4.png";
 
 function Login() {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    remember: false,
+  });
 
-  const HandleLogin = ()=>{
-    console.log("Loged in");
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === "checkbox" ? checked : value,
+    });
+  };
 
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Logged in");
+    console.log(formData.email);
+    console.log(formData.password);
+  };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg">
@@ -14,12 +29,15 @@ function Login() {
         <h1 className="text-3xl font-bold text-yellow-500 text-center mb-6">
           Login
         </h1>
-        <form onSubmit={HandleLogin}>
+        <form onSubmit={handleSubmit}>
           <div className="mb-6">
             <label htmlFor="email" className="block mb-2 font-medium"></label>
             <input
               type="email"
               id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
               className="w-full px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
               placeholder="Enter your email"
             />
@@ -29,13 +47,23 @@ function Login() {
             <input
               type="password"
               id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
               className="w-full px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
               placeholder="Enter your password"
             />
           </div>
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center ">
-              <input type="checkbox" id="remember" className="mr-2 " />
+              <input
+                type="checkbox"
+                id="remember"
+                name="remember"
+                checked={formData.remember}
+                onChange={handleInputChange}
+                className="mr-2 "
+              />
               <label htmlFor="remember">Remember me</label>
             </div>
             <a href="/password-reset" className="font-semibold hover:underline">
