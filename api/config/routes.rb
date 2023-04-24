@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :donors,  except: [:new, :edit]
   resources :donations, except: [:destroy]
   resources :stories,  except: [:new, :edit]
+  resources :events, except: [:new, :edit]
 
       resources :organisations, except: [:new, :edit] do
         resources :beneficiaries, only: [:index]
