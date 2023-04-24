@@ -125,7 +125,7 @@ function GeneralRegistration() {
         <form onSubmit={handleSubmit}>
   <div className="mb-4">
     <label htmlFor="email" className="block mb-2 font-medium">
-      
+
     </label>
     <input
       type="email"
@@ -142,7 +142,7 @@ function GeneralRegistration() {
   </div>
   <div className="mb-4">
     <label htmlFor="password" className="block mb-7 font-medium">
-      
+
     </label>
     <input
       type="password"
@@ -160,7 +160,7 @@ function GeneralRegistration() {
   {formData.registrationType === 'organization' && (
   <div className="mb-4">
     <label htmlFor="confirmPassword" className="block mb-7 font-medium">
-      
+
     </label>
     <input
       type="password"
@@ -182,7 +182,7 @@ function GeneralRegistration() {
 {formData.registrationType === 'donor' && (
   <div className="mb-4">
     <label htmlFor="confirmDonorPassword" className="block mb-7 font-medium">
-      
+
     </label>
     <input
       type="password"
@@ -226,9 +226,9 @@ function GeneralRegistration() {
 
             </div>
 
-           
+
             </div>
             );
             }
-            
+
             export default GeneralRegistration;

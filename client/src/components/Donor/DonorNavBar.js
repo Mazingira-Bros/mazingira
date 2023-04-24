@@ -18,7 +18,7 @@ function DonorNavBar(props) {
           </li>
         </ul>
         <div className="p-4">
-          <p>Hello, {props.name}! Welcome to your dashboard! Here you can manage your account settings, view your donations, and more.</p>
+          <p>Hello, {props.name}! Welcome to your dashboard! Here you can manage your account settings, donate to organizations, and more.</p>
         </div>
       </div>
     </nav>
