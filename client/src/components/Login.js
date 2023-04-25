@@ -3,6 +3,7 @@ import Logo from "../assets/logo4.png";
 
 function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
+  const [userData, setUserData] = useState([])
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -21,6 +22,7 @@ function Login() {
     });
     const data = await response.json();
     console.log(data);
+    setUserData(data)
 
     if (data.role === "Donor") {
       window.location.href = "/donor-dashboard";

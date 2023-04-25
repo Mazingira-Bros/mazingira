@@ -40,6 +40,7 @@ function GeneralRegistration() {
 
   const handleRegistrationRequest = () => {
     // Submit form data to backend
+    console.log(formData)
   };
 
   const handleSubmit = (e) => {
@@ -50,11 +51,11 @@ function GeneralRegistration() {
     if (Object.keys(errors).length === 0) {
       handleRegistrationRequest();
       if (formData.registrationType === "donor") {
-        // Redirect to donor dashboard
-        window.location.href = "/donor-dashboard";
+        console.log("/donor-dashboard")
+        // window.location.href = "/donor-dashboard";
       } else if (formData.registrationType === "organization") {
-        // Redirect to organization dashboard
-        window.location.href = "/organization-dashboard";
+        console.log("/organisation-dashboard")
+        // window.location.href = "/organization-dashboard";
       }
     }
   };

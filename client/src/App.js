@@ -10,7 +10,7 @@ import GeneralRegistrationForm from '../src/components/GeneralRegistration';
 import PasswordReset from './components/PasswordReset';
 import DonorDashBoard from '../src/components/Donor/Dashboard';
 import OrganizationDahboard from '../src/components/Organization/Dashboard';
-// import DonorNavBar from './components/Donor/DonorNavBar';
+import AdminDash from './components/Admin/Dashboard';
 // import NewDonationContent from './components/Donor/NewDonationContent';
 // import ReminderContent from './components/Donor/ReminderContent';
 // import Profilepic from '../src/components/Donor/Profilepic'
@@ -32,6 +32,7 @@ function App() {
           <Route exact path="/password-reset" Component={PasswordReset} />
           <Route exact path="/donor-dashboard" Component={DonorDashBoard} />
           <Route exact path="/organization-dashboard" Component={OrganizationDahboard} />
+          <Route exact path="/admin-dashboard" Component={AdminDash} />
 
 
 

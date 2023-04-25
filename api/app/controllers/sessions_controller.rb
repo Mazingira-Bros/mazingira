@@ -1,10 +1,12 @@
 class SessionsController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: :create, :
+  skip_before_action :verify_authenticity_token, only: :login
 
-  def create
+  def login
     user = find_user(params[:email], params[:password])
     if user
       session[:user_id] = user.id
+      session[:expires_at] = Time.current + 30.minutes # session expires in 30 minutes
+      # puts session.inspect
       render json: { user: user, role: user.class.name }, status: :ok
     else
       render json: { error: 'Invalid email or password' }, status: :unauthorized
