@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function GeneralRegistration() {
   const [formData, setFormData] = useState({
+    name:"",
     email: "",
     password: "",
     confirmPassword: "",
@@ -38,27 +39,47 @@ function GeneralRegistration() {
     return errors;
   };
 
-  const handleRegistrationRequest = () => {
-    // Submit form data to backend
-    console.log(formData)
-  };
 
-  const handleSubmit = (e) => {
-    console.log(formData)
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const errors = validateForm();
 
-    if (Object.keys(errors).length === 0) {
-      handleRegistrationRequest();
-      if (formData.registrationType === "donor") {
-        console.log("/donor-dashboard")
-        // window.location.href = "/donor-dashboard";
-      } else if (formData.registrationType === "organization") {
-        console.log("/organisation-dashboard")
-        // window.location.href = "/organization-dashboard";
+    const endpoint = formData.registrationType === "donor" ? "donors" : "organisations";
+
+    try {
+      const response = await fetch(`http://localhost:3000/${endpoint}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          password: formData.password
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error("Signup failed");
       }
+
+      const data = await response.json();
+      const errors = validateForm();
+
+      if (Object.keys(errors).length === 0) {
+        if (formData.registrationType === "donor") {
+          window.location.href = "/donor-dashboard";
+        } else if (formData.registrationType === "organization") {
+          window.location.href = "/organization-dashboard";
+        }
+      }
+    } catch (error) {
+      console.log(error);
+      alert("Signup unsuccessful");
     }
   };
+
 
   return (
     <div className="flex justify-center items-center min-h-screen bg2 ">
@@ -67,6 +88,16 @@ function GeneralRegistration() {
           Registration
         </h2>
         <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+          <label htmlFor="name" className="block mb-2 font-medium"></label>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+            placeholder="name"
+            className="w-full border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-blue-500"/>
+          </div>
           <div className="mb-4">
             <label htmlFor="email" className="block mb-2 font-medium"></label>
             <input

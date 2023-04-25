@@ -242,7 +242,26 @@ function Dashboard() {
         console.error("Failed to fetch beneficiary-stories data:", error);
       }
     };
-    fetchData();
+    fetchData();  const handleLogout = () => {
+      fetch("http://localhost:3000/logout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to logout");
+        }
+        // Redirect to login page after successful logout
+        alert("logged out succefully"); // "Session destroyed"
+          window.location.href = "/login";
+        })
+        .catch((error) => {
+          console.error(error);
+          // Handle error
+        });
+    };
   }, []);
 
   function handleBeneficiary(beneficiary) {
