@@ -186,68 +186,68 @@ import { FaTrash } from 'react-icons/fa';
 import tw from 'tailwind-styled-components';
 
 const ModalOverlay = tw.div`
-  fixed 
-  inset-0 
-  bg-gray-500 
-  bg-opacity-75 
-  flex 
-  justify-center 
-  items-center 
+  fixed
+  inset-0
+  bg-gray-500
+  bg-opacity-75
+  flex
+  justify-center
+  items-center
   z-10
 `;
 
 const Modal = tw.div`
-  bg-white 
-  w-1/2 
-  p-6 
-  rounded-lg 
+  bg-white
+  w-1/2
+  p-6
+  rounded-lg
   shadow-lg
 `;
 
 const FormLabel = tw.label`
-  block 
-  text-sm 
-  font-medium 
+  block
+  text-sm
+  font-medium
   text-gray-700
 `;
 
 const FormInput = tw.input`
-  mt-1 
-  focus:ring-indigo-500 
-  focus:border-indigo-500 
-  block 
-  w-full 
-  sm:text-sm 
-  border-gray-300 
+  mt-1
+  focus:ring-indigo-500
+  focus:border-indigo-500
+  block
+  w-full
+  sm:text-sm
+  border-gray-300
   rounded-md
 `;
 
 const FormTextarea = tw.textarea`
-  mt-1 
-  focus:ring-indigo-500 
-  focus:border-indigo-500 
-  block 
-  w-full 
-  sm:text-sm 
-  border-gray-300 
+  mt-1
+  focus:ring-indigo-500
+  focus:border-indigo-500
+  block
+  w-full
+  sm:text-sm
+  border-gray-300
   rounded-md
 `;
 
 const FormButton = tw.button`
-  inline-flex 
-  items-center 
-  px-4 
-  py-2 
-  border 
-  border-transparent 
-  text-sm 
-  font-medium 
-  rounded-md 
-  shadow-sm 
-  text-white 
-  focus:outline-none 
-  focus:ring-2 
-  focus:ring-offset-2 
+  inline-flex
+  items-center
+  px-4
+  py-2
+  border
+  border-transparent
+  text-sm
+  font-medium
+  rounded-md
+  shadow-sm
+  text-white
+  focus:outline-none
+  focus:ring-2
+  focus:ring-offset-2
   focus:ring-indigo-500
 `;
 
@@ -324,7 +324,7 @@ const Notifications = () => {
         setFormData({
           title: '',
           message: '',
-         
+
 
 sender: 'Admin',
 image: 'https://via.placeholder.com/50',

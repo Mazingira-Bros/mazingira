@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 
 import OrganizationNavBar from "./OrganizationNavBar";
 import Footer from "../Donor/Footer";
-import MyDonationsModal from "./OrganizationModals.js/MyDonationsModal";
-import MyEventsModal from "./OrganizationModals.js/MyEventsModal";
-import MyImpactModal from "./OrganizationModals.js/MyImpactModal";
-import NotificationsModal from "./OrganizationModals.js/NotificationsModal";
-import SupportModal from "./OrganizationModals.js/SupportModal";
+import MyDonationsModal from "./OrganizationModals/MyDonationsModal";
+import MyEventsModal from "./OrganizationModals/MyEventsModal";
+import MyImpactModal from "./OrganizationModals/MyImpactModal";
+import NotificationsModal from "./OrganizationModals/NotificationsModal";
+import SupportModal from "./OrganizationModals/SupportModal";
 import MyDonations from "./MyDonations";
 import MyEvents from "./MyEvents/MyEvents";
 import MyAddedEvents from "./MyEvents/MyAddedEvents";
-import MyImpact from "./MyImpact";
+import MyImpact from "./MyImpact/MyImpact";
 import Notifications from "./Notifications";
 import Support from "./Support";
 
