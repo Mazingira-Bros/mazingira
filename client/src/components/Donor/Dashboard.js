@@ -358,13 +358,14 @@ function Dashboard() {
                         <div className="flex flex-col h-full p-4">
                           {/* ***********************************************New-Donation Button*************************************************************** */}
 
-                          <button
-                            className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md mb-4 flex items-center justify-center"
-                            onClick={handleNewDonationClick} // Add the onClick event handler here
-                          >
-                            <FaDonate className="mr-2" />
-                            <span>New-Donation</span>
-                          </button>
+<button
+className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md mb-4 flex items-center justify-center"
+onClick={handleNewDonationClick} // Add the onClick event handler here
+>
+<FaDonate className="mr-2" />
+<span>New-Donation</span>
+</button>
+
 
                           {/* ***********************************************End of New-Donation Button*************************************************************** */}
 
@@ -504,13 +505,14 @@ function Dashboard() {
                         <BeneficiaryStoriesContent stories={stories} />
                       )}
 
-                      {selectedContent === "beneficiary-stories" &&
-                        !isWelcomeShown && (
-                          <BeneficiaryModal
-                            setIsWelcomeShown={setIsWelcomeShown}
-                          />
-                        )}
-                    </div>
+
+
+/>
+}
+
+{selectedContent === 'beneficiary-stories' && !isWelcomeShown && < BeneficiaryModal setIsWelcomeShown={setIsWelcomeShown}/>}
+</div>
+
 
                     {/*******************End of Benficiary Content ********************************************** */}
                   </div>

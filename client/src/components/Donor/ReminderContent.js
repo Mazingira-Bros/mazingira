@@ -9,7 +9,7 @@ function ReminderContent({ reminder, onReminder }) {
   };
 
   return (
-
+    
     <div className="flex-1 ml-4 mt-6">
       <h2 className="text-gray-900 font-bold text-2xl mb-4"></h2>
       <div className="">

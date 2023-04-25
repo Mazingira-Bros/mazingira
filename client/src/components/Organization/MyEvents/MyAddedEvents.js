@@ -194,13 +194,14 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { FaEdit, FaTrash } from 'react-icons/fa';
+import { FaEdit, FaTrash, FaMapMarkerAlt } from 'react-icons/fa';
 
 function MyAddedEvents() {
   const [events, setEvents] = useState([]);
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [formData, setFormData] = useState({
+    location: '',
     title: '',
     date: '',
     time: '',
@@ -233,6 +234,7 @@ function MyAddedEvents() {
   const handleEdit = (event) => {
     setSelectedEvent(event);
     setFormData({
+      location: event.location,
       title: event.title,
       date: event.date,
       time: event.time,
@@ -281,11 +283,12 @@ function MyAddedEvents() {
   }
   return (
 <div className="mt-6 bg-[#f2efc5]  ">
-{/* <h1 className="text-3xl font-bold text-center py-4">My Added Events</h1> */}
+
 
 <div className="grid gap-2 md:gap-4">
+<h1 className="text-3xl font-bold text-center py-4 cardevent ">My Added Events</h1>
   {events.map((event) => (
-    <div key={event.id} className="card p-4 border-b border-gray-200 flex items-start">
+    <div key={event.id} className="cardevent p-4 border-b border-gray-200 flex items-start">
       {event.poster && (
         <div className="mr-4 flex-none">
           <img
@@ -317,12 +320,18 @@ function MyAddedEvents() {
   <p className="text-gray-800">{event.description}</p>
 </div>
 
+<div className="mt-4 flex justify-end">
+  <div className="bg-gray-100 rounded-md p-2 mt-2 shadow-md flex items-center" style={{ boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.2)" }}>
+    <FaMapMarkerAlt className="mr-2 text-gray-500" />
+    <p className="text-gray-800">{event.location}</p>
+  </div>
 
+  <div className="ml-auto">
+    <button onClick={() => handleEdit(event)} className="mr-2 text-blue-500 hover:text-blue-700"><FaEdit />Edit</button>
+    <button onClick={() => handleDelete(event.id)} className="text-red-500 hover:text-red-700"><FaTrash/>Delete</button>
+  </div>
+</div>
 
-        <div className="mt-4 flex justify-end">
-          <button onClick={() => handleEdit(event)} className="mr-2 text-blue-500 hover:text-blue-700"><FaEdit />Edit</button>
-          <button onClick={() => handleDelete(event.id)} className="text-red-500 hover:text-red-700"><FaTrash/>Delete</button>
-        </div>
       </div>
     </div>
   ))}
@@ -341,7 +350,8 @@ function MyAddedEvents() {
 
         <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
-        <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+        <div className="inline-block impact-modal align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+        style={{ width: '600px', height: '400px' }}>
           <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
             <h2 className="text-lg font-medium mb-4">Edit Event</h2>
             <form>
@@ -351,6 +361,8 @@ function MyAddedEvents() {
               <input type="date" name="date" value={formData.date} onChange={handleFormChange} className="border border-gray-300 rounded-md py-2 px-3 mb-4 w-full" />
               <label className="block mb-2">Time:</label>
               <input type="time" name="time" value={formData.time} onChange={handleFormChange} className="border border-gray-300 rounded-md py-2 px-3 mb-4 w-full" />
+              <label className="block mb-2">Location:</label>
+              <input type="location" name="time" value={formData.location} onChange={handleFormChange} className="border border-gray-300 rounded-md py-2 px-3 mb-4 w-full" />
               <label className="block mb-2">Description:</label>
               <textarea name="description" value={formData.description} onChange={handleFormChange}
 

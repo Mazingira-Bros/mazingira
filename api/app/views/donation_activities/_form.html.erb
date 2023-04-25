@@ -1,0 +1,62 @@
+<%= form_with(model: donation_activity) do |form| %>
+  <% if donation_activity.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(donation_activity.errors.count, "error") %> prohibited this donation_activity from being saved:</h2>
+
+      <ul>
+        <% donation_activity.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :total_donations, style: "display: block" %>
+    <%= form.number_field :total_donations %>
+  </div>
+
+  <div>
+    <%= form.label :monthly_donations, style: "display: block" %>
+    <%= form.number_field :monthly_donations %>
+  </div>
+
+  <div>
+    <%= form.label :average_donation, style: "display: block" %>
+    <%= form.number_field :average_donation %>
+  </div>
+
+  <div>
+    <%= form.label :month, style: "display: block" %>
+    <%= form.text_field :month %>
+  </div>
+
+  <div>
+    <%= form.label :visits, style: "display: block" %>
+    <%= form.number_field :visits %>
+  </div>
+
+  <div>
+    <%= form.label :signups, style: "display: block" %>
+    <%= form.number_field :signups %>
+  </div>
+
+  <div>
+    <%= form.label :active_users, style: "display: block" %>
+    <%= form.number_field :active_users %>
+  </div>
+
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.date_field :date %>
+  </div>
+
+  <div>
+    <%= form.label :donations, style: "display: block" %>
+    <%= form.number_field :donations %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

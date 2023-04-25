@@ -14,7 +14,7 @@
     //     alert('Failed to donate. Please try again later.');
     //   }
     // };
-
+    
 
 
 
@@ -29,20 +29,20 @@ function NewDonationContent({ organization, onDonate, onAddToDonationList }) {
     const [isDonated, setIsDonated] = useState(false);
     const [orgData, setOrgData] = useState(organization);
     const [addedToDonationList, setAddedToDonationList] = useState(false);
-
+    
     // Define state for modal visibility
+   
 
-
-
+  
     const handleDonate = () => {
       onDonate(orgData?.id);
       setIsDonated(true);
     };
 
-
+  
     const handleAddToDonationList = () => {
       onAddToDonationList(orgData?.id);
-
+  
       // Update the state to reflect that the button has been clicked
       setAddedToDonationList(true);
     };
@@ -50,9 +50,9 @@ function NewDonationContent({ organization, onDonate, onAddToDonationList }) {
 
   return (
     <>
-
+    
     <div className="bg-gray-100 shadow-md rounded-md p-4">
-
+      
     {/* <h2 className="text-2xl font-bold mb-4">Donation History</h2> */}
     <div className="flex-1 mr-6  mt-6">
     {/* md:pl-80  */}
@@ -92,10 +92,10 @@ function NewDonationContent({ organization, onDonate, onAddToDonationList }) {
       </div>
     </div>
   </div>
-
+  
   </div>
   </>
-
+  
   );
 }
 

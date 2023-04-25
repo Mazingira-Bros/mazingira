@@ -4,8 +4,8 @@
 
 
 body {
-  background-color: #fff5e1;
-
+  background-color: #f2efc5;
+ 
 }
 
 
@@ -222,4 +222,36 @@ body {
   background-image: linear-gradient(to bottom, #1abc9c, #ffffff);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
+
+.max-w-md {
+  max-height: 400px; /* set the maximum height of the parent element */
+  overflow-y: auto; /* add a vertical scrollbar if the content overflows */
+}
+
+.p-6 {
+  height: auto; /* set the height of the child element to auto to adjust to the parent's height */
+}
+
+.cardimpact {
+  border-bottom: 2px solid black;
+}
+
+.cardevent {
+  border-bottom: 2px solid #8f7300;
+}
+
+.impact-modal {
+  
+  overflow-y: auto; /* add a vertical scrollbar if the content overflows */
+}
+
+.p-7 {
+  height: auto; /* set the height of the child element to auto to adjust to the parent's height */
+}
+
+
+.text-center {
+  text-align: center;
+}
+
 
