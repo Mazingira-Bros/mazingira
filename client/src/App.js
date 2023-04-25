@@ -30,7 +30,7 @@ function App() {
         <Routes>
           <Route exact path="/" Component={LandingPage} /> 
           <Route exact path="/organization-login" Component={OrgLogin} /> 
-          <Route exact path="/donor-login" Component={DonorLogin} /> 
+          <Route exact path="/login" Component={DonorLogin} /> 
           <Route exact path="/admin-login" Component={AdminLogin} /> 
           <Route exact path="/donorregistration" Component={GeneralRegistrationForm} />
           <Route exact path="/learnmore" Component={LearnMore} /> 
