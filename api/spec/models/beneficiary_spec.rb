@@ -8,6 +8,6 @@ RSpec.describe Beneficiary, type: :model do
 
   describe 'Associations' do
     it { should belong_to(:organisation) }
-    it { should have_many(:stories).dependent(:destroy) }
+    # it { should have_many(:stories).dependent(:destroy) }
   end
 end

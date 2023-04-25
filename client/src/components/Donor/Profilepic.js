@@ -6,7 +6,7 @@
 // function ProfilePicture({ profilePicture, setProfilePicture, initialProfilePicture }) {
 //   const [showModal, setShowModal] = useState(false);
 //   const [picture, setPicture] = useState(initialProfilePicture);
-  
+
 
 //   const handleUpload = (event) => {
 //     const file = event.target.files[0];
@@ -102,7 +102,7 @@ function ProfilePicture({ profilePicture, setProfilePicture, initialProfilePictu
         {picture ? (
           <img
             src={picture}
-            alt="Profile Picture"
+            alt="Profile "
             className="w-30 h-20 rounded-full"
           />
         ) : (
