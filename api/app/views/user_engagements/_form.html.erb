@@ -1,0 +1,57 @@
+<%= form_with(model: user_engagement) do |form| %>
+  <% if user_engagement.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user_engagement.errors.count, "error") %> prohibited this user_engagement from being saved:</h2>
+
+      <ul>
+        <% user_engagement.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :total_users, style: "display: block" %>
+    <%= form.number_field :total_users %>
+  </div>
+
+  <div>
+    <%= form.label :active_users, style: "display: block" %>
+    <%= form.number_field :active_users %>
+  </div>
+
+  <div>
+    <%= form.label :inactive_users, style: "display: block" %>
+    <%= form.number_field :inactive_users %>
+  </div>
+
+  <div>
+    <%= form.label :month, style: "display: block" %>
+    <%= form.text_field :month %>
+  </div>
+
+  <div>
+    <%= form.label :visits, style: "display: block" %>
+    <%= form.number_field :visits %>
+  </div>
+
+  <div>
+    <%= form.label :signups, style: "display: block" %>
+    <%= form.number_field :signups %>
+  </div>
+
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.date_field :date %>
+  </div>
+
+  <div>
+    <%= form.label :donations, style: "display: block" %>
+    <%= form.number_field :donations %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

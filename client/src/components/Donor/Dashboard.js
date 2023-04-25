@@ -62,12 +62,12 @@ function Dashboard() {
         "Content-Type": "application/json",
       },
     })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Failed to logout");
-      }
-      // Redirect to login page after successful logout
-      alert("logged out succefully"); // "Session destroyed"
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to logout");
+        }
+        // Redirect to login page after successful logout
+        alert("logged out succefully"); // "Session destroyed"
         window.location.href = "/login";
       })
       .catch((error) => {
@@ -242,19 +242,20 @@ function Dashboard() {
         console.error("Failed to fetch beneficiary-stories data:", error);
       }
     };
-    fetchData();  const handleLogout = () => {
+    fetchData();
+    const handleLogout = () => {
       fetch("http://localhost:3000/logout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
       })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to logout");
-        }
-        // Redirect to login page after successful logout
-        alert("logged out succefully"); // "Session destroyed"
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to logout");
+          }
+          // Redirect to login page after successful logout
+          alert("logged out succefully"); // "Session destroyed"
           window.location.href = "/login";
         })
         .catch((error) => {
