@@ -6,14 +6,14 @@ class DonationActivitiesController < ApplicationController
     render json: donation_activities = DonationActivity.all
   end
 
-  # GET /donation_activities/1 or /donation_activities/1.json
+  # GET /donation_activities/1 
   def show
     render json: @donation_activity || { error: "Donation activity not found" }, status: :not_found  
   end
 
   
 
-  # POST /donation_activities or /donation_activities.json
+  # POST /donation_activities 
   def create
     @donation_activity = DonationActivity.new(donation_activity_params)
 
