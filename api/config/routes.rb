@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :notifications
+  resources :users
   resources :donation_activities
   resources :user_engagements
   resources :messages

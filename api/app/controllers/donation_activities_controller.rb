@@ -8,7 +8,8 @@ class DonationActivitiesController < ApplicationController
 
   # GET /donation_activities/1 or /donation_activities/1.json
   def show
-    render json: @donation_activity || { error: "Donation activity not found" }, status: :not_found  end
+    render json: @donation_activity || { error: "Donation activity not found" }, status: :not_found  
+  end
 
   
 
