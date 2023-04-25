@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_17_125741) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_24_193814) do
   create_table "admins", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -28,6 +28,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_125741) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["organisation_id"], name: "index_beneficiaries_on_organisation_id"
+  end
+
+  create_table "donation_activities", force: :cascade do |t|
+    t.integer "total_donations"
+    t.integer "monthly_donations"
+    t.integer "average_donation"
+    t.string "month"
+    t.integer "visits"
+    t.integer "signups"
+    t.integer "active_users"
+    t.date "date"
+    t.integer "donations"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "donations", force: :cascade do |t|
@@ -50,6 +64,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_125741) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "poster"
+    t.string "location"
+    t.string "date"
+    t.string "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "inventories", force: :cascade do |t|
     t.integer "organisation_id", null: false
     t.string "image"
@@ -59,6 +84,25 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_125741) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["organisation_id"], name: "index_inventories_on_organisation_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "text"
+    t.string "sender"
+    t.string "attachment"
+    t.datetime "createdAt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string "title"
+    t.text "message"
+    t.datetime "date"
+    t.string "sender"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "organisations", force: :cascade do |t|
@@ -84,13 +128,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_125741) do
 
   create_table "stories", force: :cascade do |t|
     t.string "title"
-    t.text "content"
-    t.integer "beneficiary_id", null: false
-    t.integer "likes"
+    t.integer "organisation_id", null: false
     t.string "image"
+    t.string "summary"
+    t.string "location"
+    t.string "likes"
+    t.string "blogurl"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["beneficiary_id"], name: "index_stories_on_beneficiary_id"
+    t.index ["organisation_id"], name: "index_stories_on_organisation_id"
   end
 
   create_table "transactions", force: :cascade do |t|
@@ -102,11 +148,32 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_125741) do
     t.index ["donation_id"], name: "index_transactions_on_donation_id"
   end
 
+  create_table "user_engagements", force: :cascade do |t|
+    t.integer "total_users"
+    t.integer "active_users"
+    t.integer "inactive_users"
+    t.string "month"
+    t.integer "visits"
+    t.integer "signups"
+    t.date "date"
+    t.integer "donations"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "beneficiaries", "organisations"
   add_foreign_key "donations", "donors"
   add_foreign_key "donations", "organisations"
   add_foreign_key "inventories", "organisations"
   add_foreign_key "reminders", "donations"
-  add_foreign_key "stories", "beneficiaries"
+  add_foreign_key "stories", "organisations"
   add_foreign_key "transactions", "donations"
 end

@@ -28,5 +28,6 @@
 2. [Hilary Mwendia](https://github.com/Stiflerzak)
 3. [Joseph Mwanzia](https://github.com/JoseMwanzia)
 4. [Stephen-Nene](https://github.com/Stephen-nene)
-5. [Bruno Kiptoo](https://github.com/dev5)
+5. [Bruno Kiptoo](https://github.com/BrunoKiptoo)
+6. [Khalid](https://github.com/certihimo)
 ---

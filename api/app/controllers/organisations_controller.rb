@@ -1,6 +1,7 @@
 class OrganisationsController < ApplicationController
   before_action :set_organisation, only: [:show, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
+  skip_before_action :verify_authenticity_token
 
   # GET /organisations
   def index
@@ -51,7 +52,8 @@ class OrganisationsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def organisation_params
-    params.require(:organisation).permit(:logo, :name, :password_digest, :email, :description, :website, :contact_person, :status)
+    params.permit(:logo, :name, :password, :email, :description, :website, :contact_person)
+    # require(:organisation)
   end
 
 end
