@@ -39,7 +39,7 @@ function GeneralRegistration() {
   };
 
   const handleRegistrationRequest = () => {
-    // Submit form data to backend
+    // Submit form data to backendd
   };
 
   const handleSubmit = (e) => {
