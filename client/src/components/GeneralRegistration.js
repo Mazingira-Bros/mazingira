@@ -71,7 +71,8 @@ function GeneralRegistration() {
         if (formData.registrationType === "donor") {
           window.location.href = "/donor-dashboard";
         } else if (formData.registrationType === "organization") {
-          window.location.href = "/organization-dashboard";
+          alert("wait as your account is being vetteed");
+          window.location.href = "/login";
         }
       }
     } catch (error) {

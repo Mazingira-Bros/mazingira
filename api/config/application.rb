@@ -20,6 +20,7 @@ module MazingiraProject
 
     config.api_only = false
 
+
     # Must add these lines!
     # Adding back cookies and session middleware
     config.middleware.use ActionDispatch::Cookies
