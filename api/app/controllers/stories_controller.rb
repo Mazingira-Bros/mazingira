@@ -22,7 +22,7 @@ class StoriesController < ApplicationController
     end
 
     # POST /stories
-    def create 
+    def create
         story = Story.create(story_params)
         render json: story, status: :created
     end
@@ -33,7 +33,11 @@ class StoriesController < ApplicationController
         story.destroy
         head :no_content
     end
-    private 
+    private
+
+    def find_story
+
+    end
 
     def story_params
         params.permit(:title, :content, :likes, :image)

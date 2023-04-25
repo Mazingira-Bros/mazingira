@@ -64,6 +64,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_193814) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "poster"
+    t.string "location"
+    t.string "date"
+    t.string "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "inventories", force: :cascade do |t|
     t.integer "organisation_id", null: false
     t.string "image"
@@ -117,13 +128,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_193814) do
 
   create_table "stories", force: :cascade do |t|
     t.string "title"
-    t.text "content"
-    t.integer "beneficiary_id", null: false
-    t.integer "likes"
+    t.integer "organisation_id", null: false
     t.string "image"
+    t.string "summary"
+    t.string "location"
+    t.string "likes"
+    t.string "blogurl"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["beneficiary_id"], name: "index_stories_on_beneficiary_id"
+    t.index ["organisation_id"], name: "index_stories_on_organisation_id"
   end
 
   create_table "transactions", force: :cascade do |t|
@@ -161,6 +174,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_193814) do
   add_foreign_key "donations", "organisations"
   add_foreign_key "inventories", "organisations"
   add_foreign_key "reminders", "donations"
-  add_foreign_key "stories", "beneficiaries"
+  add_foreign_key "stories", "organisations"
   add_foreign_key "transactions", "donations"
 end

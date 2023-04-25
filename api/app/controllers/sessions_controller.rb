@@ -1,16 +1,21 @@
 class SessionsController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [:login]
-
+  skip_before_action :verify_authenticity_token, only: :create, :
 
   def create
     user = find_user(params[:email], params[:password])
     if user
-      cookies.signed[:user_id] = user.id
-      render json: user, status: :ok
+      session[:user_id] = user.id
+      render json: { user: user, role: user.class.name }, status: :ok
     else
       render json: { error: 'Invalid email or password' }, status: :unauthorized
     end
   end
+
+  def destroy
+    session.delete(:user_id)
+    render json: { message: 'Session destroyed' }, status: :ok
+  end
+
 
   private
 
