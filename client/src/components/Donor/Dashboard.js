@@ -62,12 +62,12 @@ function Dashboard() {
         "Content-Type": "application/json",
       },
     })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Failed to logout");
-      }
-      // Redirect to login page after successful logout
-      alert("logged out succefully"); // "Session destroyed"
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to logout");
+        }
+        // Redirect to login page after successful logout
+        alert("logged out succefully"); // "Session destroyed"
         window.location.href = "/login";
       })
       .catch((error) => {
@@ -242,19 +242,20 @@ function Dashboard() {
         console.error("Failed to fetch beneficiary-stories data:", error);
       }
     };
-    fetchData();  const handleLogout = () => {
+    fetchData();
+    const handleLogout = () => {
       fetch("http://localhost:3000/logout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
       })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to logout");
-        }
-        // Redirect to login page after successful logout
-        alert("logged out succefully"); // "Session destroyed"
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to logout");
+          }
+          // Redirect to login page after successful logout
+          alert("logged out succefully"); // "Session destroyed"
           window.location.href = "/login";
         })
         .catch((error) => {
@@ -358,14 +359,13 @@ function Dashboard() {
                         <div className="flex flex-col h-full p-4">
                           {/* ***********************************************New-Donation Button*************************************************************** */}
 
-<button
-className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md mb-4 flex items-center justify-center"
-onClick={handleNewDonationClick} // Add the onClick event handler here
->
-<FaDonate className="mr-2" />
-<span>New-Donation</span>
-</button>
-
+                          <button
+                            className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md mb-4 flex items-center justify-center"
+                            onClick={handleNewDonationClick} // Add the onClick event handler here
+                          >
+                            <FaDonate className="mr-2" />
+                            <span>New-Donation</span>
+                          </button>
 
                           {/* ***********************************************End of New-Donation Button*************************************************************** */}
 
@@ -505,14 +505,13 @@ onClick={handleNewDonationClick} // Add the onClick event handler here
                         <BeneficiaryStoriesContent stories={stories} />
                       )}
 
-
-
-/>
-}
-
-{selectedContent === 'beneficiary-stories' && !isWelcomeShown && < BeneficiaryModal setIsWelcomeShown={setIsWelcomeShown}/>}
-</div>
-
+                      {selectedContent === "beneficiary-stories" &&
+                        !isWelcomeShown && (
+                          <BeneficiaryModal
+                            setIsWelcomeShown={setIsWelcomeShown}
+                          />
+                        )}
+                    </div>
 
                     {/*******************End of Benficiary Content ********************************************** */}
                   </div>
