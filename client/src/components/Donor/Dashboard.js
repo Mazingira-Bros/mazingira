@@ -104,7 +104,7 @@ function Dashboard() {
     // Fetch organizations data from backend API
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/organizations');
+        const response = await fetch('http://localhost:3000/organisations');
         const data = await response.json();
         // Update state with fetched data
         setorganizations(data);
