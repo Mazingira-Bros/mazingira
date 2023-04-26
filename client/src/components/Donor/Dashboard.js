@@ -138,9 +138,10 @@ function Dashboard() {
     // Fetch organizations data from backend API
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/organizations");
+        const response = await fetch("http://localhost:3000/organisations");
         const data = await response.json();
         // Update state with fetched data
+        console.log(data)
         setorganizations(data);
       } catch (error) {
         console.error("Failed to fetch organizations data:", error);
@@ -168,6 +169,7 @@ function Dashboard() {
         const data = await response.json();
         // Update state with fetched data
         setReminders(data);
+        // console.log(data)
       } catch (error) {
         console.error("Failed to fetch organizations data:", error);
       }
@@ -243,26 +245,7 @@ function Dashboard() {
       }
     };
     fetchData();
-    const handleLogout = () => {
-      fetch("http://localhost:3000/logout", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Failed to logout");
-          }
-          // Redirect to login page after successful logout
-          alert("logged out succefully"); // "Session destroyed"
-          window.location.href = "/login";
-        })
-        .catch((error) => {
-          console.error(error);
-          // Handle error
-        });
-    };
+
   }, []);
 
   function handleBeneficiary(beneficiary) {

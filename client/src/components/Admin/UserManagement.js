@@ -8,7 +8,7 @@ function UserManagement() {
 
   useEffect(() => {
     setLoading(true);
-    fetch('http://localhost:5000/users')
+    fetch('http://localhost:5000/organisations')
       .then(res => res.json())
       .then(data => {
         setUsers(data);

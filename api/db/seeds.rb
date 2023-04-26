@@ -31,7 +31,7 @@ puts "📦 Creating organisations..."
     website: Faker::Internet.url,
     contact_person: Faker::Name.name,
     phone_number: Faker::PhoneNumber.phone_number,
-    status: rand(0..2)
+    status: rand(0..1)
   )
 end
 puts "✨ Created #{Organisation.count} organizations";puts
