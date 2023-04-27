@@ -2,21 +2,14 @@
 
 import React, { useState, useEffect } from 'react';
 
-
 function TransactionHistory() {
   const [donationData, setDonationData] = useState([]);
-  const [donorName, setDonorName] = useState('');
 
   useEffect(() => {
     // Fetch donation data from server
-    fetch('/donation-data')
+    fetch('http://localhost:5000/donation-data')
       .then(response => response.json())
       .then(data => setDonationData(data));
-
-    // Fetch donor name from server
-    fetch('/donor-name')
-      .then(response => response.json())
-      .then(data => setDonorName(data.name));
   }, []);
 
   const renderTransactionHistory = () => {
@@ -57,6 +50,8 @@ function TransactionHistory() {
     return <p className="text-gray-500 mb-4">{message}</p>;
   };
 
+  const donorName = donationData.length > 0 ? donationData[0].donorName : '';
+
   return (
     <div className="max-w-2xl mx-auto mt-8">
       <h1 className="text-3xl font-bold mb-4">My Transactions</h1>
@@ -72,6 +67,7 @@ function TransactionHistory() {
 }
 
 export default TransactionHistory;
+
 
 
 
