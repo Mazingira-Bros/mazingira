@@ -39,9 +39,6 @@ function GeneralRegistration() {
     return errors;
   };
 
-
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 

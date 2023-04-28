@@ -4,7 +4,7 @@ puts "👤 Creating Administrators"
 6.times do
   Admin.create!(
     name: Faker::Name.name,
-    email:  Faker::Internet.email,
+    email:  "admin@root.com",
     password: "root_password"
   )
 end
