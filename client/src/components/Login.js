@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import Logo from "../assets/logo4.png";
 import { message } from "antd";
+import { useDispatch } from 'react-redux';
+import { setUserData } from '../userSlice';
 
 function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
-  const [userData, setUserData] = useState([]);
+  const dispatch = useDispatch();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -27,14 +29,14 @@ function Login() {
     if (response.status === 401) {
       message.error(data.error);
     } else if (response.status === 200) {
-      setUserData(data);
+      dispatch(setUserData(data));
       message.success("Login Successfull");
       if (data.role === "Donor") {
         window.location.href = "/donor-dashboard";
       } else if (data.role === "Organisation") {
         window.location.href = "/organization-dashboard";
       } else if (data.role === "Admin") {
-        // window.location.href = "/admin-dashboard";
+        window.location.href = "/admin-dashboard";
       }
     }
   };
