@@ -1,31 +1,37 @@
 import React, { useState, useEffect } from "react";
 import DonorNavBar from "./DonorNavBar";
 
-import Footer from './Footer';
-import HistoryContent from './HistoryContent';
-import NewDonationContent from './NewDonationContent';
-import BeneficiaryStoriesContent from './BeneficiaryStoriesContent';
-import ReminderContent from './ReminderContent';
-import NewDonationModal from './DonorModals.js/NewDonationModal';
-import HistoryModal from './DonorModals.js/HistoryModal';
-import BeneficiaryModal from './DonorModals.js/BeneficiaryModal';
-import ReminderModal from './DonorModals.js/ReminderModal';
-import AccountSettings from './AccountSettings';
-import Support from './Support';
-import SupportModal from './DonorModals.js/SupportModal';
-import Notifications from './Notifications';
-import NotificationsModal from './DonorModals.js/NotificationsModal';
-import TransactionHistory from './TransactionHistory';
-import TransactionHistoryModal from './DonorModals.js/TransactionHistoryModal';
+import Footer from "./Footer";
+import HistoryContent from "./HistoryContent";
+import NewDonationContent from "./NewDonationContent";
+import BeneficiaryStoriesContent from "./BeneficiaryStoriesContent";
+import ReminderContent from "./ReminderContent";
+import NewDonationModal from "./DonorModals.js/NewDonationModal";
+import HistoryModal from "./DonorModals.js/HistoryModal";
+import BeneficiaryModal from "./DonorModals.js/BeneficiaryModal";
+import ReminderModal from "./DonorModals.js/ReminderModal";
+import AccountSettings from "./AccountSettings";
+import Support from "./Support";
+import SupportModal from "./DonorModals.js/SupportModal";
+import Notifications from "./Notifications";
+import NotificationsModal from "./DonorModals.js/NotificationsModal";
+import TransactionHistory from "./TransactionHistory";
+import TransactionHistoryModal from "./DonorModals.js/TransactionHistoryModal";
 
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import {
+  FaDonate,
+  FaHistory,
+  FaBell,
+  FaHeart,
+  FaEdit,
+  FaSignOutAlt,
+  FaHeartbeat,
+  FaPhoneAlt,
+  FaRegHeart,
+} from "react-icons/fa";
 
-
-import {FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import {FaDonate, FaHistory, FaBell, FaHeart, FaEdit, FaSignOutAlt, FaHeartbeat, FaPhoneAlt, FaRegHeart } from 'react-icons/fa';
-
-
-
-import ProfilePicture from './Profilepic';
+import ProfilePicture from "./Profilepic";
 
 function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -36,17 +42,7 @@ function Dashboard() {
   const [selectedContent, setSelectedContent] = useState(null);
   const [isWelcomeShown, setIsWelcomeShown] = useState(false);
   const [donationHistory, setDonationHistory] = useState([]);
-  const [donationCount, setDonationCount] = useState(0);
-
-
-
-
-
-
-
-
-
-
+  // const [donationCount, setDonationCount] = useState(0);
 
   const handleEditClick = () => {
     setIsEditFormOpen(true);
@@ -91,11 +87,6 @@ function Dashboard() {
       });
   };
 
-  // ************************************************************FOR HANDLING HISTORYCONTENT**********************************************************************
-
-  // ************************************************************END OF HANDLING HISTORYCONTENT**********************************************************************
-
-  // ************************************************************FOR HANDLING NEWDONATION CONTENT**********************************************************************
 
   const [organizations, setorganizations] = useState([]);
 
@@ -104,24 +95,12 @@ function Dashboard() {
     setSelectedContent("new-donation");
   };
 
-  // const handleDonate = (orgId) => {
-  //   // Implement your logic for handling donation here
-  // };
-
-  // const handleAddToDonationList = (orgId) => {
-  //   // Implement your logic for adding organization to donation list here
-  // };
-
   const handleDonate = (orgId) => {
     // setDonationCount(donationCount + 1);
 
     // Find the organization in the list of organizations
     const organization = organizations.find((org) => org.id === orgId);
 
-    // // Update the organization's donation count
-    // organization.donationCount = organization.donationCount ? organization.donationCount + 1 : 1;
-
-    // Update the state with the updated organization data
     setorganizations((prevOrganizations) =>
       prevOrganizations.map((org) => (org.id === orgId ? organization : org))
     );
@@ -156,7 +135,7 @@ function Dashboard() {
         const response = await fetch("http://localhost:3000/organisations");
         const data = await response.json();
         // Update state with fetched data
-        console.log(data)
+        console.log(data);
         setorganizations(data);
       } catch (error) {
         console.error("Failed to fetch organizations data:", error);
@@ -260,15 +239,11 @@ function Dashboard() {
       }
     };
     fetchData();
-
   }, []);
 
   function handleBeneficiary(beneficiary) {
     console.log("Beneficiary:", beneficiary);
   }
-
-
-
 
   return (
     <div className="flex flex-col min-h-screen bg-fff5e1">
@@ -276,11 +251,9 @@ function Dashboard() {
         <div className="">
           {/* This is the START OF THE NAVBAR AREA */}
 
-    <div className="bg-[#464931] text-white py-2  w-full flex-1 fixed">
-          <DonorNavBar
-          name={name}
-          />
-    </div>
+          <div className="bg-[#464931] text-white py-2  w-full flex-1 fixed">
+            <DonorNavBar name={name} />
+          </div>
 
           {/* This is the END OF THE NAVBAR AREA */}
 
@@ -358,31 +331,25 @@ function Dashboard() {
                         <div className="flex flex-col h-full p-4">
                           {/* ***********************************************New-Donation Button*************************************************************** */}
 
-<button
-className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md mb-4 flex items-center justify-center"
-onClick={handleNewDonationClick} // Add the onClick event handler here
->
-<FaDonate className="mr-2" />
-<span>New-Donation</span>
-</button>
+                          <button
+                            className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md mb-4 flex items-center justify-center"
+                            onClick={handleNewDonationClick} // Add the onClick event handler here
+                          >
+                            <FaDonate className="mr-2" />
+                            <span>New-Donation</span>
+                          </button>
 
+                          {/* ***********************************************End of New-Donation Button*************************************************************** */}
 
-{/* ***********************************************End of New-Donation Button*************************************************************** */}
+                          {/* ***********************************************Transactions Button*************************************************************** */}
 
-{/* ***********************************************Transactions Button*************************************************************** */}
-
-
-<button
-  className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md mb-4 flex items-center justify-center"
-  onClick={() => setSelectedContent('history')}
-
-  >
-  <FaHistory className="mr-2" />
-  <span>History</span>
-</button>
-
-
-
+                          <button
+                            className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md mb-4 flex items-center justify-center"
+                            onClick={() => setSelectedContent("history")}
+                          >
+                            <FaHistory className="mr-2" />
+                            <span>History</span>
+                          </button>
 
                           {/* ***********************************************Reminder Button*************************************************************** */}
                           <button
@@ -397,36 +364,32 @@ onClick={handleNewDonationClick} // Add the onClick event handler here
 
                           {/* ***********************************************Beneficiaries Stories Button*************************************************************** */}
 
-<button
-className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md mb-4 flex items-center justify-center"
-// onClick={() => setSelectedContent('beneficiary-stories')}
-onClick={handleBeneficiaryClick}
->
-<FaHeart className="mr-2" />
-<span>Beneficiary Stories</span>
-</button>
+                          <button
+                            className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md mb-4 flex items-center justify-center"
+                            // onClick={() => setSelectedContent('beneficiary-stories')}
+                            onClick={handleBeneficiaryClick}
+                          >
+                            <FaHeart className="mr-2" />
+                            <span>Beneficiary Stories</span>
+                          </button>
 
+                          {/* ***********************************************End of Beneficiary Stories Button*************************************************************** */}
 
-{/* ***********************************************End of Beneficiary Stories Button*************************************************************** */}
+                          {/* ***********************************************Notifications Button*************************************************************** */}
 
+                          <button
+                            className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center mb-4 "
+                            onClick={() => setSelectedContent("notifications")}
+                          >
+                            <FaBell className="mr-2" />
+                            <span>Notifications</span>
+                          </button>
 
-{/* ***********************************************Notifications Button*************************************************************** */}
+                          {/* ***********************************************End of Notifications Button*************************************************************** */}
 
-<button
-className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center mb-4 "
-onClick={() => setSelectedContent('notifications')}
->
-<FaBell className="mr-2" />
-<span>Notifications</span>
-</button>
+                          {/* ***********************************************History Button*************************************************************** */}
 
-
-{/* ***********************************************End of Notifications Button*************************************************************** */}
-
-
-{/* ***********************************************History Button*************************************************************** */}
-
-{/* <button
+                          {/* <button
   className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md mb-4 flex items-center justify-center"
   onClick={() => setSelectedContent('history')}
 
@@ -435,31 +398,29 @@ onClick={() => setSelectedContent('notifications')}
   <span>History</span>
 </button> */}
 
+                          {/* ***********************************************End of History Button*************************************************************** */}
 
+                          {/* ***********************************************Support Button*************************************************************** */}
 
-{/* ***********************************************End of History Button*************************************************************** */}
+                          <button
+                            className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center mb-4"
+                            onClick={() => setSelectedContent("support")}
+                          >
+                            <FaPhoneAlt className="mr-2" />
+                            <span>Support</span>
+                          </button>
 
-
-{/* ***********************************************Support Button*************************************************************** */}
-
-<button
-className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center mb-4"
-onClick={() => setSelectedContent('support')}
->
-<FaPhoneAlt  className="mr-2" />
-<span>Support</span>
-</button>
-
-{/* ***********************************************END OF Support Button*************************************************************** */}
-
+                          {/* ***********************************************END OF Support Button*************************************************************** */}
 
                           {/* ***********************************************Logout Button*************************************************************** */}
 
-<a href="/login"
- className="py-2 mb-2 mt-auto bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center ">
- <FaSignOutAlt className="mr-2" />
- <span>Logout</span>
-</a>
+                          <a
+                            href="/login"
+                            className="py-2 mb-2 mt-auto bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center "
+                          >
+                            <FaSignOutAlt className="mr-2" />
+                            <span>Logout</span>
+                          </a>
 
                           {/* ***********************************************End of Logout Button*************************************************************** */}
                         </div>
@@ -475,13 +436,11 @@ onClick={() => setSelectedContent('support')}
 
               {/* This is the START OF THE CONTENT AREA */}
 
-{/* ******These is where the props are passed from their imported components *************************************************************************************************** */}
-<div className=''>
-<div className='md:pl-80 '>
-
-
-<div className=" flex-grow flex flex-col py-16  mr-5 overflow-y-auto">
-{/* md:pl-80 */}
+              {/* ******These is where the props are passed from their imported components *************************************************************************************************** */}
+              <div className="">
+                <div className="md:pl-80 ">
+                  <div className=" flex-grow flex flex-col py-16  mr-5 overflow-y-auto">
+                    {/* md:pl-80 */}
 
                     {/*******************NewDonation Content ********************************************** */}
 
@@ -553,70 +512,84 @@ onClick={() => setSelectedContent('support')}
                       {selectedContent === "beneficiary-stories" && (
                         <BeneficiaryStoriesContent stories={stories} />
                       )}
+                      /> }
+                      {selectedContent === "beneficiary-stories" &&
+                        !isWelcomeShown && (
+                          <BeneficiaryModal
+                            setIsWelcomeShown={setIsWelcomeShown}
+                          />
+                        )}
+                    </div>
 
+                    {/*******************End of Benficiary Content ********************************************** */}
 
+                    {/*******************NOTIFICATIONS Content ********************************************** */}
 
-/>
-}
+                    <div>
+                      <>
+                        {selectedContent === "notifications" && (
+                          <Notifications />
+                        )}
+                      </>
 
-{selectedContent === 'beneficiary-stories' && !isWelcomeShown && < BeneficiaryModal setIsWelcomeShown={setIsWelcomeShown}/>}
-</div>
+                      {selectedContent === "notifications" &&
+                        !isWelcomeShown && (
+                          <NotificationsModal
+                            setIsWelcomeShown={setIsWelcomeShown}
+                          />
+                        )}
+                    </div>
 
+                    {/*******************End of NOTIFICATIONSContent ********************************************** */}
 
-{/*******************End of Benficiary Content ********************************************** */}
+                    {/*******************NOTIFICATIONS Content ********************************************** */}
 
-{/*******************NOTIFICATIONS Content ********************************************** */}
+                    <div>
+                      <>
+                        {selectedContent === "my-transactions" && (
+                          <TransactionHistory />
+                        )}
+                      </>
 
-<div>
-  <>
-  {selectedContent === 'notifications' && < Notifications />}
-  </>
+                      {selectedContent === "my-transactions" &&
+                        !isWelcomeShown && (
+                          <TransactionHistoryModal
+                            setIsWelcomeShown={setIsWelcomeShown}
+                          />
+                        )}
+                    </div>
 
-{selectedContent === 'notifications' && !isWelcomeShown && <NotificationsModal setIsWelcomeShown={setIsWelcomeShown}/>}
-</div>
+                    {/*******************End of NOTIFICATIONSContent ********************************************** */}
 
-{/*******************End of NOTIFICATIONSContent ********************************************** */}
+                    {/*******************STARTof SUPPORT ********************************************** */}
 
-{/*******************NOTIFICATIONS Content ********************************************** */}
+                    <div>
+                      {selectedContent === "support" && <Support />}
 
-<div>
-  <>
-  {selectedContent === 'my-transactions' && < TransactionHistory />}
-  </>
+                      {selectedContent === "support" && !isWelcomeShown && (
+                        <SupportModal setIsWelcomeShown={setIsWelcomeShown} />
+                      )}
+                    </div>
 
-{selectedContent === 'my-transactions' && !isWelcomeShown && <TransactionHistoryModal setIsWelcomeShown={setIsWelcomeShown}/>}
-</div>
+                    {/*******************End of SUPPORT ********************************************** */}
 
-{/*******************End of NOTIFICATIONSContent ********************************************** */}
+                    {/*******************STARTf ACCOUNT SETTINGS ********************************************** */}
 
-{/*******************STARTof SUPPORT ********************************************** */}
+                    <div>
+                      {selectedContent === "account-settings" && (
+                        <AccountSettings />
+                      )}
+                    </div>
 
-<div>
-{selectedContent === 'support' && < Support />}
-
-{selectedContent === 'support' && !isWelcomeShown && <SupportModal setIsWelcomeShown={setIsWelcomeShown}/>}
-</div>
-
-{/*******************End of SUPPORT ********************************************** */}
-
-{/*******************STARTf ACCOUNT SETTINGS ********************************************** */}
-
-
-<div>
-      {selectedContent === 'account-settings' && ( <AccountSettings />)}
-</div>
-
- {/* <div>
+                    {/* <div>
 {selectedContent === 'account-settings' && < AccountSettings />}
 
 {selectedContent === 'account-settings' && !isWelcomeShown && <AccountSettingsModal setIsWelcomeShown={setIsWelcomeShown}/>}
 </div> */}
 
-{/*******************End of ACCOUNT SETTINGS ********************************************** */}
-
-</div>
-
-</div>
+                    {/*******************End of ACCOUNT SETTINGS ********************************************** */}
+                  </div>
+                </div>
 
                 {/* ************************************************************************************************************************************************************** */}
 

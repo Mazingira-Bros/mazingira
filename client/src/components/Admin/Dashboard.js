@@ -291,7 +291,7 @@ onClick={() => setSelectedContent('support')}
 
 {/* ***********************************************Logout Button*************************************************************** */}
 
-<a href="/admin-login"
+<a href="/login"
  className="py-2 mb-2 mt-auto bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center ">
  <FaSignOutAlt className="mr-2" />
  <span>Logout</span>

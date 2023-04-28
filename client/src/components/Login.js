@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import Logo from "../assets/logo4.png";
-import { Button, message } from "antd";
+import { message } from "antd";
 
 function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [userData, setUserData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -15,8 +13,6 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    setError("");
     console.log("email:", formData.email, "password:", formData.password);
     const response = await fetch("http://localhost:3000/login", {
       method: "POST",
@@ -26,21 +22,23 @@ function Login() {
       body: JSON.stringify(formData)
     });
     const data = await response.json();
-    setUserData(data);
     console.log(data);
 
     if (response.status === 401) {
-      setError(data.error);
-      message.error("Invalid username or password");
-    } else if (data.role === "Donor") {
-      window.location.href = "/donor-dashboard";
-    } else if (data.role === "Organisation") {
-      window.location.href = "/organization-dashboard";
-    } else if (data.role === "Admin") {
-      window.location.href = "/admin-dashboard";
+      message.error(data.error);
+    } else if (response.status === 200) {
+      setUserData(data);
+      message.success("Login Successfull");
+      if (data.role === "Donor") {
+        window.location.href = "/donor-dashboard";
+      } else if (data.role === "Organisation") {
+        window.location.href = "/organization-dashboard";
+      } else if (data.role === "Admin") {
+        // window.location.href = "/admin-dashboard";
+      }
     }
-    setLoading(false);
   };
+
 
 
   return (
