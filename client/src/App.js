@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import './index.css';
@@ -13,18 +13,15 @@ import AdminDash from './components/Admin/Dashboard';
 // import NewDonationContent from './components/Donor/NewDonationContent';
 // import ReminderContent from './components/Donor/ReminderContent';
 // import Profilepic from '../src/components/Donor/Profilepic'
-import Dashboard from '../src/components/Admin/Dashboard';
-import AdminLogin from '../src/components/Admin/AdminLogin';
-import DonorLogin from '../src/components/Donor/DonorLogin';
-import OrgLogin from '../src/components/Organization/OrgLogin';
+// import AdminLogin from '../src/components/Admin/AdminLogin';
+// import DonorLogin from '../src/components/Donor/DonorLogin';
+// import OrgLogin from '../src/components/Organization/OrgLogin';
 import DonationForm from './components/Donor/DonationForm';
-// import MpesaPayment from './components/Donor/MpesaPayment'
 import MpesaPayment from './components/Donor/MpesaPayment';
 
-import Dashboard from '../src/components/Admin/Dashboard';
-import AdminLogin from '../src/components/Admin/AdminLogin';
+
 import Login from './components/Login';
-import OrgLogin from '../src/components/Organization/OrgLogin';
+
 
 
 
@@ -43,12 +40,13 @@ function App() {
           <Route exact path="/password-reset" Component={PasswordReset} />
           <Route exact path="/donor-dashboard" Component={DonorDashBoard} />
           <Route exact path="/organization-dashboard" Component={OrganizationDahboard} />
+          <Route exact path="/admin-dashboard" Component={AdminDash} />
 
 
 
 
 
-          {/* Add other routes for other components */}
+          {/* /* Add other routes for other components */}
 
         </Routes>
         {/* <DonorNavBar/> */}

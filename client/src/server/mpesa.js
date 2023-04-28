@@ -79,7 +79,7 @@ app.post("/mpesa/stkpush", async (req, res) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(requestBody),
-    agent: httpsAgent,
+    // agent: httpsAgent,
   });
 
   const data = await response.json();

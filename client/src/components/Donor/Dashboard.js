@@ -1,17 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DonorNavBar from "./DonorNavBar";
-import Footer from "./Footer";
-import HistoryContent from "./HistoryContent";
-import NewDonationContent from "./NewDonationContent";
-import BeneficiaryStoriesContent from "./BeneficiaryStoriesContent";
-import ReminderContent from "./ReminderContent";
-import NewDonationModal from "./DonorModals.js/NewDonationModal";
-import HistoryModal from "./DonorModals.js/HistoryModal";
-import BeneficiaryModal from "./DonorModals.js/BeneficiaryModal";
-import ReminderModal from "./DonorModals.js/ReminderModal";
 
-import React, { useState, useEffect } from 'react';
-import DonorNavBar from './DonorNavBar';
 import Footer from './Footer';
 import HistoryContent from './HistoryContent';
 import NewDonationContent from './NewDonationContent';
@@ -278,9 +267,8 @@ function Dashboard() {
     console.log("Beneficiary:", beneficiary);
   }
 
-  {
-    /* ***********************************************End of Beneficiaries Stories *************************************************************** */
-  }
+
+
 
   return (
     <div className="flex flex-col min-h-screen bg-fff5e1">

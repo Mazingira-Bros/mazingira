@@ -15,38 +15,15 @@ import Notifications from "./Notifications";
 import Support from "./Support";
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import {
-  FaBell,
-  FaEdit,
-  FaSignOutAlt,
-  FaMoneyBillAlt,
-  FaCalendarAlt,
-  FaChartPie,
-  FaHeartbeat,
-} from "react-icons/fa";
+import {FaBell, FaEdit, FaSignOutAlt,FaMoneyBillAlt, FaCalendarAlt, FaChartPie, FaHeartbeat, FaPhoneAlt } from 'react-icons/fa';
 
-import OrganizationNavBar from './OrganizationNavBar';
-import Footer from '../Donor/Footer';
-import MyDonationsModal from './OrganizationModals/MyDonationsModal';
-import MyEventsModal from './OrganizationModals/MyEventsModal';
-import MyImpactModal from './OrganizationModals/MyImpactModal';
-import NotificationsModal from './OrganizationModals/NotificationsModal';
-import SupportModal from './OrganizationModals/SupportModal';
-import MyDonations from './MyDonations';
-import MyEvents from './MyEvents/MyEvents';
-import MyAddedEvents from './MyEvents/MyAddedEvents';
-import MyImpact from './MyImpact/MyImpact';
-import Notifications from './Notifications';
-import Support from './Support';
+
+
 import MyImpactStories from './MyImpact/MyImpactStories';
 import AccountSettings from './AccountSettings';
 import AccountSettingsModal from './OrganizationModals/AccountSettingsModal';
 
 
-
-
-import {FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import {FaBell, FaEdit, FaSignOutAlt,FaMoneyBillAlt, FaCalendarAlt, FaChartPie, FaHeartbeat, FaPhoneAlt } from 'react-icons/fa';
 
 import ProfilePicture from '../Donor/Profilepic';
 
