@@ -5,561 +5,258 @@
       "logo": "https://earthjustice.org/wp-content/uploads/ej_logo.svg",
       "image": "https://media.istockphoto.com/id/1327919661/photo/world-earth-day-concept-green-energy-renewable-and-sustainable-resources-environmental-and.jpg?b=1&s=170667a&w=0&k=20&c=7u6TwP6RmGm5e9x78rZ_VS0QZ7JxUQmGaywqfPYdaWs=",
       "name": "Earthjustice",
+      "orgShortCode": "44683",
+      "orgPasskey": "abcdefg1234567",
+      "orgCallbackUrl": "https://mydomain.com/pat",
+      "location": "Kenya",
       "description": "Earthjustice is the United States’ largest environmental law organization, “because the earth needs a good lawyer.” Founded in the 1960s, Earthjustice attorneys have since supported various major environmental wins including the Clean Air Act and the Endangered Species Act. The organization works with activists, national politicians, international policymakers, and individuals to protect and strengthen laws for the benefit of people and a healthy planet. ",
       "email": "Earthjustice @gmail.com",
       "website": "https://earthjustice.org/",
-      "contactPerson": "Mark Einstein"
+      "contactPerson": "Mark Einstein",
+      "profilepic": "https://via.placeholder.com/50"
     },
     {
       "id": 2,
       "logo": "https://media.istockphoto.com/id/1064069544/photo/woman-is-holding-green-leaf-branch-with-painted-hand-pink-soft-background.jpg?s=612x612&w=0&k=20&c=NpzcMkq7sGvUpcde_taUar8e_24UC5o9_Ds-DH1pjuk=",
       "image": "https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGVudmlyb25tZW50YWx8ZW58MHx8MHx8&w=1000&q=80",
       "name": "School Girls Unite",
+      "orgShortCode": "44683",
+      "orgPasskey": "abcdefg1234567",
+      "orgCallbackUrl": "https://mydomain.com/pat",
+      "location": "Kenya",
       "description": "School Girls Unite is a nonprofit on a mission to tackle prejudice against girls worldwide while expanding their freedom and opportunities through education and leadership. The organization believes that education is the best way to end poverty, improve global health, and bring about a more peaceful world. Moreover, according to Project Drawdown's research-based analysis, supporting girls' education is among the top 10 most impactful things we can do to tackle climate change; this emphasizes the interconnectedness of women's rights and sustainability.",
       "email": "School Girls Unite@example.com",
       "website": "https://schoolgirlsunite.org/",
-      "contactPerson": "Jane Smith"
+      "contactPerson": "Jane Smith",
+      "profilepic": "https://via.placeholder.com/50"
     },
     {
       "id": 3,
       "logo": "https://www.fashionrevolution.org/wp-content/themes/fashion-revolution/assets/img/logo.svg",
       "image": "https://st.depositphotos.com/1447173/3140/i/600/depositphotos_31406835-stock-photo-the-aim-is-the-recycling.jpg",
       "name": "Fashion Revolution",
+      "orgShortCode": "44683",
+      "orgPasskey": "abcdefg1234567",
+      "orgCallbackUrl": "https://mydomain.com/pat",
+      "location": "Kenya",
       "description": "Fashion Revolution is a global movement uniting people and brands to work together towards creating a safer, cleaner, and fairer fashion industry. Founded after the Rana Plaza collapse in 2013, Fashion Revolution believes that collaboration across the value chain (from farmers, manufacturers, dye houses, to consumer) is the best way to radically transform the industry. It works with global coordinators to host events every year for an entire week in April—around the anniversary of the Rana Plaza factory collapse—that aim to inspire consumers and brands to take a closer look at how and by whom their clothes were made.",
       "email": "Fashion Revolution@example.com",
       "website": "https://www.fashionrevolution.org/",
-      "contactPerson": "Bob Johnson"
+      "contactPerson": "Bob Johnson",
+      "profilepic": "https://via.placeholder.com/50"
+
     },
     {
       "id": 4,
       "logo": " https://www.nrdc.org/sites/default/files/styles/huge_16x9_100/public/2023-01/future-1536.jpg.webp?itok=yZ1QV2UR ",
       "image": " https://www.nrdc.org/sites/default/files/styles/huge_4x3_100/public/2023-04/daf-donation-earth-day-1258008992-homepage-dropdown.jpg.webp?itok=rEkD4ChE ",
       "name": "Natural Resources Defense Council",
+      "orgShortCode": "44683",
+      "orgPasskey": "abcdefg1234567",
+      "orgCallbackUrl": "https://mydomain.com/pat",
+      "location": "Kenya",
       "description": "The Natural Resources Defense Council (NRDC) is a nonprofit working to safeguard the earth—including its people, plants and animals, and “the natural systems on which all life depends.” Founded in the 1970s by a team of law students and attorneys, it is now a membership-based organization that collaborates with lawyers, activists, scientists, businesses, and individuals to identify the root cause of problems and formulate sustainable solutions. It works internationally to ensure the everybody has the right to clean air, clean water, and healthy wild spaces.",
       "email": " NRDC@example.com",
       "website": " https://www.nrdc.org/ ",
-      "contactPerson": "Alice Brown"
+      "contactPerson": "Alice Brown",
+      "profilepic": "https://via.placeholder.com/50"
     }
   ],
   "reminders": [
-    {
-      "id": 1,
-      "title": "Beach Cleanup",
-      "description": "Join us for a beach clean-up on Saturday at 9am",
-      "date": "2023-04-23rd",
-      "location": "Ocean Beach, San Francisco",
-      "image": " https://www.nrdc.org/sites/default/files/styles/huge_4x3_100/public/2023-04/daf-donation-earth-day-1258008992-homepage-dropdown.jpg.webp?itok=rEkD4ChE "
-    },
-    {
-      "id": 2,
-      "title": "Sustainable Living Forum",
-      "image": "https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGVudmlyb25tZW50YWx8ZW58MHx8MHx8&w=1000&q=80 ",
-      "description": "Don't miss our panel discussion on sustainable living on Wednesday at 6pm",
-      "date": "2023-04-27th",
-      "location": "123 Main St, San Francisco"
-    },
-    {
-      "id": 3,
-      "title": "Community Garden Day",
-      "image": " https://st.depositphotos.com/1447173/3140/i/600/depositphotos_31406835-stock-photo-the-aim-is-the-recycling.jpg ",
-      "description": "Come help us plant the new community garden on Sunday at 10am",
-      "date": "2023-05-01st",
-      "location": "Golden Gate Park, San Francisco"
-    },
-    {
-      "id": 4,
-      "title": "Climate Change March",
-      "image": " https://media.istockphoto.com/id/1327919661/photo/world-earth-day-concept-green-energy-renewable-and-sustainable-resources-environmental-and.jpg?b=1&s=170667a&w=0&k=20&c=7u6TwP6RmGm5e9x78rZ_VS0QZ7JxUQmGaywqfPYdaWs= ",
-      "description": "Join us for a climate change march on Saturday at 2pm",
-      "date": "2023-05-07th",
-      "location": "Civic Center Plaza, San Francisco"
-    },
-    {
-      "id": 5,
-      "title": "Beach Cleanup",
-      "description": "Join us for a beach clean-up on Saturday at 9am",
-      "date": "2023-04-23rd",
-      "location": "Ocean Beach, San Francisco",
-      "image": " https://www.nrdc.org/sites/default/files/styles/huge_4x3_100/public/2023-04/daf-donation-earth-day-1258008992-homepage-dropdown.jpg.webp?itok=rEkD4ChE "
-    },
-    {
-      "id": 6,
-      "title": "Beach Cleanup",
-      "description": "Join us for a beach clean-up on Saturday at 9am",
-      "date": "2023-04-23rd",
-      "location": "Ocean Beach, San Francisco",
-      "image": " https://www.nrdc.org/sites/default/files/styles/huge_4x3_100/public/2023-04/daf-donation-earth-day-1258008992-homepage-dropdown.jpg.webp?itok=rEkD4ChE "
-    },
-    {
-      "id": 7,
-      "title": "Beach Cleanup",
-      "description": "Join us for a beach clean-up on Saturday at 9am",
-      "date": "2023-04-23rd",
-      "location": "Ocean Beach, San Francisco",
-      "image": " https://www.nrdc.org/sites/default/files/styles/huge_4x3_100/public/2023-04/daf-donation-earth-day-1258008992-homepage-dropdown.jpg.webp?itok=rEkD4ChE "
-    },
-    {
-      "id": 8,
-      "title": "Beach Cleanup",
-      "description": "Join us for a beach clean-up on Saturday at 9am",
-      "date": "2023-04-23rd",
-      "location": "Ocean Beach, San Francisco",
-      "image": " https://www.nrdc.org/sites/default/files/styles/huge_4x3_100/public/2023-04/daf-donation-earth-day-1258008992-homepage-dropdown.jpg.webp?itok=rEkD4ChE "
-    }
-  ],
-  "stories": [
-    {
-      "id": 1,
-      "title": "Saving the Turtles",
-      "blogurl": "https://tomorrowfood200274315.wordpress.com/2023/04/04/step-by-step-guide-deploying-an-api-only-ruby-on-rails-application-on-render/",
-      "name": "Earthjustice",
-      "date": "2023-04-23rd",
-      "location": "Costa Rica",
-      "summary": "We helped protect turtle nesting grounds and hatchlings from predators and poachers, and raised awareness about the importance of sea turtle conservation.",
-      "image": "https://images.ctfassets.net/81iqaqpfd8fy/1E7sBF870wYQRIaMn0s7sD/b8763104bbf99c182aad503e2870df97/environmentvol.jpg?h=620&w=1440"
-    },
-    {
-      "id": 2,
-      "title": "Protecting the Amazon",
-      "blogurl": "https://tomorrowfood200274315.wordpress.com/2023/04/04/step-by-step-guide-deploying-an-api-only-ruby-on-rails-application-on-render/",
-      "name": "Fashion Revolution",
-      "date": "2023-04-23rd",
-      "location": "Brazil",
-      "summary": "We worked with local communities to stop deforestation and preserve the biodiversity of the Amazon rainforest.",
-      "image": "https://img.freepik.com/premium-photo/young-responsible-people-doing-community-charity-work-park-group-people-cleaning-together-public-park-saving-environment_1212-7546.jpg"
-    },
-    {
-      "id": 3,
-      "title": "Clean Water for All",
-      "blogurl": "https://tomorrowfood200274315.wordpress.com/2023/04/04/step-by-step-guide-deploying-an-api-only-ruby-on-rails-application-on-render/",
-      "name": "Natural Resources Defense Council",
-      "date": "2023-04-23rd",
-      "location": "India",
-      "summary": "We built wells and provided water filtration systems to give communities access to clean water and prevent water-borne illnesses.",
-      "image": "https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2017/12/20/Pictures/asian-little-girl-helping-tree-father-plant_6cea6b48-e54e-11e7-bd8c-dad1885580ce.jpg"
-    },
-    {
-      "id": 4,
-      "title": "Renewable Energy in Action",
-      "blogurl": "https://tomorrowfood200274315.wordpress.com/2023/04/04/step-by-step-guide-deploying-an-api-only-ruby-on-rails-application-on-render/",
-      "name": "Earthjustice",
-      "date": "2023-04-23rd",
-      "location": "USA",
-      "summary": "We installed solar panels on community buildings and helped households transition to renewable energy, reducing their carbon footprint.",
-      "image": "https://cdn1.matadornetwork.com/blogs/1/2020/07/volunteers-planting-trees-1200x853.jpg"
-    },
-    {
-      "id": 5,
-      "title": "Community Forests",
-      "blogurl": "https://tomorrowfood200274315.wordpress.com/2023/04/04/step-by-step-guide-deploying-an-api-only-ruby-on-rails-application-on-render/",
-      "name": "School Girls Unite",
-      "date": "2023-04-23rd",
-      "location": "Kenya",
-      "summary": "We worked with local communities to establish sustainable community forests, which provide important habitat for wildlife and help combat climate change.",
-      "image": "https://www.scotsman.com/webimg/b25lY21zOmExYTQ4OGJiLWU0YjItNDhjYi1hOGNlLTc4ZmY0Y2M5NmEyODphMTJmM2JmZC03NjU0LTRiZTItOWE0NS1iMzk3MjVkZWMwOTY=.jpg?width=1200&enable=upscale"
-    },
-    {
-      "id": 6,
-      "title": "Reducing Plastic Pollution",
-      "blogurl": "https://tomorrowfood200274315.wordpress.com/2023/04/04/step-by-step-guide-deploying-an-api-only-ruby-on-rails-application-on-render/",
-      "name": "Fashion Revolution",
-      "date": "2023-04-23rd",
-      "location": "Indonesia",
-      "summary": "We raised awareness about plastic pollution and provided education and resources to help communities reduce their use of single-use plastics.",
-      "image": "https://t4.ftcdn.net/jpg/01/65/02/89/360_F_165028958_a8t7Q0WJyETMXpRzabLZXFmFRVAYvbsM.jpg"
-    }
-  ],
-  "donations": [
-    {
-      "id": 1,
-      "amount": "$50",
-      "time": "2022-04-20T15:30:00Z",
-      "anonymous": false,
-      "donorName": "John Doe",
-      "donorEmail": "johndoe@example.com",
-      "donorImage": "https://wallpapers.com/images/featured/87h46gcobjl5e4xu.jpg"
-    },
-    {
-      "id": 2,
-      "amount": "$50",
-      "time": "2022-04-20T15:30:00Z",
-      "anonymous": false,
-      "donorName": "John Doe",
-      "donorEmail": "johndoe@example.com",
-      "donorImage": "https://wallpapers.com/images/featured/87h46gcobjl5e4xu.jpg"
-    },
-    {
-      "id": 3,
-      "amount": "$50",
-      "time": "2022-04-20T15:30:00Z",
-      "anonymous": false,
-      "donorName": "John Doe",
-      "donorEmail": "johndoe@example.com",
-      "donorImage": "https://wallpapers.com/images/featured/87h46gcobjl5e4xu.jpg"
-    },
-    {
-      "id": 4,
-      "amount": "$25",
-      "time": "2022-04-19T12:15:00Z",
-      "anonymous": true,
-      "donorName": "",
-      "donorEmail": "",
-      "donorImage": "https://wallpapers.com/images/hd/cool-profile-picture-ld8f4n1qemczkrig.jpg"
-    },
-    {
-      "id": 5,
-      "amount": "$100",
-      "time": "2022-04-18T09:45:00Z",
-      "anonymous": false,
-      "donorName": "Jane Smith",
-      "donorEmail": "janesmith@example.com",
-      "donorImage": "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?cs=srgb&dl=pexels-mohamed-abdelghaffar-771742.jpg&fm=jpg"
-    }
-  ],
-  "events": [
-    {
-      "id": 1,
-      "title": "Annual Charity Walk",
-      "description": "Join us for our annual charity walk to raise funds for the local shelter.",
-      "time": "2023-05-10T08:00:00Z",
-      "date": "May 10, 2023",
-      "poster": "https://picsum.photos/id/1015/300/200",
-      "location": "Central Park"
-    },
-    {
-      "id": 2,
-      "title": "Community Cleanup Day",
-      "description": "Help keep our community clean by joining us for a day of litter picking and garbage collection.",
-      "time": "2023-06-15T10:00:00Z",
-      "date": "June 15, 2023",
-      "poster": "https://picsum.photos/id/1025/300/200",
-      "location": "Downtown Plaza"
-    },
-    {
-      "id": 3,
-      "title": "Blood Drive",
-      "description": "Donate blood and help save lives at our annual blood drive event.",
-      "time": "2023-07-20T14:00:00Z",
-      "date": "July 20, 2023",
-      "poster": "https://picsum.photos/id/1035/300/200",
-      "location": "Community Center"
-    },
-    {
-      "id": 4,
-      "title": "Food Drive",
-      "description": "Help feed the hungry in our community by donating non-perishable food items at our food drive.",
-      "time": "2023-08-25T09:00:00Z",
-      "date": "August 25, 2023",
-      "poster": "https://picsum.photos/id/1045/300/200",
-      "location": "Supermarket Parking Lot"
-    }
-  ],
-  "notifications": [
-    {
-      "id": 1,
-      "title": "Welcome to our platform!",
-      "message": "Thank you for joining our platform. We hope you enjoy your experience! 😊",
-      "date": "2023-04-20T12:30:00.000Z",
-      "sender": "Mazingira 👑",
-      "image": "https://wallpapers.com/images/featured/87h46gcobjl5e4xu.jpg"
-    },
-    {
-      "id": 2,
-      "title": "New feature added!",
-      "message": "We've just added a new feature to our platform. Check it out now! 🚀",
-      "date": "2023-04-21T09:45:00.000Z",
-      "sender": "Mazingira🌿",
-      "image": "https://wallpapers.com/images/featured/87h46gcobjl5e4xu.jpg"
-    },
-    {
-      "id": 3,
-      "title": "Important update",
-      "message": "Please be aware of an important update that may affect your account. Check your email for more details. 📩",
-      "date": "2023-04-22T15:20:00.000Z",
-      "sender": "Mazingira🍃",
-      "image": "https://wallpapers.com/images/featured/87h46gcobjl5e4xu.jpg"
-    },
-    {
-      "id": 4,
-      "title": "New message received!",
-      "message": "You have a new message from John Doe.",
-      "date": "2023-04-19T08:30:00.000Z",
-      "sender": "John Doe",
-      "image": "https://via.placeholder.com/50"
-    },
-    {
-      "id": 5,
-      "title": "Payment received",
-      "message": "You have received a payment of $50 from Jane Smith.",
-      "date": "2023-04-20T12:15:00.000Z",
-      "sender": "Jane Smith",
-      "image": "https://via.placeholder.com/50"
-    },
-    {
-      "id": 6,
-      "title": "Meeting reminder",
-      "message": "Don't forget about our meeting today at 2:00 PM.",
-      "date": "2023-04-21T08:00:00.000Z",
-      "sender": "John Doe",
-      "image": "https://via.placeholder.com/50"
-    },
-    {
-      "id": 7,
-      "title": "Celebrate Earth Day",
-      "message": "Join us as we celebrate earth day! 🌍",
-      "date": "2023-04-21T09:45:00.000Z",
-      "sender": "Mazingira🌿",
-      "image": "https://wallpapers.com/images/featured/87h46gcobjl5e4xu.jpg"
-    },
-    {
-      "title": "",
-      "message": "",
-      "sender": "Admin",
-      "image": "https://via.placeholder.com/50",
-      "user": "",
-      "id": 8
-    },
-    {
-      "title": "nbnnbnbb",
-      "message": "nbnbnbnbnb",
-      "sender": "Admin",
-      "image": "https://via.placeholder.com/50",
-      "user": "",
-      "id": 9
-    },
-    {
-      "title": "",
-      "message": "",
-      "sender": "Admin",
-      "image": "https://via.placeholder.com/50",
-      "user": "",
-      "id": 10
-    }
-  ],
-  "messages": [
-    {
-      "id": 1,
-      "text": "Hello, how can I help you today?",
-      "sender": "support",
-      "attachment": "",
-      "createdAt": "2023-04-22T12:00:00.000Z"
-    },
-    {
-      "id": 2,
-      "text": "I have a question about my account.",
-      "sender": "user",
-      "attachment": "",
-      "createdAt": "2023-04-22T12:01:00.000Z"
-    },
-    {
-      "id": 3,
-      "text": "Sure, what would you like to know?",
-      "sender": "support",
-      "attachment": "",
-      "createdAt": "2023-04-22T12:02:00.000Z"
-    },
-    {
-      "id": 4,
-      "text": "How can I change my password?",
-      "sender": "user",
-      "attachment": "",
-      "createdAt": "2023-04-22T12:03:00.000Z"
-    },
-    {
-      "id": 5,
-      "text": "You can change your password by going to your account settings.",
-      "sender": "support",
-      "attachment": "",
-      "createdAt": "2023-04-22T12:04:00.000Z"
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "id": 11
-    },
-    {
-      "id": 12
-    }
-  ],
-  "user-engagement": [
-    {
-      "id": 1,
-      "totalUsers": 1000,
-      "activeUsers": 500,
-      "inactiveUsers": 500,
-      "month": "April",
-      "visits": 5000,
-      "signups": 100,
-      "date": "2023-04-23",
-      "donations": 5000
-    },
-    {
-      "id": 2,
-      "totalUsers": 1000,
-      "activeUsers": 500,
-      "inactiveUsers": 500,
-      "month": "April",
-      "visits": 5000,
-      "signups": 100,
-      "date": "2023-04-23",
-      "donations": 5000
-    },
-    {
-      "id": 3,
-      "totalUsers": 1000,
-      "activeUsers": 500,
-      "inactiveUsers": 500,
-      "month": "April",
-      "visits": 5000,
-      "signups": 100,
-      "date": "2023-04-23",
-      "donations": 5000
-    }
-  ],
-  "donation-activity": [
-    {
-      "id": 1,
-      "totalDonations": 10000,
-      "monthlyDonations": 2000,
-      "averageDonation": 50,
-      "month": "April",
-      "visits": 5000,
-      "signups": 100,
-      "activeUsers": 500,
-      "date": "2023-04-23",
-      "donations": 5000
-    },
-    {
-      "id": 2,
-      "totalDonations": 10000,
-      "monthlyDonations": 2000,
-      "averageDonation": 50,
-      "month": "April",
-      "visits": 5000,
-      "signups": 100,
-      "activeUsers": 500,
-      "date": "2023-04-23",
-      "donations": 5000
-    },
-    {
-      "id": 3,
-      "totalDonations": 10000,
-      "monthlyDonations": 2000,
-      "averageDonation": 50,
-      "month": "April",
-      "visits": 5000,
-      "signups": 100,
-      "activeUsers": 500,
-      "date": "2023-04-23",
-      "donations": 5000
-    },
-    {
-      "totalDonations": 10000,
-      "monthlyDonations": 2000,
-      "averageDonation": 50,
-      "month": "April",
-      "visits": 5000,
-      "signups": 100,
-      "activeUsers": 500,
-      "date": "2023-04-23",
-      "donations": 5000
-    }
-  ],
-  "pages": [
-    {
-      "id": 1,
-      "title": "Home",
-      "content": "<p>Welcome to our website!</p>"
-    },
-    {
-      "id": 2,
-      "title": "About Us",
-      "content": "<p>We are a company that sells products online.</p>"
-    }
-  ],
-  "posts": [
-    {
-      "id": 1,
-      "title": "New Product Launch",
-      "content": "<p>We are excited to announce the launch of our new product!</p>"
-    },
-    {
-      "id": 2,
-      "title": "Holiday Sale",
-      "content": "<p>Get your holiday shopping done early with our special sale!</p>"
-    }
-  ],
-  "donation-data": [
-    {
-      "id": 1,
-      "donorName": "John Doe",
-      "date": "2022-03-20",
-      "amount": 50,
-      "paymentMethod": "Credit Card",
-      "organizationId": 1
-    },
-    {
-      "id": 2,
-      "donorName": "Jane Smith",
-      "date": "2022-03-22",
-      "amount": 100,
-      "paymentMethod": "PayPal",
-      "organizationId": 2
-    },
-    {
-      "id": 3,
-      "donorName": "Bob Johnson",
-      "date": "2022-03-25",
-      "amount": 25,
-      "paymentMethod": "Venmo",
-      "organizationId": 1
-    }
-  ],
-  "organization-data": [
-    {
-      "id": 1,
-      "name": "Red Cross"
-    },
-    {
-      "id": 2,
-      "name": "UNICEF"
-    },
-    {
-      "id": 3,
-      "name": "Doctors Without Borders"
-    }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "name": "John Smith",
-      "email": "john.smith@example.com",
-      "role": "donor"
-    },
-    {
-      "id": 2,
-      "name": "Jane Doe",
-      "email": "jane.doe@example.com",
-      "role": "organization"
-    },
-    {
-      "id": 3,
-      "name": "Bob Johnson",
-      "email": "bob.johnson@example.com",
-      "role": "donor"
-    }
-  ]
+      {
+        "id": 1,
+        "title": "Beach Cleanup",
+        "description": "Join us for a beach clean-up on Saturday at 9am",
+        "date": "2023-04-23rd",
+        "location": "Ocean Beach, San Francisco",
+        "image": " https://www.nrdc.org/sites/default/files/styles/huge_4x3_100/public/2023-04/daf-donation-earth-day-1258008992-homepage-dropdown.jpg.webp?itok=rEkD4ChE "
+      },
+
+      {
+        "id": 2,
+        "title": "Sustainable Living Forum",
+        "image": "https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGVudmlyb25tZW50YWx8ZW58MHx8MHx8&w=1000&q=80 ",
+        "description": "Don't miss our panel discussion on sustainable living on Wednesday at 6pm",
+        "date": "2023-04-27th",
+        "location": "123 Main St, San Francisco"
+      },
+      {
+        "id": 3,
+        "title": "Community Garden Day",
+        "image": " https://st.depositphotos.com/1447173/3140/i/600/depositphotos_31406835-stock-photo-the-aim-is-the-recycling.jpg ",
+        "description": "Come help us plant the new community garden on Sunday at 10am",
+        "date": "2023-05-01st",
+        "location": "Golden Gate Park, San Francisco"
+      },
+      {
+        "id": 4,
+        "title": "Climate Change March",
+        "image": " https://media.istockphoto.com/id/1327919661/photo/world-earth-day-concept-green-energy-renewable-and-sustainable-resources-environmental-and.jpg?b=1&s=170667a&w=0&k=20&c=7u6TwP6RmGm5e9x78rZ_VS0QZ7JxUQmGaywqfPYdaWs= ",
+        "description": "Join us for a climate change march on Saturday at 2pm",
+        "date": "2023-05-07th",
+        "location": "Civic Center Plaza, San Francisco"
+      },
+      {
+        "id": 5,
+        "title": "Beach Cleanup",
+        "description": "Join us for a beach clean-up on Saturday at 9am",
+        "date": "2023-04-23rd",
+        "location": "Ocean Beach, San Francisco",
+        "image": " https://www.nrdc.org/sites/default/files/styles/huge_4x3_100/public/2023-04/daf-donation-earth-day-1258008992-homepage-dropdown.jpg.webp?itok=rEkD4ChE "
+      },
+      {
+        "id": 6,
+        "title": "Beach Cleanup",
+        "description": "Join us for a beach clean-up on Saturday at 9am",
+        "date": "2023-04-23rd",
+        "location": "Ocean Beach, San Francisco",
+        "image": " https://www.nrdc.org/sites/default/files/styles/huge_4x3_100/public/2023-04/daf-donation-earth-day-1258008992-homepage-dropdown.jpg.webp?itok=rEkD4ChE "
+      },
+      {
+        "id": 7,
+        "title": "Beach Cleanup",
+        "description": "Join us for a beach clean-up on Saturday at 9am",
+        "date": "2023-04-23rd",
+        "location": "Ocean Beach, San Francisco",
+        "image": " https://www.nrdc.org/sites/default/files/styles/huge_4x3_100/public/2023-04/daf-donation-earth-day-1258008992-homepage-dropdown.jpg.webp?itok=rEkD4ChE "
+      },
+      {
+        "id": 8,
+        "title": "Beach Cleanup",
+        "description": "Join us for a beach clean-up on Saturday at 9am",
+        "date": "2023-04-23rd",
+        "location": "Ocean Beach, San Francisco",
+        "image": " https://www.nrdc.org/sites/default/files/styles/huge_4x3_100/public/2023-04/daf-donation-earth-day-1258008992-homepage-dropdown.jpg.webp?itok=rEkD4ChE "
+      }
+    ],
+    "stories": [
+      {
+        "id": 1,
+        "title": "Saving the Turtles",
+        "location": "Costa Rica",
+        "summary": "We helped protect turtle nesting grounds and hatchlings from predators and poachers, and raised awareness about the importance of sea turtle conservation.",
+        "image": "https://images.ctfassets.net/81iqaqpfd8fy/1E7sBF870wYQRIaMn0s7sD/b8763104bbf99c182aad503e2870df97/environmentvol.jpg?h=620&w=1440"
+      },
+      {
+        "id": 2,
+        "title": "Protecting the Amazon",
+        "location": "Brazil",
+        "summary": "We worked with local communities to stop deforestation and preserve the biodiversity of the Amazon rainforest.",
+        "image": "https://img.freepik.com/premium-photo/young-responsible-people-doing-community-charity-work-park-group-people-cleaning-together-public-park-saving-environment_1212-7546.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Clean Water for All",
+        "location": "India",
+        "summary": "We built wells and provided water filtration systems to give communities access to clean water and prevent water-borne illnesses.",
+        "image": "https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2017/12/20/Pictures/asian-little-girl-helping-tree-father-plant_6cea6b48-e54e-11e7-bd8c-dad1885580ce.jpg"
+      },
+      {
+        "id": 4,
+        "title": "Renewable Energy in Action",
+        "location": "USA",
+        "summary": "We installed solar panels on community buildings and helped households transition to renewable energy, reducing their carbon footprint.",
+        "image": "https://cdn1.matadornetwork.com/blogs/1/2020/07/volunteers-planting-trees-1200x853.jpg"
+      },
+      {
+        "id": 5,
+        "title": "Community Forests",
+        "location": "Kenya",
+        "summary": "We worked with local communities to establish sustainable community forests, which provide important habitat for wildlife and help combat climate change.",
+        "image": "https://www.scotsman.com/webimg/b25lY21zOmExYTQ4OGJiLWU0YjItNDhjYi1hOGNlLTc4ZmY0Y2M5NmEyODphMTJmM2JmZC03NjU0LTRiZTItOWE0NS1iMzk3MjVkZWMwOTY=.jpg?width=1200&enable=upscale"
+      },
+      {
+        "id": 6,
+        "title": "Reducing Plastic Pollution",
+        "location": "Indonesia",
+        "summary": "We raised awareness about plastic pollution and provided education and resources to help communities reduce their use of single-use plastics.",
+        "image": "https://t4.ftcdn.net/jpg/01/65/02/89/360_F_165028958_a8t7Q0WJyETMXpRzabLZXFmFRVAYvbsM.jpg"
+      }
+    ],
+
+    "donations": [
+      {
+        "id": 1,
+        "amount": "$50",
+        "time": "2022-04-20T15:30:00Z",
+        "anonymous": false,
+        "donorName": "John Doe",
+        "donorEmail": "johndoe@example.com",
+        "donorImage": "https://wallpapers.com/images/featured/87h46gcobjl5e4xu.jpg"
+      },
+      {
+        "id": 2,
+        "amount": "$50",
+        "time": "2022-04-20T15:30:00Z",
+        "anonymous": false,
+        "donorName": "John Doe",
+        "donorEmail": "johndoe@example.com",
+        "donorImage": "https://wallpapers.com/images/featured/87h46gcobjl5e4xu.jpg"
+      },
+      {
+        "id": 3,
+        "amount": "$50",
+        "time": "2022-04-20T15:30:00Z",
+        "anonymous": false,
+        "donorName": "John Doe",
+        "donorEmail": "johndoe@example.com",
+        "donorImage": "https://wallpapers.com/images/featured/87h46gcobjl5e4xu.jpg"
+      },
+      {
+        "id": 4,
+        "amount": "$25",
+        "time": "2022-04-19T12:15:00Z",
+        "anonymous": true,
+        "donorName": "jshhgsdghsdghsdghdsgh",
+        "donorEmail": "hdghsgdhgshdhsdhg",
+        "donorImage": "https://wallpapers.com/images/hd/cool-profile-picture-ld8f4n1qemczkrig.jpg"
+      },
+      {
+        "id": 5,
+        "amount": "$100",
+        "time": "2022-04-18T09:45:00Z",
+        "anonymous": false,
+        "donorName": "Jane Smith",
+        "donorEmail": "janesmith@example.com",
+        "donorImage": "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?cs=srgb&dl=pexels-mohamed-abdelghaffar-771742.jpg&fm=jpg"
+      }
+    ],
+
+      "events": [
+        {
+          "id": 1,
+          "title": "Annual Charity Walk",
+          "description": "Join us for our annual charity walk to raise funds for the local shelter.",
+          "time": "2023-05-10T08:00:00Z",
+          "date": "May 10, 2023",
+          "poster": "https://picsum.photos/id/1015/300/200"
+        },
+        {
+          "id": 2,
+          "title": "Community Cleanup Day",
+          "description": "Help keep our community clean by joining us for a day of litter picking and garbage collection.",
+          "time": "2023-06-15T10:00:00Z",
+          "date": "June 15, 2023",
+          "poster": "https://picsum.photos/id/1025/300/200"
+        },
+        {
+          "id": 3,
+          "title": "Blood Drive",
+          "description": "Donate blood and help save lives at our annual blood drive event.",
+          "time": "2023-07-20T14:00:00Z",
+          "date": "July 20, 2023",
+          "poster": "https://picsum.photos/id/1035/300/200"
+        },
+        {
+          "id": 4,
+          "title": "Food Drive",
+          "description": "Help feed the hungry in our community by donating non-perishable food items at our food drive.",
+          "time": "2023-08-25T09:00:00Z",
+          "date": "August 25, 2023",
+          "poster": "https://picsum.photos/id/1045/300/200"
+        }
+      ]
+
+
+
 }

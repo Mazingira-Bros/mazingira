@@ -25,9 +25,40 @@ import {
   FaHeartbeat,
 } from "react-icons/fa";
 
-import ProfilePicture from "../Donor/Profilepic";
+import OrganizationNavBar from './OrganizationNavBar';
+import Footer from '../Donor/Footer';
+import MyDonationsModal from './OrganizationModals/MyDonationsModal';
+import MyEventsModal from './OrganizationModals/MyEventsModal';
+import MyImpactModal from './OrganizationModals/MyImpactModal';
+import NotificationsModal from './OrganizationModals/NotificationsModal';
+import SupportModal from './OrganizationModals/SupportModal';
+import MyDonations from './MyDonations';
+import MyEvents from './MyEvents/MyEvents';
+import MyAddedEvents from './MyEvents/MyAddedEvents';
+import MyImpact from './MyImpact/MyImpact';
+import Notifications from './Notifications';
+import Support from './Support';
+import MyImpactStories from './MyImpact/MyImpactStories';
+import AccountSettings from './AccountSettings';
+import AccountSettingsModal from './OrganizationModals/AccountSettingsModal';
+
+
+
+
+import {FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import {FaBell, FaEdit, FaSignOutAlt,FaMoneyBillAlt, FaCalendarAlt, FaChartPie, FaHeartbeat, FaPhoneAlt } from 'react-icons/fa';
+
+import ProfilePicture from '../Donor/Profilepic';
+
+
+
+
 
 function Dashboard() {
+
+
+
+
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [profilePicture, setProfilePicture] = useState("");
   const [isEditFormOpen, setIsEditFormOpen] = useState(false);
@@ -38,6 +69,13 @@ function Dashboard() {
   const [isWelcomeShown, setIsWelcomeShown] = useState(false);
   // const [donationHistory, setDonationHistory] = useState([]);
   // const [donationCount, setDonationCount] = useState(0);
+
+
+
+
+  const handleAccountSettingsClick = () => {
+    setSelectedContent('account-settings');
+  };
 
   const handleEditClick = () => {
     setIsEditFormOpen(true);
@@ -93,9 +131,11 @@ function Dashboard() {
         <div className="">
           {/* This is the START OF THE NAVBAR AREA */}
 
-          <div className="bg-[#042a30] text-white py-2  w-full flex-1 fixed">
-            <OrganizationNavBar name={name} />
-          </div>
+    <div className="bg-[#042a30] text-white py-2  w-full flex-1 fixed">
+          <OrganizationNavBar
+          name={name}
+          />
+    </div>
 
           {/* This is the END OF THE NAVBAR AREA */}
 
@@ -220,24 +260,25 @@ function Dashboard() {
 
                           {/* ***********************************************Support Button*************************************************************** */}
 
-                          <button
-                            className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center"
-                            onClick={() => setSelectedContent("support")}
-                          >
-                            <FaHeartbeat className="mr-2" />
-                            <span>Support</span>
-                          </button>
+<button
+className="py-2 mb-2 bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center"
+onClick={() => setSelectedContent('support')}
+>
+<FaPhoneAlt  className="mr-2" />
+<span>Support</span>
+</button>
 
-                          {/* ***********************************************END OF Support Button*************************************************************** */}
+{/* ***********************************************END OF Support Button*************************************************************** */}
+
+
 
                           {/* ***********************************************Logout Button*************************************************************** */}
 
-                          <button
-                            onClick={handleLogout}
-                            className="py-2 mb-2 mt-auto bg-[#fff5e1] hover:bg-red-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center "
-                          >
-                            <span>Logout</span>
-                          </button>
+<a href="/login"
+ className="py-2 mb-2 mt-auto bg-[#fff5e1] hover:bg-yellow-200 text-[#32594a] text-gray-600 font-medium rounded-md flex items-center justify-center ">
+ <FaSignOutAlt className="mr-2" />
+ <span>Logout</span>
+</a>
 
                           {/* ***********************************************End of Logout Button*************************************************************** */}
                         </div>
@@ -253,11 +294,11 @@ function Dashboard() {
 
               {/* This is the START OF THE CONTENT AREA */}
 
-              {/* ******These is where the props are passed from their imported components *************************************************************************************************** */}
-              <div className="bg-[#f2efc5]">
-                <div className="md:pl-80 ">
-                  <div className=" flex-grow flex flex-col py-16  mr-5 overflow-y-auto">
-                    {/* md:pl-80 */}
+{/* ******These is where the props are passed from their imported components *************************************************************************************************** */}
+<div className='bg-[#f2efc5]'>
+<div className='md:pl-80'>
+<div className=" flex-grow flex flex-col  py-20  mr-5 overflow-y-auto">
+{/* md:pl-80 */}
 
                     {/*******************STRAT OF MY Donation Content ********************************************** */}
 
@@ -276,37 +317,41 @@ function Dashboard() {
 
                     {/*******************START OF MYEVENTS Content ********************************************** */}
 
-                    <div className="flex flex-row flex-wrap">
-                      <div className="w-full lg:w-1/2">
-                        {selectedContent === "my-events" && <MyEvents />}
-                      </div>
-                      <div className="w-full lg:w-1/2 ">
-                        {selectedContent === "my-events" && <MyAddedEvents />}
-                      </div>
-                      {selectedContent === "my-events" && !isWelcomeShown && (
-                        <MyEventsModal setIsWelcomeShown={setIsWelcomeShown} />
-                      )}
-                    </div>
+<div className="flex flex-row flex-wrap">
+  <div className="w-full lg:w-1/2">
+    {selectedContent === 'my-events' && <MyEvents />}
+  </div>
+  <div className="w-full lg:w-1/2">
+    {selectedContent === 'my-events' && <div className='overflow-y-auto' style={{ height: '500px' }}>
+      <MyAddedEvents />
+    </div>}
+  </div>
+  {selectedContent === 'my-events' && !isWelcomeShown && <MyEventsModal setIsWelcomeShown={setIsWelcomeShown}/>}
+</div>
+
+
+
 
                     {/*******************End of MYEVENTS Content ********************************************** */}
 
                     {/*******************MyImpact Content ********************************************** */}
 
-                    <div className="">
-                      {/* use this for styling do not delete its custom css reminder-container */}
-                      {selectedContent === "my-impact" && <MyImpact />}
+<div className="">
+  {/* use this for styling do not delete its custom css reminder-container */}
+  {selectedContent === 'my-impact' &&  <MyImpact/>}
 
-                      {selectedContent === "my-impact" && !isWelcomeShown && (
-                        <MyImpactModal setIsWelcomeShown={setIsWelcomeShown} />
-                      )}
-                    </div>
+  {selectedContent === 'my-impact' && !isWelcomeShown && <MyImpactModal setIsWelcomeShown={setIsWelcomeShown}/>}
+
+</div>
 
                     {/*******************End of MyImpact Content ********************************************** */}
 
                     {/*******************NOTIFICATIONS Content ********************************************** */}
 
-                    <div>
-                      {selectedContent === "notifications" && <Notifications />}
+<div>
+  <>
+  {selectedContent === 'notifications' && < Notifications />}
+  </>
 
                       {selectedContent === "notifications" &&
                         !isWelcomeShown && (
@@ -328,9 +373,27 @@ function Dashboard() {
                       )}
                     </div>
 
-                    {/*******************End of SUPPORT ********************************************** */}
-                  </div>
-                </div>
+{/*******************End of SUPPORT ********************************************** */}
+
+{/*******************STARTf ACCOUNT SETTINGS ********************************************** */}
+
+
+<div>
+      {selectedContent === 'account-settings' && ( <AccountSettings />)}
+</div>
+
+ {/* <div>
+{selectedContent === 'account-settings' && < AccountSettings />}
+
+{selectedContent === 'account-settings' && !isWelcomeShown && <AccountSettingsModal setIsWelcomeShown={setIsWelcomeShown}/>}
+</div> */}
+
+{/*******************End of ACCOUNT SETTINGS ********************************************** */}
+
+
+</div>
+
+</div>
 
                 {/* ************************************************************************************************************************************************************** */}
 

@@ -15,6 +15,14 @@ import AdminDash from './components/Admin/Dashboard';
 // import Profilepic from '../src/components/Donor/Profilepic'
 import Dashboard from '../src/components/Admin/Dashboard';
 import AdminLogin from '../src/components/Admin/AdminLogin';
+import DonorLogin from '../src/components/Donor/DonorLogin';
+import OrgLogin from '../src/components/Organization/OrgLogin';
+import DonationForm from './components/Donor/DonationForm';
+// import MpesaPayment from './components/Donor/MpesaPayment'
+import MpesaPayment from './components/Donor/MpesaPayment';
+
+import Dashboard from '../src/components/Admin/Dashboard';
+import AdminLogin from '../src/components/Admin/AdminLogin';
 import Login from './components/Login';
 import OrgLogin from '../src/components/Organization/OrgLogin';
 
@@ -29,14 +37,12 @@ function App() {
         <Routes>
           <Route exact path="/" Component={LandingPage} />
           <Route exact path="/login" Component={Login} />
-          <Route exact path="/admin-login" Component={AdminLogin} />
           <Route exact path="/donorregistration" Component={GeneralRegistrationForm} />
           <Route exact path="/learnmore" Component={LearnMore} />
           <Route exact path="/registration" Component={GeneralRegistrationForm} />
           <Route exact path="/password-reset" Component={PasswordReset} />
           <Route exact path="/donor-dashboard" Component={DonorDashBoard} />
           <Route exact path="/organization-dashboard" Component={OrganizationDahboard} />
-          <Route exact path="/admin-dashboard" Component={Dashboard} />
 
 
 

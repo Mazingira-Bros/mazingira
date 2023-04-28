@@ -8,18 +8,18 @@ import { Link } from 'react-router-dom';
     const [userId, setUserId] = useState(null);
 
     // const [deleteReason, setDeleteReason] = useState('');
-  
+
     const handleDeleteAccount = async (userId) => {
       try {
         // Send DELETE request to server's API to delete user by ID
-        const response = await fetch(`/api/organisations/${userId}`, {
+        const response = await fetch(`/api/users/${userId}`, {
           method: 'DELETE'
         });
-    
+
         if (response.ok) {
           // User was successfully deleted from database
           console.log('User deleted successfully!');
-    
+
           // Log the user out and redirect to registration page
           await fetch('/api/auth/logout', {
             method: 'POST'
@@ -32,14 +32,14 @@ import { Link } from 'react-router-dom';
       } catch (error) {
         console.error('Error deleting user:', error);
       }
-    
+
       // Close the delete account modal
       setShowDeleteModal(false);
     };
-    
-    
-    
-    
+
+
+
+
   return (
 
     <div className="max-w-4xl mx-auto">
@@ -88,7 +88,7 @@ import { Link } from 'react-router-dom';
       Delete Account
     </button>
   </div>
- 
+
   </div>
   {/* delete account modal */}
   {showDeleteModal && (
@@ -135,9 +135,9 @@ import { Link } from 'react-router-dom';
     </div>
     </div>
     )}
-    
+
     </div>
-    
+
   );
 }
 

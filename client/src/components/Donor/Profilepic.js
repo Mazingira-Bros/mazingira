@@ -69,15 +69,16 @@
 
 // export default ProfilePicture;
 
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaCamera } from "react-icons/fa";
 
-function ProfilePicture({ profilePicture, setProfilePicture, initialProfilePicture }) {
+function ProfilePicture({ initialProfilePicture }) {
   const [showModal, setShowModal] = useState(false);
   const [picture, setPicture] = useState("");
+  const [profilePicture, setProfilePicture] = useState("");
 
-  useState(() => {
+  useEffect(() => {
+    setProfilePicture(initialProfilePicture);
     setPicture(initialProfilePicture);
   }, [initialProfilePicture]);
 
@@ -88,12 +89,33 @@ function ProfilePicture({ profilePicture, setProfilePicture, initialProfilePictu
       setProfilePicture(reader.result);
       setPicture(reader.result);
       setShowModal(false);
+      saveProfilePicture(reader.result);
     };
     reader.readAsDataURL(file);
   };
 
   const handleIconClick = () => {
     setShowModal(true);
+  };
+
+  const saveProfilePicture = (picture) => {
+    fetch(" http://localhost:5000/profile-picture", {
+      method: "POST",
+      body: JSON.stringify({ picture }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+  };
+
+  const getProfilePicture = () => {
+    fetch(" http://localhost:5000/profile-picture")
+      .then((response) => response.json())
+      .then((data) => setProfilePicture(data.picture))
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -142,3 +164,4 @@ function ProfilePicture({ profilePicture, setProfilePicture, initialProfilePictu
 }
 
 export default ProfilePicture;
+
