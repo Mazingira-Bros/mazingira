@@ -16,6 +16,8 @@ import Addorganization from './components/Organization/AddOrganization';
 import Sidebar from './components/Admin/AdminNavBar';
 // import DonorNavBar from './components/Donor/DonorNavBar';
 // import NewDonationContent from './components/Donor/NewDonationContent';
+import Paypal from './components/Donor/Paypalpage';
+
 
 function App() {
   //
@@ -36,6 +38,7 @@ function App() {
           <Route exact path="/checkout" element={<Checkout/>} />
           <Route exact path="/addorganization" element={<Addorganization/>} />
          <Route exact path="/adminsidebar" element={<Sidebar/>} />
+         <Route exact path="/paypal" element={<Paypal/>} />
 
 
           {/* Add other routes for other components */}
