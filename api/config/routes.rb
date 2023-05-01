@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
   post "/login", to: "sessions#login"
   post "/logout", to: "sessions#destroy"
+  get "/me" , to: "sessions#me"
 
   # Defines the root path route ("/")
   root "home#index"

@@ -1,12 +1,39 @@
 import React, { useState } from "react";
 import Logo from "../assets/logo4.png";
-import { message } from "antd";
-import { useDispatch } from 'react-redux';
-import { setUserData } from '../userSlice';
+import { message, Button } from "antd";
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from "react-router-dom";
+
+
 
 function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
+  const userData = useSelector(state => state.userData);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const me = (e) => {
+    e.preventDefault();
+    fetch("http://localhost:3000/me", {
+      credentials: 'include'
+    }).then(response => {
+      if (response.ok) {
+        return response.json();
+      } else if (response.status === 401) {
+        throw new Error("User not logged in");
+      } else {
+        throw new Error("Failed to fetch user data");
+      }
+    })
+    .then((data) => {
+      console.log('User data:', userData);
+      dispatch(userData(userData));
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  };
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -15,7 +42,6 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("email:", formData.email, "password:", formData.password);
     const response = await fetch("http://localhost:3000/login", {
       method: "POST",
       headers: {
@@ -24,24 +50,26 @@ function Login() {
       body: JSON.stringify(formData)
     });
     const data = await response.json();
-    console.log(data);
 
     if (response.status === 401) {
       message.error(data.error);
     } else if (response.status === 200) {
-      dispatch(setUserData(data));
-      message.success("Login Successfull");
-      if (data.role === "Donor") {
-        window.location.href = "/donor-dashboard";
-      } else if (data.role === "Organisation") {
-        window.location.href = "/organization-dashboard";
-      } else if (data.role === "Admin") {
-        window.location.href = "/admin-dashboard";
+      dispatch({ type: 'SET_USER_DATA', payload: data });
+      const roleToDashboardMap = {
+        "Donor": "/donor-dashboard",
+        "Organisation": "/organization-dashboard",
+        "Admin": "/admin-dashboard",
+      };
+      const url = roleToDashboardMap[data.role];
+      if (userData !== null && url) {
+        dispatch({ type: 'SET_USER_DATA', payload: data });
+        message.success("Login Successfull");
+        console.log(userData)
+        navigate(url);
+        // window.location.href = dashboardPath;
       }
     }
   };
-
-
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg">
@@ -63,7 +91,10 @@ function Login() {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="password" className="block mb-2 font-medium"></label>
+            <label
+              htmlFor="password"
+              className="block mb-2 font-medium"
+            ></label>
             <input
               type="password"
               id="password"
@@ -99,6 +130,7 @@ function Login() {
             </a>
           </p>
         </div>
+        <Button onClick={me}>hello</Button>
       </div>
       <div className="text-center text-white font-semibold mt-40">
         <p>
